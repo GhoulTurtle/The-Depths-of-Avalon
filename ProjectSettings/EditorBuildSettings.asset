@@ -5,7 +5,13 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/SampleScene.unity
     guid: 99c9720ab356a0642a771bea13969a05
+  - enabled: 1
+    path: Assets/Scenes/SantosUIDev.unity
+    guid: 043c1e0b23f424a43ace4945e7fb3c42
+  - enabled: 1
+    path: Assets/Scenes/Richardson Dev Scene.unity
+    guid: 749d39ea6b67f324484520aec1ca16f1
   m_configObjects: {}
