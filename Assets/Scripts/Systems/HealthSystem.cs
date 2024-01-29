@@ -5,22 +5,30 @@ using UnityEngine;
 
 public class HealthSystem : MonoBehaviour {
 
-    #region Editable Variables
+#region Editable Variables
     [Header("Editable Variables")]
     [SerializeField] private float maxHealth;
     [SerializeField] private float currentHealth;
-    #endregion
+#endregion
 
+#region Events
     public event EventHandler OnDie; //Used for whenever a player is killed.
     public event EventHandler OnDamaged; //Used for any events that happen when player is damaged.
     public event EventHandler OnHealed; //Used for anything that happens when a player gets healed
+#endregion
+
+    [SerializeField] private bool isAlive;
+
     private void Awake() {
         currentHealth = maxHealth;
+        isAlive = true;
     }
-
 
     //Need way to modify current health
     public void TakeDamage(float damageAmount) {
+        if(!isAlive) {
+            return;
+        }
         currentHealth -= damageAmount;
 
         if(currentHealth < 0) {
@@ -48,6 +56,7 @@ public class HealthSystem : MonoBehaviour {
 
     //Need way to trigger OnDie event when health <= 0
     private void Die() {
+        isAlive = false;
         OnDie?.Invoke(this, EventArgs.Empty);
     }
 }

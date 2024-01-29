@@ -5,11 +5,13 @@ using UnityEngine;
 
 public class ForTesting : MonoBehaviour {
 
+    public HealthSystem healthSystem;
+
     private void Awake() {
 
     }
     private void OnEnable() {
-    
+        
     }
 
     private void OnDisable() {
@@ -23,7 +25,7 @@ public class ForTesting : MonoBehaviour {
     
     private void Update() {
         if(Input.GetKeyDown(KeyCode.J)) {
-            
+            healthSystem.TakeDamage(10);
         }
     }
 }
