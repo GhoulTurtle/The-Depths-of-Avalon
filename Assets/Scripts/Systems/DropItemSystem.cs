@@ -1,7 +1,5 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
-using Unity.Mathematics;
 using UnityEngine;
 
 [RequireComponent(typeof(HealthSystem))]
@@ -45,7 +43,7 @@ public class DropItemSystem : MonoBehaviour {
     }
 
     private void DropSelectedItem(GameObject selectedItem) {
-        Instantiate(selectedItem, this.transform.position, quaternion.identity);
+        Instantiate(selectedItem, this.transform.position, Quaternion.identity);
         Debug.Log("Dropping " + selectedItem);
         Destroy(this.gameObject);
     }
