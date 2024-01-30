@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2436a66c7e1b0640a8db7d50b89b4ea, type: 3}
+  m_Name: _MerlinCharacter
+  m_EditorClassIdentifier: 
+  CharacterName: Merlin
+  CharacterStats: {fileID: 11400000, guid: d95031662288f074d82e748f491ba639, type: 2}
+  CharacterVisuals: {fileID: 11400000, guid: e536e2c61293c0c48a5440795fe875d2, type: 2}
+  CharacterAudio: {fileID: 11400000, guid: 369ea1ee1dcfc7243b478a6e293e243c, type: 2}

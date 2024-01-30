@@ -1,12 +1,15 @@
 using System;
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 [RequireComponent(typeof(CharacterController))]
-public class PlayerController : MonoBehaviour{
+public class PlayerMovement : MonoBehaviour{
     [Header("Speed Variables")]
+    [Range(3, 20)]
     [SerializeField] private float movementSpeed = 5f;
+    [Range(3, 10)]
     [SerializeField] private float accelerationSpeed = 10f;
+    [Range(3, 30)]
+    [SerializeField] private float rotationSpeed;
 
     [Header("Ground Check Variables")]
     [SerializeField] private float groundedOffset = -0.14f;
@@ -27,14 +30,42 @@ public class PlayerController : MonoBehaviour{
 
     private bool grounded = false;
 
+    private Camera mainCamera;
+
+    private Character playerCharacter;
+
     private void Awake() {
         TryGetComponent(out characterController);
+        TryGetComponent(out playerCharacter);
+        playerCharacter.OnSetupCharacter += UpdateMovementVariables;
+    }
+
+    private void OnDestroy() {
+        playerCharacter.OnSetupCharacter -= UpdateMovementVariables;
+    }
+
+    private void Start() {
+        mainCamera = Camera.main;
     }
 
     private void Update() {
         GroundCheck();
         Gravity();
         Move();
+    }
+    
+    public void SetInputVector(Vector2 movement) => currentMovementDirection = movement;
+
+    public void UpdatePosition(Vector3 pos){
+        characterController.enabled = false;
+        transform.position = pos;
+        characterController.enabled = true;
+    }
+
+    private void UpdateMovementVariables(object sender, Character.SetupCharacterEventArgs e){
+        movementSpeed = e.CharacterStats.movementSpeed;
+        accelerationSpeed = e.CharacterStats.accelerationSpeed;
+        rotationSpeed = e.CharacterStats.rotationSpeed;
     }
 
     private void Gravity(){
@@ -65,7 +96,6 @@ public class PlayerController : MonoBehaviour{
         return new Vector3(transform.position.x, transform.position.y - groundedOffset, transform.position.z);
     }
 
-    public void OnMove(InputAction.CallbackContext context) => currentMovementDirection = context.ReadValue<Vector2>();
     
     private void Move(){
         float targetSpeed = movementSpeed;
@@ -89,7 +119,6 @@ public class PlayerController : MonoBehaviour{
 
         var normalizedMovementDirection = new Vector3(currentMovementDirection.x, 0f, currentMovementDirection.y).normalized;
 
-        
         Vector3 inputDirection = normalizedMovementDirection;
 
         if(input != Vector2.zero){
@@ -97,13 +126,23 @@ public class PlayerController : MonoBehaviour{
                 currentMovementDirection = input;
             }
             
-            inputDirection = transform.right * -input.y + transform.forward * input.x;
+            inputDirection = new Vector3(input.x, 0, input.y);
         }
         else{
             currentMovementDirection = Vector2.zero;
         }
 
+        var targetVector = Quaternion.Euler(0, mainCamera.transform.eulerAngles.y, 0) * inputDirection;
+
         //Add vertical velocity to the calculation
-        characterController.Move(inputDirection * (currentSpeed * Time.deltaTime) + new Vector3(0f, verticalVelocity, 0f) * Time.deltaTime);
+        characterController.Move(targetVector * (currentSpeed * Time.deltaTime) + new Vector3(0f, verticalVelocity, 0f) * Time.deltaTime);
+        UpdateRotation(targetVector);
+    }
+
+    private void UpdateRotation(Vector3 movementDirection){
+        if(movementDirection.magnitude == 0) { return; }
+
+        var rotation = Quaternion.LookRotation(movementDirection);
+        transform.rotation = Quaternion.RotateTowards(transform.rotation, rotation, rotationSpeed);
     }
 }
