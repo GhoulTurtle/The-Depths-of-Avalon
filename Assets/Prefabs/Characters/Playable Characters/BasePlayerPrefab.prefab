@@ -305,12 +305,12 @@ MonoBehaviour:
   movementSpeed: 8
   accelerationSpeed: 10
   rotationSpeed: 9.5
-  groundedOffset: -0.14
-  groundedRadius: 0.5
+  groundedOffset: 0.55
+  groundedRadius: 0.6
   groundLayers:
     serializedVersion: 2
     m_Bits: 64
-  gravity: -5
+  gravity: -15
   fallTimeout: 0.15
 --- !u!114 &4338515436821928063
 MonoBehaviour:

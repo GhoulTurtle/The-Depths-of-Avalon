@@ -16,6 +16,9 @@ public class PlayerManager : MonoBehaviour{
 
 	public event EventHandler<PlayerEventArgs> OnPlayerJoined;
 	public event EventHandler<PlayerEventArgs> OnPlayerLeave;
+	public event EventHandler OnCorrectPlayerCount;
+
+	private readonly float correctPlayerCount = 2;
 
 	public class PlayerEventArgs : EventArgs{
 		public Player player;
@@ -42,6 +45,10 @@ public class PlayerManager : MonoBehaviour{
 		CurrentPlayerList.Add(incomingPlayer);
 
 		OnPlayerJoined?.Invoke(this, new PlayerEventArgs(incomingPlayer));
+		
+		if(CurrentPlayerList.Count == correctPlayerCount){
+			OnCorrectPlayerCount?.Invoke(this, EventArgs.Empty);
+		}
     }
 
     public void RemovePlayer(PlayerInput playerInput){
