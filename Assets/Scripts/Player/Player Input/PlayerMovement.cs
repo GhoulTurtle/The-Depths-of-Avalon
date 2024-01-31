@@ -20,18 +20,22 @@ public class PlayerMovement : MonoBehaviour{
     [SerializeField] private float gravity = -15f;
     [SerializeField] private float fallTimeout = 0.15f;
     
-    private Vector2 currentMovementDirection;
+    private Vector2 currentInput;
     private CharacterController characterController;
 
+    //Movement
+    private Vector3 inputDirection;
+
+    //Gravity
     private const float terminalVelocity = 53f;
     private float currentSpeed;
     private float verticalVelocity;
-    private float fallTimeoutDelta;
 
+    //Checks
     private bool grounded = false;
 
-    private Camera mainCamera;
-
+    //References
+    private CameraController mainCameraController;
     private Character playerCharacter;
 
     private void Awake() {
@@ -45,7 +49,7 @@ public class PlayerMovement : MonoBehaviour{
     }
 
     private void Start() {
-        mainCamera = Camera.main;
+        Camera.main.TryGetComponent(out mainCameraController);
     }
 
     private void Update() {
@@ -54,7 +58,7 @@ public class PlayerMovement : MonoBehaviour{
         Move();
     }
     
-    public void SetInputVector(Vector2 movement) => currentMovementDirection = movement;
+    public void SetInputVector(Vector2 _currentInput) => currentInput = _currentInput;
 
     public void UpdatePosition(Vector3 pos){
         characterController.enabled = false;
@@ -70,22 +74,13 @@ public class PlayerMovement : MonoBehaviour{
 
     private void Gravity(){
         if(grounded){
-                fallTimeoutDelta = fallTimeout;
-
-                // Stops our velocity dropping infitely when grounded
-                if(verticalVelocity < 0f){
-                    verticalVelocity = -2f;
-                }
-            }
-            else{
-                if(fallTimeoutDelta >= 0.0f){
-                    fallTimeoutDelta -= Time.deltaTime;
-                }
-            }
+            verticalVelocity = -2f;
+            return;
+        }
 
         if(verticalVelocity < terminalVelocity){
             verticalVelocity += gravity * Time.deltaTime;
-        }
+        }  
     }
 
     private void GroundCheck(){
@@ -98,17 +93,22 @@ public class PlayerMovement : MonoBehaviour{
 
     
     private void Move(){
+        //Project the input to see if that would set us to far from the camera midpoint
+        inputDirection = new Vector3(currentInput.x, 0, currentInput.y).normalized;
+        
+        if(Vector3.Distance(mainCameraController.MidPoint, transform.position + inputDirection) > mainCameraController.WanderLimit){
+            currentInput = Vector2.zero;  
+        } 
+
         float targetSpeed = movementSpeed;
 
-        var input = currentMovementDirection;
-
-        if(input == Vector2.zero) targetSpeed = 0f;
+        if(currentInput == Vector2.zero) targetSpeed = 0f;
 
         float currentHorizontalSpeed = new Vector3(characterController.velocity.x, 0f, characterController.velocity.z).magnitude;
         float speedOffset = 0.1f;
 
         if(currentHorizontalSpeed < targetSpeed - speedOffset || currentHorizontalSpeed > targetSpeed + speedOffset){
-            currentSpeed = Mathf.Lerp(currentHorizontalSpeed, targetSpeed * input.magnitude, Time.deltaTime * accelerationSpeed);
+            currentSpeed = Mathf.Lerp(currentHorizontalSpeed, targetSpeed * currentInput.magnitude, Time.deltaTime * accelerationSpeed);
 
             currentSpeed = Mathf.Round(currentSpeed * 1000f) / 1000f;
         }
@@ -116,23 +116,7 @@ public class PlayerMovement : MonoBehaviour{
         else{
             currentSpeed = targetSpeed;
         }
-
-        var normalizedMovementDirection = new Vector3(currentMovementDirection.x, 0f, currentMovementDirection.y).normalized;
-
-        Vector3 inputDirection = normalizedMovementDirection;
-
-        if(input != Vector2.zero){
-            if(input != currentMovementDirection){
-                currentMovementDirection = input;
-            }
-            
-            inputDirection = new Vector3(input.x, 0, input.y);
-        }
-        else{
-            currentMovementDirection = Vector2.zero;
-        }
-
-        var targetVector = Quaternion.Euler(0, mainCamera.transform.eulerAngles.y, 0) * inputDirection;
+        var targetVector = Quaternion.Euler(0, mainCameraController.transform.eulerAngles.y, 0) * inputDirection;
 
         //Add vertical velocity to the calculation
         characterController.Move(targetVector * (currentSpeed * Time.deltaTime) + new Vector3(0f, verticalVelocity, 0f) * Time.deltaTime);

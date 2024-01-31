@@ -18,5 +18,7 @@ public class Player{
 		}
 	}
 
+	public Transform GetPlayerTransform() => assignedPlayerInput.transform; 
+
 	public void UpdateCharacter(CharacterSO _characterSO) => playerCharacter.ChangeCharacter(_characterSO);
 }
