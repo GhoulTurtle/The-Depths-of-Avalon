@@ -42,6 +42,7 @@ public class PlayerMovement : MonoBehaviour{
         TryGetComponent(out characterController);
         TryGetComponent(out playerCharacter);
         playerCharacter.OnSetupCharacter += UpdateMovementVariables;
+        playerCharacter.OnStatusEffectApplied += StatusEffectApplied;
     }
 
     private void OnDestroy() {
@@ -64,6 +65,10 @@ public class PlayerMovement : MonoBehaviour{
         characterController.enabled = false;
         transform.position = pos;
         characterController.enabled = true;
+    }
+    
+    private void StatusEffectApplied(object sender, Character.StatusEffectAppliedEventArgs e){
+        
     }
 
     private void UpdateMovementVariables(object sender, Character.SetupCharacterEventArgs e){
@@ -90,7 +95,6 @@ public class PlayerMovement : MonoBehaviour{
     private Vector3 GetGroundCheckPosition(){
         return new Vector3(transform.position.x, transform.position.y - groundedOffset, transform.position.z);
     }
-
     
     private void Move(){
         //Project the input to see if that would set us to far from the camera midpoint

@@ -713,6 +713,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d320ee3024a8ca4888732c8ed24fab5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  arthurCharacterSO: {fileID: 11400000, guid: 392d07da349b2eb4dac1a1b6195a1bdc, type: 2}
+  merlinCharacterSO: {fileID: 11400000, guid: a01f38f3868dc61429fc738f34547ab9, type: 2}
 --- !u!1 &1970675883
 GameObject:
   m_ObjectHideFlags: 0
