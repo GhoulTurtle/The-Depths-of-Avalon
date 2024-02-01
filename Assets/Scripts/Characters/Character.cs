@@ -17,11 +17,19 @@ public class Character : MonoBehaviour{
 	private GameObject characterVisuals;
 
 	public event EventHandler<SetupCharacterEventArgs> OnSetupCharacter;
+	public event EventHandler<StatusEffectAppliedEventArgs> OnStatusEffectApplied;
 
 	public class SetupCharacterEventArgs : EventArgs{
 		public CharacterStatsSO CharacterStats;
 		public SetupCharacterEventArgs(CharacterStatsSO _characterStats){
 			CharacterStats = _characterStats;
+		}
+	}
+
+	public class StatusEffectAppliedEventArgs : EventArgs{
+		public StatusEffect abilityEffect;
+		public StatusEffectAppliedEventArgs(StatusEffect _abilityEffect){
+			abilityEffect = _abilityEffect;
 		}
 	}
 
@@ -44,6 +52,10 @@ public class Character : MonoBehaviour{
 		UpdateCharacterVisuals();
 
 		OnSetupCharacter?.Invoke(this, new SetupCharacterEventArgs(characterSO.CharacterStats));
+	}
+
+	public void ApplyStatusEffectToCharacter(StatusEffect effect){
+		OnStatusEffectApplied?.Invoke(this, new StatusEffectAppliedEventArgs(effect));
 	}
 
 	private void CleanupCharacter(){

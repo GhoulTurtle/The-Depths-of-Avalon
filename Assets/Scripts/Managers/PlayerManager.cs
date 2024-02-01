@@ -10,6 +10,9 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class PlayerManager : MonoBehaviour{
+	[SerializeField] private CharacterSO arthurCharacterSO;
+	[SerializeField] private CharacterSO merlinCharacterSO;
+
 	public static PlayerManager Instance {get; private set;}
 
 	public List<Player> CurrentPlayerList {get; private set;}
@@ -43,6 +46,10 @@ public class PlayerManager : MonoBehaviour{
 		
 		Player incomingPlayer = new Player(incomingPlayerIndex, playerInput);
 		CurrentPlayerList.Add(incomingPlayer);
+
+		var playerCharacter = incomingPlayerIndex == 0 ? arthurCharacterSO : merlinCharacterSO;
+
+		incomingPlayer.UpdateCharacter(playerCharacter);
 
 		OnPlayerJoined?.Invoke(this, new PlayerEventArgs(incomingPlayer));
 		
