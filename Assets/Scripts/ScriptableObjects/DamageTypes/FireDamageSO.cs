@@ -27,7 +27,7 @@ public class FireDamageSO : DamageTypeSO
 
         while (isInFlames) {
             // Apply damage each tick
-            healthSystem.TakeDamage(damageAmount);
+            healthSystem.TakeDamage(this, damageAmount);
             Debug.Log($"Damage tick");
 
             // Delay for the specified time between ticks
@@ -38,7 +38,7 @@ public class FireDamageSO : DamageTypeSO
             for (int i = 0; i < TicksPerSecond * EffectDuration; i++) {
                 // Apply damage each tick
                 // Note: You may want to add a check here if isInFlames becomes true again during the continuation.
-                healthSystem.TakeDamage(damageAmount);
+                healthSystem.TakeDamage(this, damageAmount);
                 Debug.Log($"Damage tick {i + 1}");
 
                 // Delay for the specified time between ticks

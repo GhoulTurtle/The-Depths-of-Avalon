@@ -6,10 +6,10 @@ using UnityEngine;
 public class StunDamageSO : DamageTypeSO
 {
     public override void DealDamage(HealthSystem healthSystem, float damageAmount) {
-        // if(TryGetGetComponent<???>(out ??? nameHere)) {
-        //     //Call the StunFunction from the component
+        // if(healthSystem.TryGetComponent(out Character character)){
+        //     character.ApplyStatusEffectToCharacter(StatusEffect.Stun);
         // }
 
-        healthSystem.TakeDamage(damageAmount);
+        healthSystem.TakeDamage(this, damageAmount);
     }
 }
