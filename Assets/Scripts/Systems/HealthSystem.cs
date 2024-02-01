@@ -9,12 +9,22 @@ public class HealthSystem : MonoBehaviour {
     [Header("Editable Variables")]
     [SerializeField] private float maxHealth;
     [SerializeField] private float currentHealth;
+    [SerializeField] private DamageTypeSO requiredDamageType;
 #endregion
 
 #region Events
     public event EventHandler OnDie; //Used for whenever a player is killed.
-    public event EventHandler OnDamaged; //Used for any events that happen when player is damaged.
+    public event EventHandler<DamagedEventArgs> OnDamaged; //Used for any events that happen when player is damaged.
     public event EventHandler OnHealed; //Used for anything that happens when a player gets healed
+
+    public class DamagedEventArgs : EventArgs {
+        public DamageTypeSO damageTypeSO;
+        public float damageAmount;
+        public DamagedEventArgs(DamageTypeSO _damageTypeSO, float _damageAmount) {
+            damageTypeSO = _damageTypeSO;
+            damageAmount = _damageAmount;
+        }
+    }
 #endregion
 
     [SerializeField] private bool isAlive;
@@ -25,10 +35,13 @@ public class HealthSystem : MonoBehaviour {
     }
 
     //Need way to modify current health
-    public void TakeDamage(float damageAmount) {
-        if(!isAlive) {
+    public void TakeDamage(DamageTypeSO damageType, float damageAmount) {
+        if(requiredDamageType != null && damageType != requiredDamageType) {
+            return;
+        } if(!isAlive) {
             return;
         }
+
         currentHealth -= damageAmount;
 
         if(currentHealth < 0) {
@@ -36,7 +49,7 @@ public class HealthSystem : MonoBehaviour {
         }
 
         //Need to update Player UI when damage taken/healed
-        OnDamaged?.Invoke(this, EventArgs.Empty); //cause any event subscribed to activate when hit.
+        OnDamaged?.Invoke(this, new DamagedEventArgs(damageType, damageAmount)); //cause any event subscribed to activate when hit.
 
         if(currentHealth == 0) {
             Die();
@@ -59,4 +72,4 @@ public class HealthSystem : MonoBehaviour {
         isAlive = false;
         OnDie?.Invoke(this, EventArgs.Empty);
     }
-}
+ }
