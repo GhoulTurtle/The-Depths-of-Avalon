@@ -6,6 +6,7 @@ using UnityEngine;
 public class ForTesting : MonoBehaviour {
 
     public HealthSystem healthSystem;
+    public DamageTypeSO damageTypeSO;
 
     private void Awake() {
 
@@ -25,7 +26,8 @@ public class ForTesting : MonoBehaviour {
     
     private void Update() {
         if(Input.GetKeyDown(KeyCode.J)) {
-            healthSystem.TakeDamage(10);
+            damageTypeSO.DealDamage(healthSystem, 10);
+            Debug.Log("Dealing Damage");
         }
     }
 }
