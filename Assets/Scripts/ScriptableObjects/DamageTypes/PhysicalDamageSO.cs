@@ -7,6 +7,6 @@ public class PhysicalDamageSO : DamageTypeSO
 {
     // Instant Damage
     public override void DealDamage(HealthSystem healthSystem, float damageAmount) {
-        healthSystem.TakeDamage(damageAmount);
+        healthSystem.TakeDamage(this, damageAmount);
     }
 }
