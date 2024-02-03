@@ -15,6 +15,7 @@ public class Character : MonoBehaviour{
 	[SerializeField] private Transform characterVisualParent;
 	[SerializeField] private AudioSource characterAudioSource;
 
+	private List<Status> currentCharacterStatus;
 	private GameObject characterVisuals;
 
 	public event EventHandler<SetupCharacterEventArgs> OnSetupCharacter;
@@ -71,6 +72,8 @@ public class Character : MonoBehaviour{
 		if(characterVisuals != null){
 			Destroy(characterVisuals);
 		}
+
+		currentCharacterStatus.Clear();
 	}
 
     private void UpdateCharacterVisuals(){

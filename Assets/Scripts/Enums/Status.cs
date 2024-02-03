@@ -1,5 +1,7 @@
 public enum Status{
 	None,
-	Stun,
+	Burned,
 	Knockback,
+	Slow,
+	Stun,
 }
