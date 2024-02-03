@@ -81,14 +81,18 @@ public class Character : MonoBehaviour{
 		var statusEffectInstance = new StatusEffect(statusEffect.statusDuration, statusEffect.statusStrength, statusEffect.Status);
 		var statusEffectCoroutine = statusEffectInstance.StatusEffectCoroutine(this);
 
+		Debug.Log(statusEffect.Status + " has started!");
+
 		characterStatusDictionary.Add(statusEffectInstance, statusEffectCoroutine);
 		OnStatusEffectApplied?.Invoke(this, new StatusEffectAppliedEventArgs(statusEffect));
 		StartCoroutine(statusEffectCoroutine);
 	}
 
-	public void FinishedEffect(StatusEffect effect){
-		characterStatusDictionary.Remove(effect);
-		OnStatusEffectFinished?.Invoke(this, new StatusEffectAppliedEventArgs(effect));
+	public void FinishedEffect(StatusEffect statusEffect){
+		Debug.Log(statusEffect.Status + " has finished!");
+
+		characterStatusDictionary.Remove(statusEffect);
+		OnStatusEffectFinished?.Invoke(this, new StatusEffectAppliedEventArgs(statusEffect));
 	}
 
 	private void CleanupCharacter(){

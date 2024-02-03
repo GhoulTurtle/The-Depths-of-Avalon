@@ -16,8 +16,8 @@ public class PlayerInputHandler : MonoBehaviour{
 		TryGetComponent(out playerCaster);
 		TryGetComponent(out playerCharacter);
 
-		playerCharacter.OnStatusEffectApplied += (sender, e) => {Debug.Log("Stun Started"); if(e.abilityEffect.Status == Status.Stun) disableInput = true;};
-		playerCharacter.OnStatusEffectFinished += (sender, e) => {Debug.Log("Stun Finished"); if(e.abilityEffect.Status == Status.Stun) disableInput = false;};
+		playerCharacter.OnStatusEffectApplied += (sender, e) => {if(e.abilityEffect.Status == Status.Stun) disableInput = true;};
+		playerCharacter.OnStatusEffectFinished += (sender, e) => {if(e.abilityEffect.Status == Status.Stun) disableInput = false;};
 	}
 
 	private void OnDestroy() {

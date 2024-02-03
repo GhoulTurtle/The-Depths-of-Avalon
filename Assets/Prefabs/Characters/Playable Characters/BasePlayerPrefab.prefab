@@ -362,7 +362,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   gravity: -15
-  fallTimeout: 0.15
 --- !u!114 &4338515436821928063
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -437,11 +436,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 932f9fad1bf66fa4c9fa8af278036794, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageTypeSO: {fileID: 11400000, guid: a39d8008fcb92614181af06b2a61240b, type: 2}
+  damageTypeSO: {fileID: 11400000, guid: 13ac5a387add4d24cbf82f5fa3f25086, type: 2}
   statusEffect:
     statusDuration:
       minValue: 2.4956856
       maxValue: 3.232819
-    statusStrength: 1
+    statusStrength: 16
   damageAmount: 10
   healthSystem: {fileID: 0}
