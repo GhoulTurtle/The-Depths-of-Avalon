@@ -401,9 +401,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b21fcb1133f32f43958dfbfadc39968, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CasterLayerMask:
+  casterLayerMask:
     serializedVersion: 2
     m_Bits: 128
-  TargetLayerMask:
+  targetLayerMask:
     serializedVersion: 2
     m_Bits: 256

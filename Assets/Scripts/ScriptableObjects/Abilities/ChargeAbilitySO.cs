@@ -10,6 +10,6 @@ public class ChargeAbilitySO : AbilitySO
 
     public override void CastAbility(Caster caster)
     {
-
+        Debug.Log(AbilityName);
     }
 }
