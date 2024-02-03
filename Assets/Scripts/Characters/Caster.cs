@@ -31,6 +31,7 @@ public class Caster : MonoBehaviour{
 	private Dictionary<AbilitySO, AbilityCooldown> abilityCooldowns;
 
 	private bool isCasting = false;
+	private GizmosCall currentGizmosCall;
 
 	private void Awake() {
 		abilityCooldowns = new Dictionary<AbilitySO, AbilityCooldown>();
@@ -42,6 +43,7 @@ public class Caster : MonoBehaviour{
 
     private void OnDestroy() {
 		character.OnSetupCharacter -= SetupCharacterAbilities;
+		StopAllCoroutines();
 	}
 
     public void UseCharacterAbility(int abilityIndex){
@@ -104,8 +106,12 @@ public class Caster : MonoBehaviour{
 
 		OnAbilityCanceled?.Invoke(this, new AbilityEventArgs(abilityCooldown));
 	}
-	 
-	private void SetupCharacterAbilities(object sender, Character.SetupCharacterEventArgs e){
+
+	public void DebugAbility(Color gizmosColor, GizmosShape shape, Vector3 origin, Vector3 destination = new Vector3(), float radius = 0){
+		currentGizmosCall = new GizmosCall(gizmosColor, shape, origin, destination, radius);
+    }
+
+    private void SetupCharacterAbilities(object sender, Character.SetupCharacterEventArgs e){
 		abilitySOs.Clear();
 		abilityCooldowns.Clear();
 
@@ -127,5 +133,18 @@ public class Caster : MonoBehaviour{
 
 		StartCoroutine(abilityCooldown.AbilityCooldownCoroutine());
 		OnAbilityFired?.Invoke(this, new AbilityEventArgs(abilityCooldown));
+	}
+
+	private void OnDrawGizmos() {
+		if(currentGizmosCall == null) return;
+		Gizmos.color = currentGizmosCall.Color;
+        switch (currentGizmosCall.Shape){
+            case GizmosShape.Ray: Gizmos.DrawRay(currentGizmosCall.Origin, currentGizmosCall.Destination);
+                break;
+            case GizmosShape.Sphere: Gizmos.DrawWireSphere(currentGizmosCall.Origin, currentGizmosCall.Radius);
+                break;
+            case GizmosShape.Box: Gizmos.DrawWireCube(currentGizmosCall.Origin, currentGizmosCall.Destination);
+                break;
+        }
 	}
 }

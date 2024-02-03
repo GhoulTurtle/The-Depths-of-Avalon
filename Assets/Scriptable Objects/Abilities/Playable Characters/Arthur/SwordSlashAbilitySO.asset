@@ -14,13 +14,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AbilityName: Sword Slash
   CastTime: 0
-  Cooldown: 0.5
+  Cooldown: 0.25
   AbilityDamageType: {fileID: 11400000, guid: 494a1e5db449980439d7584e253947ed, type: 2}
+  AbilityStatusEffect:
+    statusDuration: 0
+    statusStrength: 0
   AbilityDamageAmount:
-    minValue: 5.75321
+    minValue: 4.6348076
     maxValue: 10.50642
   IsCancelable: 0
   AbilityVisuals: {fileID: 0}
   CastingAudio: {fileID: 0}
   FiredAudio: {fileID: 0}
   CanceledAudio: {fileID: 0}
+  DrawAbilityGizmos: 0
+  GizmosColor: {r: 0, g: 1, b: 0.041554213, a: 1}
+  GizmosShape: 1
+  MeleeRangeRadius: 2.5
+  MeleeCheckOffset: 2
+  MaxTargetsHit: 3

@@ -2,11 +2,16 @@ using System;
 
 [Serializable]
 public class StatusEffect {
-	public float statusDuration;
+	[MinMaxRange(0.1f, 30f)]
+	public RangedFloat statusDuration;
 	public float statusStrength;
-	public Status status;
+	public Status Status {get; private set;}
 	
-	public StatusEffect(float _statusDuration){
+	public void SetStatus(Status _status){
+		Status = _status;
+	}
+
+	public StatusEffect(RangedFloat _statusDuration){
 		statusDuration = _statusDuration;
 	}
 }

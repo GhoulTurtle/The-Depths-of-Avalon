@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: StompAbilitySO
   m_EditorClassIdentifier: 
   AbilityName: Stomp
-  CastTime: 0
-  Cooldown: 0
-  AbilityDamageType: {fileID: 0}
+  CastTime: 0.25
+  Cooldown: 5
+  AbilityDamageType: {fileID: 11400000, guid: a39d8008fcb92614181af06b2a61240b, type: 2}
   AbilityDamageAmount:
     minValue: 0
     maxValue: 0

@@ -5,7 +5,7 @@ public class StunDamageSO : DamageTypeSO
 {
     public override void DealDamage(HealthSystem healthSystem, float damageAmount, StatusEffect statusEffect) {
         if(healthSystem.TryGetComponent(out Character character) && statusEffect != null){
-            statusEffect.status = Status.Stun;
+            statusEffect.SetStatus(Status.Stun);
             character.ApplyStatusEffectToCharacter(statusEffect);
         }
 
