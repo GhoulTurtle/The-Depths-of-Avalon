@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7118599039630769877}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: PlayerVisuals
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41,7 +41,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3976151741996121544}
   - component: {fileID: 4537791954355014679}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: PlayerAudio
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -173,7 +173,8 @@ GameObject:
   - component: {fileID: 8342011540678546256}
   - component: {fileID: 4338515436821928063}
   - component: {fileID: 4127411281864016584}
-  m_Layer: 0
+  - component: {fileID: -487671402204889205}
+  m_Layer: 7
   m_Name: BasePlayerPrefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -270,19 +271,67 @@ MonoBehaviour:
     m_ActionId: 7e9f2a32-d89b-409a-8f31-f1221f5fbf1b
     m_ActionName: Player/Interact
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4338515436821928063}
+        m_TargetAssemblyTypeName: PlayerInputHandler, Assembly-CSharp
+        m_MethodName: OnAbilityOne
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: e5b3e509-09e7-400c-90e4-36083c78055e
     m_ActionName: Player/Ability1
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4338515436821928063}
+        m_TargetAssemblyTypeName: PlayerInputHandler, Assembly-CSharp
+        m_MethodName: OnAbilityTwo
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: b3295d52-b0a5-412c-80dc-a1d842a64eea
     m_ActionName: Player/Ability2
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4338515436821928063}
+        m_TargetAssemblyTypeName: PlayerInputHandler, Assembly-CSharp
+        m_MethodName: OnAbilityThree
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: af740d45-1552-4646-a221-9c7555af497c
     m_ActionName: Player/Ability3
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4338515436821928063}
+        m_TargetAssemblyTypeName: PlayerInputHandler, Assembly-CSharp
+        m_MethodName: OnAbilityFour
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 00585207-7c2c-4ea8-b69a-77759fdfa9e0
     m_ActionName: Player/Ability4
   m_NeverAutoSwitchControlSchemes: 1
@@ -340,3 +389,21 @@ MonoBehaviour:
   characterType: 0
   characterVisualParent: {fileID: 7118599039630769877}
   characterAudioSource: {fileID: 4537791954355014679}
+--- !u!114 &-487671402204889205
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6509989325390252658}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b21fcb1133f32f43958dfbfadc39968, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CasterLayerMask:
+    serializedVersion: 2
+    m_Bits: 128
+  TargetLayerMask:
+    serializedVersion: 2
+    m_Bits: 256
