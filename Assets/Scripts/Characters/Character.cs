@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 /// <summary>
@@ -20,9 +21,16 @@ public class Character : MonoBehaviour{
 	public event EventHandler<StatusEffectAppliedEventArgs> OnStatusEffectApplied;
 
 	public class SetupCharacterEventArgs : EventArgs{
+		public List<AbilitySO> CharacterAbilities;
+		public CharacterAudioSO CharacterAudio;
+		public CharacterVisualsSO CharacterVisuals;
 		public CharacterStatsSO CharacterStats;
-		public SetupCharacterEventArgs(CharacterStatsSO _characterStats){
+		
+		public SetupCharacterEventArgs(CharacterStatsSO _characterStats, CharacterVisualsSO _characterVisuals, CharacterAudioSO _characterAudio, List<AbilitySO> _characterAbilities){
 			CharacterStats = _characterStats;
+			CharacterVisuals = _characterVisuals;
+			CharacterAudio = _characterAudio;
+			CharacterAbilities = _characterAbilities;
 		}
 	}
 
@@ -51,7 +59,7 @@ public class Character : MonoBehaviour{
 		//Setup Stats, Visuals, and Audio.
 		UpdateCharacterVisuals();
 
-		OnSetupCharacter?.Invoke(this, new SetupCharacterEventArgs(characterSO.CharacterStats));
+		OnSetupCharacter?.Invoke(this, new SetupCharacterEventArgs(characterSO.CharacterStats, characterSO.CharacterVisuals, characterSO.CharacterAudio, characterSO.CharacterAbilities));
 	}
 
 	public void ApplyStatusEffectToCharacter(StatusEffect effect){

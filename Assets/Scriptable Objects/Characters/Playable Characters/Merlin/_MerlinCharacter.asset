@@ -14,5 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CharacterName: Merlin
   CharacterStats: {fileID: 11400000, guid: d95031662288f074d82e748f491ba639, type: 2}
+  CharacterAbilities:
+  - {fileID: 11400000, guid: 9e17150ad3c728344bf6d083b226b7c1, type: 2}
+  - {fileID: 11400000, guid: deeb488b842d27a41ac24934253b0d1c, type: 2}
+  - {fileID: 11400000, guid: df5188fcc989c2942ae08b63ded96b32, type: 2}
+  - {fileID: 11400000, guid: 80772ee97468742409c80e265d5b3053, type: 2}
   CharacterVisuals: {fileID: 11400000, guid: e536e2c61293c0c48a5440795fe875d2, type: 2}
   CharacterAudio: {fileID: 11400000, guid: 369ea1ee1dcfc7243b478a6e293e243c, type: 2}
