@@ -1,5 +1,7 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 /// <summary>
@@ -15,11 +17,12 @@ public class Character : MonoBehaviour{
 	[SerializeField] private Transform characterVisualParent;
 	[SerializeField] private AudioSource characterAudioSource;
 
-	private List<Status> currentCharacterStatus;
+	private Dictionary<StatusEffect, IEnumerator> characterStatusDictionary;
 	private GameObject characterVisuals;
 
 	public event EventHandler<SetupCharacterEventArgs> OnSetupCharacter;
 	public event EventHandler<StatusEffectAppliedEventArgs> OnStatusEffectApplied;
+	public event EventHandler<StatusEffectAppliedEventArgs> OnStatusEffectFinished;
 
 	public class SetupCharacterEventArgs : EventArgs{
 		public List<AbilitySO> CharacterAbilities;
@@ -40,6 +43,10 @@ public class Character : MonoBehaviour{
 		public StatusEffectAppliedEventArgs(StatusEffect _abilityEffect){
 			abilityEffect = _abilityEffect;
 		}
+	}
+
+	private void Awake() {
+		characterStatusDictionary = new Dictionary<StatusEffect, IEnumerator>();
 	}
 
 	private void Start() {
@@ -63,8 +70,25 @@ public class Character : MonoBehaviour{
 		OnSetupCharacter?.Invoke(this, new SetupCharacterEventArgs(characterSO.CharacterStats, characterSO.CharacterVisuals, characterSO.CharacterAudio, characterSO.CharacterAbilities));
 	}
 
-	public void ApplyStatusEffectToCharacter(StatusEffect effect){
-		OnStatusEffectApplied?.Invoke(this, new StatusEffectAppliedEventArgs(effect));
+	public void ApplyStatusEffectToCharacter(StatusEffect statusEffect){
+		//Check if we already have that effect
+		if(characterStatusDictionary.FirstOrDefault(_statusEffect => _statusEffect.Key.Status == statusEffect.Status).Key != null){
+			//Reset/Stack
+			return;
+		}
+
+		//Make a new instance for it to be able to run a coroutine
+		var statusEffectInstance = new StatusEffect(statusEffect.statusDuration, statusEffect.statusStrength, statusEffect.Status);
+		var statusEffectCoroutine = statusEffectInstance.StatusEffectCoroutine(this);
+
+		characterStatusDictionary.Add(statusEffectInstance, statusEffectCoroutine);
+		OnStatusEffectApplied?.Invoke(this, new StatusEffectAppliedEventArgs(statusEffect));
+		StartCoroutine(statusEffectCoroutine);
+	}
+
+	public void FinishedEffect(StatusEffect effect){
+		characterStatusDictionary.Remove(effect);
+		OnStatusEffectFinished?.Invoke(this, new StatusEffectAppliedEventArgs(effect));
 	}
 
 	private void CleanupCharacter(){
@@ -73,7 +97,7 @@ public class Character : MonoBehaviour{
 			Destroy(characterVisuals);
 		}
 
-		currentCharacterStatus.Clear();
+		characterStatusDictionary.Clear();
 	}
 
     private void UpdateCharacterVisuals(){
