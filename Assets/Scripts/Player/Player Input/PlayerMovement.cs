@@ -18,7 +18,6 @@ public class PlayerMovement : MonoBehaviour{
 
     [Header("Gravity")]
     [SerializeField] private float gravity = -15f;
-    [SerializeField] private float fallTimeout = 0.15f;
     
     private Vector2 currentInput;
     private CharacterController characterController;
@@ -28,7 +27,6 @@ public class PlayerMovement : MonoBehaviour{
 
     //Gravity
     private const float terminalVelocity = 53f;
-    private float currentSpeed;
     private float verticalVelocity;
 
     //Checks
@@ -38,19 +36,28 @@ public class PlayerMovement : MonoBehaviour{
     private CameraController mainCameraController;
     private Character playerCharacter;
 
+    //Movement speed
+    private float currentMovementSpeed;
+    private float currentSpeed;
+    
     private void Awake() {
         TryGetComponent(out characterController);
         TryGetComponent(out playerCharacter);
         playerCharacter.OnSetupCharacter += UpdateMovementVariables;
         playerCharacter.OnStatusEffectApplied += StatusEffectApplied;
+        playerCharacter.OnStatusEffectFinished += StatusEffectFinished;
     }
 
     private void OnDestroy() {
         playerCharacter.OnSetupCharacter -= UpdateMovementVariables;
+        playerCharacter.OnStatusEffectApplied -= StatusEffectApplied;
+        playerCharacter.OnStatusEffectFinished -= StatusEffectFinished;
     }
 
     private void Start() {
         Camera.main.TryGetComponent(out mainCameraController);
+        
+        currentMovementSpeed = movementSpeed;
     }
 
     private void Update() {
@@ -68,7 +75,14 @@ public class PlayerMovement : MonoBehaviour{
     }
     
     private void StatusEffectApplied(object sender, Character.StatusEffectAppliedEventArgs e){
-        
+        if(e.abilityEffect.Status != Status.Slow) return;
+        float reducedMovementSpeed = movementSpeed * (1f - (e.abilityEffect.statusStrength * 0.01f));
+        currentMovementSpeed = reducedMovementSpeed;
+    }
+
+    private void StatusEffectFinished(object sender, Character.StatusEffectAppliedEventArgs e){
+        if(e.abilityEffect.Status != Status.Slow) return;
+        currentMovementSpeed = movementSpeed;
     }
 
     private void UpdateMovementVariables(object sender, Character.SetupCharacterEventArgs e){
@@ -104,7 +118,7 @@ public class PlayerMovement : MonoBehaviour{
             currentInput = Vector2.zero;  
         } 
 
-        float targetSpeed = movementSpeed;
+        float targetSpeed = currentMovementSpeed;
 
         if(currentInput == Vector2.zero) targetSpeed = 0f;
 

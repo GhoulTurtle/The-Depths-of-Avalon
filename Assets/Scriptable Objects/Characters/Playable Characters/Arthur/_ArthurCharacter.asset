@@ -14,5 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CharacterName: Arthur
   CharacterStats: {fileID: 11400000, guid: f0ebf84847afe354a9e464658b98e00b, type: 2}
+  CharacterAbilities:
+  - {fileID: 11400000, guid: 9765ca9b6e667f442b308a84b32e9b22, type: 2}
+  - {fileID: 11400000, guid: 9d6fbc5b73d21ea4c807b41788163caf, type: 2}
+  - {fileID: 11400000, guid: e7483338e93217f458f2c7a79e005bd7, type: 2}
+  - {fileID: 11400000, guid: 1e255a51bd00e8546b7e563dd48454fa, type: 2}
   CharacterVisuals: {fileID: 11400000, guid: 774e156e720e3fa4a92706cc5315d666, type: 2}
   CharacterAudio: {fileID: 11400000, guid: 8a3cd7cb9b3c9f743b2b15ca897f14b8, type: 2}

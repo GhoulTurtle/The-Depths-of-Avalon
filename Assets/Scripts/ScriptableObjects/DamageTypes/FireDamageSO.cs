@@ -1,6 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using System.Threading.Tasks;
 using UnityEngine;
 
@@ -13,7 +10,7 @@ public class FireDamageSO : DamageTypeSO
     // DoT effect
     // Deals the damageAmount per tick
 
-    public override void DealDamage(HealthSystem healthSystem, float damageAmount) {
+    public override void DealDamage(HealthSystem healthSystem, float damageAmount, StatusEffect statusEffect) {
         Debug.Log("Starting DealDamage");
         isInFlames = !isInFlames;
 
