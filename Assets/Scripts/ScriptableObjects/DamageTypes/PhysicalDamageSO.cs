@@ -4,7 +4,7 @@ using UnityEngine;
 public class PhysicalDamageSO : DamageTypeSO
 {
     // Instant Damage
-    public override void DealDamage(HealthSystem healthSystem, float damageAmount, StatusEffect statusEffect) {
-        healthSystem.TakeDamage(this, damageAmount);
+    public override void DealDamage(HealthSystem healthSystem, float damageAmount, StatusEffect statusEffect, Transform damageSource) {
+        healthSystem.TakeDamage(this, damageAmount, damageSource);
     }
 }
