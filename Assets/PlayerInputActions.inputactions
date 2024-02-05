@@ -25,7 +25,7 @@
                 },
                 {
                     "name": "Ability1",
-                    "type": "Value",
+                    "type": "Button",
                     "id": "e5b3e509-09e7-400c-90e4-36083c78055e",
                     "expectedControlType": "Button",
                     "processors": "",
@@ -34,7 +34,7 @@
                 },
                 {
                     "name": "Ability2",
-                    "type": "Value",
+                    "type": "Button",
                     "id": "b3295d52-b0a5-412c-80dc-a1d842a64eea",
                     "expectedControlType": "Button",
                     "processors": "",
@@ -43,7 +43,7 @@
                 },
                 {
                     "name": "Ability3",
-                    "type": "Value",
+                    "type": "Button",
                     "id": "af740d45-1552-4646-a221-9c7555af497c",
                     "expectedControlType": "Button",
                     "processors": "",
@@ -52,7 +52,7 @@
                 },
                 {
                     "name": "Ability4",
-                    "type": "Value",
+                    "type": "Button",
                     "id": "00585207-7c2c-4ea8-b69a-77759fdfa9e0",
                     "expectedControlType": "Button",
                     "processors": "",

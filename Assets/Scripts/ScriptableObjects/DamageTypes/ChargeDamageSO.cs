@@ -1,11 +1,9 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "Charge Damage", menuName = "Damage Type/Charge Damage")]
 public class ChargeDamageSO : DamageTypeSO
 {
-    public override void DealDamage(HealthSystem healthSystem, float damageAmount) {
-        healthSystem.TakeDamage(this, damageAmount);
+    public override void DealDamage(HealthSystem healthSystem, float damageAmount, StatusEffect statusEffect, Transform damageSource) {
+        healthSystem.TakeDamage(this, damageAmount, damageSource);
     }
 }
