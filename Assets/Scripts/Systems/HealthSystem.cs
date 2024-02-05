@@ -18,9 +18,11 @@ public class HealthSystem : MonoBehaviour {
     public class DamagedEventArgs : EventArgs {
         public DamageTypeSO damageTypeSO;
         public float damageAmount;
-        public DamagedEventArgs(DamageTypeSO _damageTypeSO, float _damageAmount) {
+        public Transform damageSourceGO;
+        public DamagedEventArgs(DamageTypeSO _damageTypeSO, float _damageAmount, Transform _damageSource) {
             damageTypeSO = _damageTypeSO;
             damageAmount = _damageAmount;
+            damageSourceGO = _damageSource;
         }
     }
 #endregion
@@ -33,7 +35,7 @@ public class HealthSystem : MonoBehaviour {
     }
 
     //Need way to modify current health
-    public void TakeDamage(DamageTypeSO damageType, float damageAmount) {
+    public void TakeDamage(DamageTypeSO damageType, float damageAmount, Transform damageSource) {
         if(requiredDamageType != null && damageType != requiredDamageType) {
             return;
         } if(!isAlive) {
@@ -47,7 +49,7 @@ public class HealthSystem : MonoBehaviour {
         }
 
         //Need to update Player UI when damage taken/healed
-        OnDamaged?.Invoke(this, new DamagedEventArgs(damageType, damageAmount)); //cause any event subscribed to activate when hit.
+        OnDamaged?.Invoke(this, new DamagedEventArgs(damageType, damageAmount, damageSource)); //cause any event subscribed to activate when hit.
 
         if(currentHealth == 0) {
             Die();

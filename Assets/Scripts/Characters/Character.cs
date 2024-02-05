@@ -18,7 +18,7 @@ public class Character : MonoBehaviour{
 	[SerializeField] private AudioSource characterAudioSource;
 
 	private Dictionary<StatusEffect, IEnumerator> characterStatusDictionary;
-	private GameObject characterVisuals;
+	public GameObject characterVisuals;
 
 	public event EventHandler<SetupCharacterEventArgs> OnSetupCharacter;
 	public event EventHandler<StatusEffectAppliedEventArgs> OnStatusEffectApplied;

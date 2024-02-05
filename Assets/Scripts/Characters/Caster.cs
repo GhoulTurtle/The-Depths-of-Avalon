@@ -26,7 +26,7 @@ public class Caster : MonoBehaviour{
 	[SerializeField] private LayerMask casterLayerMask;
 	[SerializeField] private LayerMask targetLayerMask;
 
-	private Character character;
+	public Character character;
 	private List<AbilitySO> abilitySOs;
 	private Dictionary<AbilitySO, AbilityCooldown> abilityCooldowns;
 
