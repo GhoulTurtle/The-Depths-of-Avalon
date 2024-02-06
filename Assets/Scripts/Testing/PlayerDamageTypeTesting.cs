@@ -12,6 +12,7 @@ public class PlayerDamageTypeTesting : MonoBehaviour
 
 	    private void Update() {
         if(Input.GetKeyDown(KeyCode.J)) {
+			damageTypeSO.DealDamage(healthSystem, damageAmount, statusEffect, this.transform);
         }
     }
 }

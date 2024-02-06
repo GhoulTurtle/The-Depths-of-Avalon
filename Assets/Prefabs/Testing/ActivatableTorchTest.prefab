@@ -109,7 +109,7 @@ GameObject:
   - component: {fileID: 665272508340797513}
   - component: {fileID: 4219363194292388159}
   m_Layer: 0
-  m_Name: BurnableObject Test
+  m_Name: ActivatableTorchTest
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

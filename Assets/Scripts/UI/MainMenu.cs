@@ -10,7 +10,7 @@ public class MainMenu : MonoBehaviour
     // Start is called before the first frame update
     public void PlayPressed()
     {
-       SceneManager.LoadScene("Richardson Dev Scene");
+       SceneManager.LoadScene(1);
 
     }
 
