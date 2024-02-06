@@ -10,6 +10,7 @@ public class DuoPlate : PlateObject
 
     // List to keep track of players on the pressure plate
     private List<GameObject> playersOnPlate = new List<GameObject>();
+    private bool isActivated = false;
 
     public override void Activate()
     {
@@ -19,6 +20,7 @@ public class DuoPlate : PlateObject
             // Trigger the activation event
             OnActivate?.Invoke(this, EventArgs.Empty);
             Debug.Log("Duo Plate Activated");
+            isActivated = true;
         }
     }
 
@@ -35,6 +37,9 @@ public class DuoPlate : PlateObject
 
     private void OnTriggerEnter(Collider other)
     {
+        if(isActivated) {
+            return;
+        }
         if((playerLayer.value & 1 << other.gameObject.layer) != 0) {
             // Add the player to the list
             playersOnPlate.Add(other.gameObject);
