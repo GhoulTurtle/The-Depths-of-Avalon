@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7118599039630769877}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: PlayerVisuals
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41,7 +41,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3976151741996121544}
   - component: {fileID: 4537791954355014679}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: PlayerAudio
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -176,7 +176,7 @@ GameObject:
   - component: {fileID: -487671402204889205}
   - component: {fileID: 1718911537333029899}
   - component: {fileID: -635800207006913966}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: BasePlayerPrefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -390,6 +390,7 @@ MonoBehaviour:
   characterType: 0
   characterVisualParent: {fileID: 7118599039630769877}
   characterAudioSource: {fileID: 4537791954355014679}
+  characterVisuals: {fileID: 0}
 --- !u!114 &-487671402204889205
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -408,6 +409,7 @@ MonoBehaviour:
   targetLayerMask:
     serializedVersion: 2
     m_Bits: 512
+  character: {fileID: 0}
 --- !u!114 &1718911537333029899
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -101,7 +101,7 @@ public class Character : MonoBehaviour{
 			Destroy(characterVisuals);
 		}
 
-		characterStatusDictionary.Clear();
+		characterStatusDictionary?.Clear();
 	}
 
     private void UpdateCharacterVisuals(){
