@@ -77,7 +77,7 @@ public class Character : MonoBehaviour{
 			return;
 		}
 
-		//Make a new instance for it to be able to run a coroutine
+		//Make a new instance of a StatusEffect to be able to run a coroutine
 		var statusEffectInstance = new StatusEffect(statusEffect.statusDuration, statusEffect.statusStrength, statusEffect.Status);
 		var statusEffectCoroutine = statusEffectInstance.StatusEffectCoroutine(this);
 
