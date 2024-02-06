@@ -28,13 +28,13 @@ public class Caster : MonoBehaviour{
 
 	public Character character;
 	private List<AbilitySO> abilitySOs;
-	private Dictionary<AbilitySO, AbilityCooldown> abilityCooldowns;
+	private Dictionary<AbilitySO, AbilityCooldown> abilityCooldownDictionary;
 
 	private bool isCasting = false;
 	private GizmosCall currentGizmosCall;
 
 	private void Awake() {
-		abilityCooldowns = new Dictionary<AbilitySO, AbilityCooldown>();
+		abilityCooldownDictionary = new Dictionary<AbilitySO, AbilityCooldown>();
 		abilitySOs = new List<AbilitySO>();
 		TryGetComponent(out character);
 		
@@ -52,10 +52,11 @@ public class Caster : MonoBehaviour{
 			return;
 		}
 
-		AbilityCooldown abilityCooldown = abilityCooldowns[abilitySOs[abilityIndex]];
+		AbilityCooldown abilityCooldown = abilityCooldownDictionary[abilitySOs[abilityIndex]];
 
 		if(abilityCooldown.OnCooldown || isCasting){
 			if(abilitySOs[abilityIndex].IsCancelable){
+				abilitySOs[abilityIndex].CancelAbility(this);
 				OnAbilityCanceled?.Invoke(this, new AbilityEventArgs(abilityCooldown));
 				return;
 			}
@@ -74,12 +75,13 @@ public class Caster : MonoBehaviour{
 			return;
 		}
 
-		AbilityCooldown abilityCooldown = abilityCooldowns[ability];
+		AbilityCooldown abilityCooldown = abilityCooldownDictionary[ability];
 		
 		var abilityIndex = abilitySOs.IndexOf(ability);
 
 		if(abilityCooldown.OnCooldown || isCasting){
 			if(abilitySOs[abilityIndex].IsCancelable){
+				abilitySOs[abilityIndex].CancelAbility(this);
 				OnAbilityCanceled?.Invoke(this, new AbilityEventArgs(abilityCooldown));
 				return;
 			}
@@ -98,7 +100,7 @@ public class Caster : MonoBehaviour{
 			return;
 		}
 
-		AbilityCooldown abilityCooldown = abilityCooldowns[ability];
+		AbilityCooldown abilityCooldown = abilityCooldownDictionary[ability];
 
 		var abilityIndex = abilitySOs.IndexOf(ability);
 
@@ -113,12 +115,12 @@ public class Caster : MonoBehaviour{
 
     private void SetupCharacterAbilities(object sender, Character.SetupCharacterEventArgs e){
 		abilitySOs.Clear();
-		abilityCooldowns.Clear();
+		abilityCooldownDictionary.Clear();
 
 		abilitySOs = e.CharacterAbilities;
 
 		foreach (AbilitySO ability in e.CharacterAbilities){
-			abilityCooldowns.Add(ability, new AbilityCooldown(ability.Cooldown));
+			abilityCooldownDictionary.Add(ability, new AbilityCooldown(ability.Cooldown));
 		}
     }
 
