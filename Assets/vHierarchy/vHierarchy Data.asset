@@ -45,6 +45,9 @@ MonoBehaviour:
         - GlobalObjectId_V1-2-afeed342239944e40a800254abb386b0-146483024-0
         - GlobalObjectId_V1-2-afeed342239944e40a800254abb386b0-1725661531-0
         - GlobalObjectId_V1-2-afeed342239944e40a800254abb386b0-6312633920750505155-1834089442
+        - GlobalObjectId_V1-2-afeed342239944e40a800254abb386b0-653539716-0
+        - GlobalObjectId_V1-2-afeed342239944e40a800254abb386b0-915069399-0
+        - GlobalObjectId_V1-2-afeed342239944e40a800254abb386b0-1336219600-0
         values:
         - iColor: 8
           icon: Folder Icon
@@ -98,8 +101,14 @@ MonoBehaviour:
           icon: Folder Icon
         - iColor: 0
           icon: 
+        - iColor: 6
+          icon: Folder Icon
+        - iColor: 5
+          icon: Folder Icon
+        - iColor: 5
+          icon: Folder Icon
       goDatasByInstanceId:
-        keys: f8f8ffffeeb8fdff6ab1fdffe6adfdff18f5ffff00a8fdffc2a4fdfff4f8ffffd8f4ffff549efdff389ffdffdeeafffff2600000f8600000a098fdff5e98fdffe699fdff3a6dfdff2c4dfdff2a4dfdff9e47fdff9c47fdff0446fdff7643fdff7443fdff96d0fdff
+        keys: f8f8ffffeeb8fdff6ab1fdffe6adfdff18f5ffff00a8fdffc2a4fdfff4f8ffffd8f4ffff549efdff389ffdffdeeafffff2600000f8600000a098fdff5e98fdffe699fdff3a6dfdff2c4dfdff2a4dfdff9e47fdff9c47fdff0446fdff7643fdff7443fdff96d0fdffc6b402002eaf020072af02004eb0020000b502002ab4020048b10200eab4020006b50200e2b20200d6b00200c699fcfffab00200a0b1020070b1020070b30200a6b0020052af020072b202000cb3020058b402003ab20200c2b002009eaf020082b30200b4aafcff3092fbffae91fbfffc90fbff
         values:
         - iColor: 8
           icon: Folder Icon
@@ -153,6 +162,64 @@ MonoBehaviour:
           icon: Folder Icon
         - iColor: 0
           icon: 
+        - iColor: 8
+          icon: Folder Icon
+        - iColor: 6
+          icon: Folder Icon
+        - iColor: 5
+          icon: Folder Icon
+        - iColor: 5
+          icon: Folder Icon
+        - iColor: 5
+          icon: Folder Icon
+        - iColor: 5
+          icon: Folder Icon
+        - iColor: 2
+          icon: Folder Icon
+        - iColor: 5
+          icon: Folder Icon
+        - iColor: 5
+          icon: Folder Icon
+        - iColor: 5
+          icon: Folder Icon
+        - iColor: 6
+          icon: Folder Icon
+        - iColor: 1
+          icon: AvatarMask On Icon
+        - iColor: 1
+          icon: DirectionalLight Icon
+        - iColor: 1
+          icon: Camera Icon
+        - iColor: 5
+          icon: Folder Icon
+        - iColor: 5
+          icon: Folder Icon
+        - iColor: 5
+          icon: Folder Icon
+        - iColor: 6
+          icon: Folder Icon
+        - iColor: 5
+          icon: Folder Icon
+        - iColor: 5
+          icon: Folder Icon
+        - iColor: 5
+          icon: Folder Icon
+        - iColor: 5
+          icon: Folder Icon
+        - iColor: 6
+          icon: Folder Icon
+        - iColor: 5
+          icon: Folder Icon
+        - iColor: 5
+          icon: Folder Icon
+        - iColor: 0
+          icon: 
+        - iColor: 6
+          icon: Folder Icon
+        - iColor: 5
+          icon: Folder Icon
+        - iColor: 5
+          icon: Folder Icon
     - goDatasByGlobalId:
         keys: []
         values: []
