@@ -407,7 +407,7 @@ MonoBehaviour:
     m_Bits: 128
   targetLayerMask:
     serializedVersion: 2
-    m_Bits: 256
+    m_Bits: 0
 --- !u!114 &1718911537333029899
 MonoBehaviour:
   m_ObjectHideFlags: 0
