@@ -18,7 +18,7 @@ public class Character : MonoBehaviour{
 	[SerializeField] private AudioSource characterAudioSource;
 
 	private Dictionary<StatusEffect, IEnumerator> characterStatusDictionary;
-	private GameObject characterVisuals;
+	public GameObject characterVisuals;
 
 	public event EventHandler<SetupCharacterEventArgs> OnSetupCharacter;
 	public event EventHandler<StatusEffectAppliedEventArgs> OnStatusEffectApplied;
@@ -77,7 +77,7 @@ public class Character : MonoBehaviour{
 			return;
 		}
 
-		//Make a new instance for it to be able to run a coroutine
+		//Make a new instance of a StatusEffect to be able to run a coroutine
 		var statusEffectInstance = new StatusEffect(statusEffect.statusDuration, statusEffect.statusStrength, statusEffect.Status);
 		var statusEffectCoroutine = statusEffectInstance.StatusEffectCoroutine(this);
 
@@ -101,7 +101,7 @@ public class Character : MonoBehaviour{
 			Destroy(characterVisuals);
 		}
 
-		characterStatusDictionary.Clear();
+		characterStatusDictionary?.Clear();
 	}
 
     private void UpdateCharacterVisuals(){

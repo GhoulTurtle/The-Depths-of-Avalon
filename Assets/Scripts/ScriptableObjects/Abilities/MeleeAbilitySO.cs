@@ -35,10 +35,10 @@ public class MeleeAbilitySO : AbilitySO{
             var randomDamage = Random.Range(AbilityDamageAmount.minValue, AbilityDamageAmount.maxValue);
 
             if(AbilityDamageType != null){
-                AbilityDamageType.DealDamage(healthSystem, randomDamage, AbilityStatusEffect);
+                AbilityDamageType.DealDamage(healthSystem, randomDamage, AbilityStatusEffect, caster.transform);
             }
             else{
-                healthSystem.TakeDamage(AbilityDamageType, randomDamage);
+                healthSystem.TakeDamage(AbilityDamageType, randomDamage, caster.transform);
             }
         }
     }

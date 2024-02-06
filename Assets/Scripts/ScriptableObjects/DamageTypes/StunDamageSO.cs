@@ -2,12 +2,12 @@ using UnityEngine;
 
 [CreateAssetMenu(fileName = "Stun Damage", menuName = "Damage Type/Stun Damage")]
 public class StunDamageSO : DamageTypeSO{
-    public override void DealDamage(HealthSystem healthSystem, float damageAmount, StatusEffect statusEffect) {
+    public override void DealDamage(HealthSystem healthSystem, float damageAmount, StatusEffect statusEffect, Transform damageSource) {
         if(healthSystem.TryGetComponent(out Character character) && statusEffect != null){
             statusEffect.SetStatus(Status.Stun);
             character.ApplyStatusEffectToCharacter(statusEffect);
         }
 
-        healthSystem.TakeDamage(this, damageAmount);
+        healthSystem.TakeDamage(this, damageAmount, damageSource);
     }
 }
