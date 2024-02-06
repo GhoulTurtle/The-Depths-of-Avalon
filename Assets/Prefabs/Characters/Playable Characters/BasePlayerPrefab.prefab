@@ -408,7 +408,7 @@ MonoBehaviour:
     m_Bits: 256
   targetLayerMask:
     serializedVersion: 2
-    m_Bits: 512
+    m_Bits: 3584
   character: {fileID: 0}
 --- !u!114 &1718911537333029899
 MonoBehaviour:
@@ -438,7 +438,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 932f9fad1bf66fa4c9fa8af278036794, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageTypeSO: {fileID: 11400000, guid: 13ac5a387add4d24cbf82f5fa3f25086, type: 2}
+  damageTypeSO: {fileID: 11400000, guid: a39d8008fcb92614181af06b2a61240b, type: 2}
   statusEffect:
     statusDuration:
       minValue: 2.4956856

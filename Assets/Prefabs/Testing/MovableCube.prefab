@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 2538378317841074552}
   - component: {fileID: 8231851708764217566}
   - component: {fileID: 2508615239737739823}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: MovableCube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
