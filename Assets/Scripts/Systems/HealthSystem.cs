@@ -5,6 +5,7 @@ public class HealthSystem : MonoBehaviour {
 
 #region Editable Variables
     [Header("Editable Variables")]
+    [SerializeField] private bool isInvincible = false;
     [SerializeField] private float maxHealth;
     [SerializeField] private float currentHealth;
     [SerializeField] private DamageTypeSO requiredDamageType;
@@ -42,7 +43,9 @@ public class HealthSystem : MonoBehaviour {
             return;
         }
 
-        currentHealth -= damageAmount;
+        if(!isInvincible){
+            currentHealth -= damageAmount;
+        }
 
         if(currentHealth < 0) {
             currentHealth = 0;

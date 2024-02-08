@@ -40,8 +40,10 @@ public class Character : MonoBehaviour{
 
 	public class StatusEffectAppliedEventArgs : EventArgs{
 		public StatusEffect abilityEffect;
-		public StatusEffectAppliedEventArgs(StatusEffect _abilityEffect){
+		public Transform damageSource;
+		public StatusEffectAppliedEventArgs(StatusEffect _abilityEffect, Transform _damageSource = null){
 			abilityEffect = _abilityEffect;
+			damageSource = _damageSource;
 		}
 	}
 
@@ -70,7 +72,7 @@ public class Character : MonoBehaviour{
 		OnSetupCharacter?.Invoke(this, new SetupCharacterEventArgs(characterSO.CharacterStats, characterSO.CharacterVisuals, characterSO.CharacterAudio, characterSO.CharacterAbilities));
 	}
 
-	public void ApplyStatusEffectToCharacter(StatusEffect statusEffect){
+	public void ApplyStatusEffectToCharacter(StatusEffect statusEffect, Transform damageSource){
 		//Check if we already have that effect
 		if(characterStatusDictionary.FirstOrDefault(_statusEffect => _statusEffect.Key.Status == statusEffect.Status).Key != null){
 			//Reset/Stack
@@ -84,7 +86,7 @@ public class Character : MonoBehaviour{
 		Debug.Log(statusEffect.Status + " has started!");
 
 		characterStatusDictionary.Add(statusEffectInstance, statusEffectCoroutine);
-		OnStatusEffectApplied?.Invoke(this, new StatusEffectAppliedEventArgs(statusEffect));
+		OnStatusEffectApplied?.Invoke(this, new StatusEffectAppliedEventArgs(statusEffect, damageSource));
 		StartCoroutine(statusEffectCoroutine);
 	}
 

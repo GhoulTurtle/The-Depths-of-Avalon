@@ -6,8 +6,6 @@ public class PlayerMovement : MonoBehaviour{
     [Header("Speed Variables")]
     [Range(3, 20)]
     [SerializeField] private float movementSpeed = 5f;
-    [Range(3, 10)]
-    [SerializeField] private float accelerationSpeed = 10f;
     [Range(3, 30)]
     [SerializeField] private float rotationSpeed;
 
@@ -24,10 +22,14 @@ public class PlayerMovement : MonoBehaviour{
 
     //Movement
     private Vector3 inputDirection;
+    private Vector3 externalMovement;
 
-    //Gravity
+    //Gravity & Mass
     private const float terminalVelocity = 53f;
     private float verticalVelocity;
+    private float playerMass = 3f;
+    private float knockbackEffectMinAmount = 0.5f;
+    private float knockbackEnergyConsumptionAmount = 5f;
 
     //Checks
     private bool grounded = false;
@@ -64,8 +66,9 @@ public class PlayerMovement : MonoBehaviour{
         GroundCheck();
         Gravity();
         Move();
+        ExternalMovementEnergyCalc();
     }
-    
+
     public void SetInputVector(Vector2 _currentInput) => currentInput = _currentInput;
 
     public void UpdatePosition(Vector3 pos){
@@ -75,9 +78,17 @@ public class PlayerMovement : MonoBehaviour{
     }
     
     private void StatusEffectApplied(object sender, Character.StatusEffectAppliedEventArgs e){
-        if(e.abilityEffect.Status != Status.Slow) return;
-        float reducedMovementSpeed = movementSpeed * (1f - (e.abilityEffect.statusStrength * 0.01f));
-        currentMovementSpeed = reducedMovementSpeed;
+        switch (e.abilityEffect.Status){
+            case Status.Knockback:
+                var direction = (e.damageSource.position + transform.position).normalized;
+                direction.y = 0;
+                externalMovement += direction.normalized * (e.abilityEffect.statusStrength / playerMass);
+                break;
+            case Status.Slow:
+                float reducedMovementSpeed = movementSpeed * (1f - (e.abilityEffect.statusStrength * 0.01f));
+                currentMovementSpeed = reducedMovementSpeed;
+                break;
+        }
     }
 
     private void StatusEffectFinished(object sender, Character.StatusEffectAppliedEventArgs e){
@@ -87,7 +98,7 @@ public class PlayerMovement : MonoBehaviour{
 
     private void UpdateMovementVariables(object sender, Character.SetupCharacterEventArgs e){
         movementSpeed = e.CharacterStats.movementSpeed;
-        accelerationSpeed = e.CharacterStats.accelerationSpeed;
+        playerMass = e.CharacterStats.characterMass;
         rotationSpeed = e.CharacterStats.rotationSpeed;
     }
 
@@ -118,26 +129,12 @@ public class PlayerMovement : MonoBehaviour{
             currentInput = Vector2.zero;  
         } 
 
-        float targetSpeed = currentMovementSpeed;
-
-        if(currentInput == Vector2.zero) targetSpeed = 0f;
-
-        float currentHorizontalSpeed = new Vector3(characterController.velocity.x, 0f, characterController.velocity.z).magnitude;
-        float speedOffset = 0.1f;
-
-        if(currentHorizontalSpeed < targetSpeed - speedOffset || currentHorizontalSpeed > targetSpeed + speedOffset){
-            currentSpeed = Mathf.Lerp(currentHorizontalSpeed, targetSpeed * currentInput.magnitude, Time.deltaTime * accelerationSpeed);
-
-            currentSpeed = Mathf.Round(currentSpeed * 1000f) / 1000f;
-        }
-
-        else{
-            currentSpeed = targetSpeed;
-        }
         var targetVector = Quaternion.Euler(0, mainCameraController.transform.eulerAngles.y, 0) * inputDirection;
 
+        Vector3 finalMove = targetVector + externalMovement;
+
         //Add vertical velocity to the calculation
-        characterController.Move(targetVector * (currentSpeed * Time.deltaTime) + new Vector3(0f, verticalVelocity, 0f) * Time.deltaTime);
+        characterController.Move(finalMove * (movementSpeed * Time.deltaTime) + new Vector3(0f, verticalVelocity, 0f) * Time.deltaTime);
         UpdateRotation(targetVector);
     }
 
@@ -146,5 +143,16 @@ public class PlayerMovement : MonoBehaviour{
 
         var rotation = Quaternion.LookRotation(movementDirection);
         transform.rotation = Quaternion.RotateTowards(transform.rotation, rotation, rotationSpeed);
+    }
+    
+    private void ExternalMovementEnergyCalc(){
+        if (externalMovement == Vector3.zero) return;
+        
+        if (externalMovement.magnitude <= knockbackEffectMinAmount){
+            externalMovement = Vector3.zero;
+            return;
+        }
+        
+        externalMovement = Vector3.Lerp(externalMovement, Vector3.zero, knockbackEnergyConsumptionAmount * Time.deltaTime);
     }
 }

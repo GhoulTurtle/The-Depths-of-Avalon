@@ -422,6 +422,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 217dd0aa7852d8441933a7bd60588e8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isInvincible: 0
   maxHealth: 100
   currentHealth: 0
   requiredDamageType: {fileID: 0}
@@ -438,11 +439,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 932f9fad1bf66fa4c9fa8af278036794, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageTypeSO: {fileID: 11400000, guid: a39d8008fcb92614181af06b2a61240b, type: 2}
+  damageTypeSO: {fileID: 11400000, guid: 72fcffdb100fa5d40b1b3195d42b8d0f, type: 2}
   statusEffect:
     statusDuration:
-      minValue: 2.4956856
-      maxValue: 3.232819
-    statusStrength: 16
+      minValue: 0.1
+      maxValue: 1.9889059
+    statusStrength: 21
   damageAmount: 10
   healthSystem: {fileID: 0}
