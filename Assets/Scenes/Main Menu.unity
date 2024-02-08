@@ -2016,6 +2016,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: main title banner
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 3507ab24921aaba40b9516190c6618b5,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5184,6 +5189,16 @@ PrefabInstance:
     - target: {fileID: 1626141291904938640, guid: cd9ca9a612b2d074e8507be7bca79678,
         type: 3}
       propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2187915294806248671, guid: cd9ca9a612b2d074e8507be7bca79678,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3032583101154511008, guid: cd9ca9a612b2d074e8507be7bca79678,
+        type: 3}
+      propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3081761808563409891, guid: cd9ca9a612b2d074e8507be7bca79678,
@@ -5286,6 +5301,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3955598919515727068, guid: cd9ca9a612b2d074e8507be7bca79678,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5340144958499246799, guid: cd9ca9a612b2d074e8507be7bca79678,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5346351717452127033, guid: cd9ca9a612b2d074e8507be7bca79678,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6187824195616471081, guid: cd9ca9a612b2d074e8507be7bca79678,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -5295,6 +5325,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: SetActive
+      objectReference: {fileID: 0}
+    - target: {fileID: 6653151895110744989, guid: cd9ca9a612b2d074e8507be7bca79678,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6780555634625143899, guid: cd9ca9a612b2d074e8507be7bca79678,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7087787647283836167, guid: cd9ca9a612b2d074e8507be7bca79678,
         type: 3}
@@ -5306,6 +5346,21 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -374
       objectReference: {fileID: 0}
+    - target: {fileID: 7848937759493141095, guid: cd9ca9a612b2d074e8507be7bca79678,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7995094520478952247, guid: cd9ca9a612b2d074e8507be7bca79678,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8010040589064076206, guid: cd9ca9a612b2d074e8507be7bca79678,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8576892338298028251, guid: cd9ca9a612b2d074e8507be7bca79678,
         type: 3}
       propertyPath: m_margin.z
@@ -5315,6 +5370,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_fontStyle
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8657406274677752437, guid: cd9ca9a612b2d074e8507be7bca79678,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8703850223366054183, guid: cd9ca9a612b2d074e8507be7bca79678,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8757892683808640410, guid: cd9ca9a612b2d074e8507be7bca79678,
         type: 3}
@@ -5350,7 +5415,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1748825084
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5497,8 +5562,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: The Depths of Avalon
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 24ee5053d7f284344bc13efe7d90ddba, type: 2}
+  m_sharedMaterial: {fileID: -3769705910441761786, guid: 24ee5053d7f284344bc13efe7d90ddba,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -5522,7 +5588,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 49.35
+  m_fontSize: 55.95
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
