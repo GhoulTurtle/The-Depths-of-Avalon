@@ -354,7 +354,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movementSpeed: 8
-  accelerationSpeed: 10
   rotationSpeed: 9.5
   groundedOffset: 0.55
   groundedRadius: 0.6
@@ -426,7 +425,6 @@ MonoBehaviour:
   maxHealth: 100
   currentHealth: 0
   requiredDamageType: {fileID: 0}
-  isAlive: 0
 --- !u!114 &-635800207006913966
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -439,11 +437,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 932f9fad1bf66fa4c9fa8af278036794, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageTypeSO: {fileID: 11400000, guid: 72fcffdb100fa5d40b1b3195d42b8d0f, type: 2}
+  damageTypeSO: {fileID: 11400000, guid: 2ac3428a4ad1e7643a6fac7b152b86e6, type: 2}
   statusEffect:
     statusDuration:
-      minValue: 0.1
-      maxValue: 1.9889059
-    statusStrength: 21
-  damageAmount: 10
+      minValue: 1.2517715
+      maxValue: 1.2517715
+    statusStrength: 1
+  damageAmount: 15
   healthSystem: {fileID: 0}

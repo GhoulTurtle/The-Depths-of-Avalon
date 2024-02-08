@@ -47,6 +47,8 @@ public class Character : MonoBehaviour{
 		}
 	}
 
+	private HealthSystem characterHealthSystem;
+
 	private void Awake() {
 		characterStatusDictionary = new Dictionary<StatusEffect, IEnumerator>();
 	}
@@ -55,9 +57,11 @@ public class Character : MonoBehaviour{
 		if(characterSO != null){
 			SetupCharacter();
 		}
+
+		TryGetComponent(out characterHealthSystem);
 	}
 
-	public void ChangeCharacter(CharacterSO _characterSO){
+    public void ChangeCharacter(CharacterSO _characterSO){
 		if(characterSO == _characterSO) return;
 
 		characterSO = _characterSO;
@@ -73,6 +77,9 @@ public class Character : MonoBehaviour{
 	}
 
 	public void ApplyStatusEffectToCharacter(StatusEffect statusEffect, Transform damageSource){
+		//Return if the character is dead
+		if(!characterHealthSystem.IsAlive) return;
+
 		//Check if we already have that effect
 		if(characterStatusDictionary.FirstOrDefault(_statusEffect => _statusEffect.Key.Status == statusEffect.Status).Key != null){
 			//Reset/Stack
@@ -92,7 +99,7 @@ public class Character : MonoBehaviour{
 
 	public void FinishedEffect(StatusEffect statusEffect){
 		Debug.Log(statusEffect.Status + " has finished!");
-
+		
 		characterStatusDictionary.Remove(statusEffect);
 		OnStatusEffectFinished?.Invoke(this, new StatusEffectAppliedEventArgs(statusEffect));
 	}

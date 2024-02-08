@@ -28,18 +28,38 @@ public class HealthSystem : MonoBehaviour {
     }
 #endregion
 
-    [SerializeField] private bool isAlive;
+#region References
+    private Character character;
+    private BurnJob currentBurnJob;
+#endregion
+
+    public bool IsAlive {get; private set;}
 
     private void Awake() {
         currentHealth = maxHealth;
-        isAlive = true;
+        IsAlive = true;
+    }
+
+    private void Start() {
+        if(TryGetComponent(out character)){
+            character.OnStatusEffectApplied += StatusEffectApplied;
+            character.OnStatusEffectFinished += StatusEffectFinished;
+        }
+    }
+
+    private void OnDestroy() {
+        if(character != null){
+            character.OnStatusEffectApplied -= StatusEffectApplied;
+            character.OnStatusEffectFinished -= StatusEffectFinished;
+            StopAllCoroutines();
+        }
     }
 
     //Need way to modify current health
     public void TakeDamage(DamageTypeSO damageType, float damageAmount, Transform damageSource) {
         if(requiredDamageType != null && damageType != requiredDamageType) {
             return;
-        } if(!isAlive) {
+        } if(!IsAlive) {
             return;
         }
 
@@ -72,7 +92,24 @@ public class HealthSystem : MonoBehaviour {
 
     //Need way to trigger OnDie event when health <= 0
     private void Die() {
-        isAlive = false;
+        IsAlive = false;
+        if(currentBurnJob != null){
+            currentBurnJob.FinishedBurning();
+            currentBurnJob = null;
+        }
+
         OnDie?.Invoke(this, EventArgs.Empty);
+    }
+
+    private void StatusEffectApplied(object sender, Character.StatusEffectAppliedEventArgs e){
+        if(e.abilityEffect.Status != Status.Burned) return;
+        currentBurnJob = new BurnJob(this);
+        StartCoroutine(currentBurnJob.BurnDOTCorutine());
+    }
+
+    private void StatusEffectFinished(object sender, Character.StatusEffectAppliedEventArgs e){
+        if(e.abilityEffect.Status != Status.Burned || currentBurnJob == null) return;
+        currentBurnJob.FinishedBurning();
+        currentBurnJob = null;
     }
  }

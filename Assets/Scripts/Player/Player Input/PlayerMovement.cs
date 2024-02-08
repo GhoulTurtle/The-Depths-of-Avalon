@@ -40,7 +40,6 @@ public class PlayerMovement : MonoBehaviour{
 
     //Movement speed
     private float currentMovementSpeed;
-    private float currentSpeed;
     
     private void Awake() {
         TryGetComponent(out characterController);
@@ -134,7 +133,7 @@ public class PlayerMovement : MonoBehaviour{
         Vector3 finalMove = targetVector + externalMovement;
 
         //Add vertical velocity to the calculation
-        characterController.Move(finalMove * (movementSpeed * Time.deltaTime) + new Vector3(0f, verticalVelocity, 0f) * Time.deltaTime);
+        characterController.Move(finalMove * (currentMovementSpeed * Time.deltaTime) + new Vector3(0f, verticalVelocity, 0f) * Time.deltaTime);
         UpdateRotation(targetVector);
     }
 
