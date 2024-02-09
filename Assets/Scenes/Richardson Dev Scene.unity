@@ -260,10 +260,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 217dd0aa7852d8441933a7bd60588e8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isInvincible: 0
   maxHealth: 100
   currentHealth: 0
   requiredDamageType: {fileID: 0}
-  isAlive: 0
 --- !u!65 &753838847
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -416,10 +416,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 217dd0aa7852d8441933a7bd60588e8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isInvincible: 0
   maxHealth: 100
   currentHealth: 0
   requiredDamageType: {fileID: 0}
-  isAlive: 0
 --- !u!65 &1163488111
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -538,10 +538,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 217dd0aa7852d8441933a7bd60588e8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isInvincible: 0
   maxHealth: 100
   currentHealth: 0
   requiredDamageType: {fileID: 0}
-  isAlive: 0
 --- !u!65 &1200296448
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -660,10 +660,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 217dd0aa7852d8441933a7bd60588e8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isInvincible: 0
   maxHealth: 100
   currentHealth: 0
   requiredDamageType: {fileID: 0}
-  isAlive: 0
 --- !u!65 &1380482890
 BoxCollider:
   m_ObjectHideFlags: 0
