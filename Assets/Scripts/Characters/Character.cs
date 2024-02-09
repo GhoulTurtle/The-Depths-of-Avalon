@@ -18,12 +18,14 @@ public class Character : MonoBehaviour{
 	[SerializeField] private AudioSource characterAudioSource;
 
 	private Dictionary<StatusEffect, IEnumerator> characterStatusDictionary;
-	public GameObject characterVisuals;
+	
+	public AudioSource CharacterAudioSource => characterAudioSource;
 
 	public event EventHandler<SetupCharacterEventArgs> OnSetupCharacter;
 	public event EventHandler<StatusEffectAppliedEventArgs> OnStatusEffectApplied;
 	public event EventHandler<StatusEffectAppliedEventArgs> OnStatusEffectFinished;
 
+	
 	public class SetupCharacterEventArgs : EventArgs{
 		public List<AbilitySO> CharacterAbilities;
 		public CharacterAudioSO CharacterAudio;
@@ -48,6 +50,7 @@ public class Character : MonoBehaviour{
 	}
 
 	private HealthSystem characterHealthSystem;
+	private GameObject characterVisuals;
 
 	private void Awake() {
 		characterStatusDictionary = new Dictionary<StatusEffect, IEnumerator>();
@@ -93,6 +96,9 @@ public class Character : MonoBehaviour{
 		Debug.Log(statusEffect.Status + " has started!");
 
 		characterStatusDictionary.Add(statusEffectInstance, statusEffectCoroutine);
+
+		characterSO.SharedAssetsSO.StatusInflicted(statusEffectInstance.Status, this);
+
 		OnStatusEffectApplied?.Invoke(this, new StatusEffectAppliedEventArgs(statusEffect, damageSource));
 		StartCoroutine(statusEffectCoroutine);
 	}

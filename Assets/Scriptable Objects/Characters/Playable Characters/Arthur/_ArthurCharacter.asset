@@ -21,3 +21,4 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 1e255a51bd00e8546b7e563dd48454fa, type: 2}
   CharacterVisuals: {fileID: 11400000, guid: 774e156e720e3fa4a92706cc5315d666, type: 2}
   CharacterAudio: {fileID: 11400000, guid: 8a3cd7cb9b3c9f743b2b15ca897f14b8, type: 2}
+  SharedAssetsSO: {fileID: 11400000, guid: 73836fe52e2624346adea17c8b132a65, type: 2}
