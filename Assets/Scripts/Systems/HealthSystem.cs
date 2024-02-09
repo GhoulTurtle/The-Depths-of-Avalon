@@ -80,7 +80,11 @@ public class HealthSystem : MonoBehaviour {
     }
 
     public void Heal(float healAmount) {
+        if(!IsAlive) {
+            IsAlive = true;
+        }
         currentHealth += healAmount;
+        
 
         if(currentHealth > maxHealth) {
             currentHealth = maxHealth;
