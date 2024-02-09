@@ -40,14 +40,10 @@ public class Character : MonoBehaviour{
 
 	public class StatusEffectAppliedEventArgs : EventArgs{
 		public StatusEffect abilityEffect;
-		public Transform damageSource;
-		public StatusEffectAppliedEventArgs(StatusEffect _abilityEffect, Transform _damageSource = null){
+		public StatusEffectAppliedEventArgs(StatusEffect _abilityEffect){
 			abilityEffect = _abilityEffect;
-			damageSource = _damageSource;
 		}
 	}
-
-	private HealthSystem characterHealthSystem;
 
 	private void Awake() {
 		characterStatusDictionary = new Dictionary<StatusEffect, IEnumerator>();
@@ -57,11 +53,9 @@ public class Character : MonoBehaviour{
 		if(characterSO != null){
 			SetupCharacter();
 		}
-
-		TryGetComponent(out characterHealthSystem);
 	}
 
-    public void ChangeCharacter(CharacterSO _characterSO){
+	public void ChangeCharacter(CharacterSO _characterSO){
 		if(characterSO == _characterSO) return;
 
 		characterSO = _characterSO;
@@ -76,10 +70,7 @@ public class Character : MonoBehaviour{
 		OnSetupCharacter?.Invoke(this, new SetupCharacterEventArgs(characterSO.CharacterStats, characterSO.CharacterVisuals, characterSO.CharacterAudio, characterSO.CharacterAbilities));
 	}
 
-	public void ApplyStatusEffectToCharacter(StatusEffect statusEffect, Transform damageSource){
-		//Return if the character is dead
-		if(!characterHealthSystem.IsAlive) return;
-
+	public void ApplyStatusEffectToCharacter(StatusEffect statusEffect){
 		//Check if we already have that effect
 		if(characterStatusDictionary.FirstOrDefault(_statusEffect => _statusEffect.Key.Status == statusEffect.Status).Key != null){
 			//Reset/Stack
@@ -93,13 +84,13 @@ public class Character : MonoBehaviour{
 		Debug.Log(statusEffect.Status + " has started!");
 
 		characterStatusDictionary.Add(statusEffectInstance, statusEffectCoroutine);
-		OnStatusEffectApplied?.Invoke(this, new StatusEffectAppliedEventArgs(statusEffect, damageSource));
+		OnStatusEffectApplied?.Invoke(this, new StatusEffectAppliedEventArgs(statusEffect));
 		StartCoroutine(statusEffectCoroutine);
 	}
 
 	public void FinishedEffect(StatusEffect statusEffect){
 		Debug.Log(statusEffect.Status + " has finished!");
-		
+
 		characterStatusDictionary.Remove(statusEffect);
 		OnStatusEffectFinished?.Invoke(this, new StatusEffectAppliedEventArgs(statusEffect));
 	}
