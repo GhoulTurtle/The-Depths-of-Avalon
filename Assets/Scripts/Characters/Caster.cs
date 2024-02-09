@@ -26,7 +26,7 @@ public class Caster : MonoBehaviour{
 	[SerializeField] private LayerMask casterLayerMask;
 	[SerializeField] private LayerMask targetLayerMask;
 
-	public Character character;
+	[HideInInspector] public Character character;
 	private List<AbilitySO> abilitySOs;
 	private Dictionary<AbilitySO, AbilityCooldown> abilityCooldownDictionary;
 
@@ -47,6 +47,7 @@ public class Caster : MonoBehaviour{
 	}
 
     public void UseCharacterAbility(int abilityIndex){
+		if(abilitySOs == null || abilitySOs.Count - 1 < abilityIndex) return;
 		if(abilitySOs[abilityIndex] == null){
 			Debug.LogError("<color=red>No valid ability found on character: " + character.gameObject.name + " that matches the index: " + abilityIndex + "</color>");
 			return;
