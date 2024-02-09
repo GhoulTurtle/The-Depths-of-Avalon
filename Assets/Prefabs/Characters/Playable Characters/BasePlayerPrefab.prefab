@@ -176,6 +176,7 @@ GameObject:
   - component: {fileID: -487671402204889205}
   - component: {fileID: 1718911537333029899}
   - component: {fileID: -635800207006913966}
+  - component: {fileID: 823138864008314314}
   m_Layer: 8
   m_Name: BasePlayerPrefab
   m_TagString: Untagged
@@ -446,3 +447,16 @@ MonoBehaviour:
     statusStrength: 1
   damageAmount: 20
   healthSystem: {fileID: 0}
+--- !u!114 &823138864008314314
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6509989325390252658}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9abd9436dbba5294897be80b071d72f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  respawnDelay: 3
