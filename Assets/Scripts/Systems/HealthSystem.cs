@@ -5,7 +5,6 @@ public class HealthSystem : MonoBehaviour {
 
 #region Editable Variables
     [Header("Editable Variables")]
-    [SerializeField] private bool isInvincible = false;
     [SerializeField] private float maxHealth;
     [SerializeField] private float currentHealth;
     [SerializeField] private DamageTypeSO requiredDamageType;
@@ -28,44 +27,22 @@ public class HealthSystem : MonoBehaviour {
     }
 #endregion
 
-#region References
-    private Character character;
-    private BurnJob currentBurnJob;
-#endregion
-
-    public bool IsAlive {get; private set;}
+    [SerializeField] private bool isAlive;
 
     private void Awake() {
         currentHealth = maxHealth;
-        IsAlive = true;
-    }
-
-    private void Start() {
-        if(TryGetComponent(out character)){
-            character.OnStatusEffectApplied += StatusEffectApplied;
-            character.OnStatusEffectFinished += StatusEffectFinished;
-        }
-    }
-
-    private void OnDestroy() {
-        if(character != null){
-            character.OnStatusEffectApplied -= StatusEffectApplied;
-            character.OnStatusEffectFinished -= StatusEffectFinished;
-            StopAllCoroutines();
-        }
+        isAlive = true;
     }
 
     //Need way to modify current health
     public void TakeDamage(DamageTypeSO damageType, float damageAmount, Transform damageSource) {
         if(requiredDamageType != null && damageType != requiredDamageType) {
             return;
-        } if(!IsAlive) {
+        } if(!isAlive) {
             return;
         }
 
-        if(!isInvincible){
-            currentHealth -= damageAmount;
-        }
+        currentHealth -= damageAmount;
 
         if(currentHealth < 0) {
             currentHealth = 0;
@@ -92,24 +69,7 @@ public class HealthSystem : MonoBehaviour {
 
     //Need way to trigger OnDie event when health <= 0
     private void Die() {
-        IsAlive = false;
-        if(currentBurnJob != null){
-            currentBurnJob.FinishedBurning();
-            currentBurnJob = null;
-        }
-
+        isAlive = false;
         OnDie?.Invoke(this, EventArgs.Empty);
-    }
-
-    private void StatusEffectApplied(object sender, Character.StatusEffectAppliedEventArgs e){
-        if(e.abilityEffect.Status != Status.Burned) return;
-        currentBurnJob = new BurnJob(this);
-        StartCoroutine(currentBurnJob.BurnDOTCorutine());
-    }
-
-    private void StatusEffectFinished(object sender, Character.StatusEffectAppliedEventArgs e){
-        if(e.abilityEffect.Status != Status.Burned || currentBurnJob == null) return;
-        currentBurnJob.FinishedBurning();
-        currentBurnJob = null;
     }
  }
