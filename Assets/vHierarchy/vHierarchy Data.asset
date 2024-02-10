@@ -13,5 +13,224 @@ MonoBehaviour:
   m_Name: vHierarchy Data
   m_EditorClassIdentifier: 
   sceneDatasByGuid:
-    keys: []
-    values: []
+    keys:
+    - 
+    - a0117947df55d2d46bb17bcba6cc4979
+    values:
+    - goDatasByGlobalId:
+        keys: []
+        values: []
+      goDatasByInstanceId:
+        keys: 
+        values: []
+    - goDatasByGlobalId:
+        keys:
+        - GlobalObjectId_V1-2-a0117947df55d2d46bb17bcba6cc4979-1819567049-0
+        - GlobalObjectId_V1-2-a0117947df55d2d46bb17bcba6cc4979-1434982391-0
+        - GlobalObjectId_V1-2-a0117947df55d2d46bb17bcba6cc4979-1856993343-0
+        - GlobalObjectId_V1-2-a0117947df55d2d46bb17bcba6cc4979-1463541788-0
+        - GlobalObjectId_V1-2-a0117947df55d2d46bb17bcba6cc4979-711939947-0
+        - GlobalObjectId_V1-2-a0117947df55d2d46bb17bcba6cc4979-420829598-0
+        - GlobalObjectId_V1-2-a0117947df55d2d46bb17bcba6cc4979-966720952-0
+        - GlobalObjectId_V1-2-a0117947df55d2d46bb17bcba6cc4979-2101431979-0
+        - GlobalObjectId_V1-2-a0117947df55d2d46bb17bcba6cc4979-1095258410-0
+        - GlobalObjectId_V1-2-a0117947df55d2d46bb17bcba6cc4979-1068286427-0
+        - GlobalObjectId_V1-2-a0117947df55d2d46bb17bcba6cc4979-1993922973-0
+        - GlobalObjectId_V1-2-a0117947df55d2d46bb17bcba6cc4979-907350831-0
+        - GlobalObjectId_V1-2-a0117947df55d2d46bb17bcba6cc4979-1134634874-0
+        - GlobalObjectId_V1-2-a0117947df55d2d46bb17bcba6cc4979-737264359-0
+        - GlobalObjectId_V1-2-a0117947df55d2d46bb17bcba6cc4979-1183431510-0
+        - GlobalObjectId_V1-2-a0117947df55d2d46bb17bcba6cc4979-728971088-0
+        - GlobalObjectId_V1-2-a0117947df55d2d46bb17bcba6cc4979-227822313-0
+        - GlobalObjectId_V1-2-a0117947df55d2d46bb17bcba6cc4979-913827605-0
+        - GlobalObjectId_V1-2-a0117947df55d2d46bb17bcba6cc4979-1862284956-0
+        - GlobalObjectId_V1-2-a0117947df55d2d46bb17bcba6cc4979-1429087368-0
+        - GlobalObjectId_V1-2-a0117947df55d2d46bb17bcba6cc4979-1118764720-0
+        - GlobalObjectId_V1-2-a0117947df55d2d46bb17bcba6cc4979-1017404697-0
+        - GlobalObjectId_V1-2-a0117947df55d2d46bb17bcba6cc4979-877815501-0
+        - GlobalObjectId_V1-2-a0117947df55d2d46bb17bcba6cc4979-545108984-0
+        - GlobalObjectId_V1-2-a0117947df55d2d46bb17bcba6cc4979-243988811-0
+        - GlobalObjectId_V1-2-a0117947df55d2d46bb17bcba6cc4979-1350975266-0
+        - GlobalObjectId_V1-2-a0117947df55d2d46bb17bcba6cc4979-578957401-0
+        - GlobalObjectId_V1-2-a0117947df55d2d46bb17bcba6cc4979-1261606881-0
+        - GlobalObjectId_V1-2-a0117947df55d2d46bb17bcba6cc4979-528615208-0
+        - GlobalObjectId_V1-2-a0117947df55d2d46bb17bcba6cc4979-1455323625-0
+        - GlobalObjectId_V1-2-a0117947df55d2d46bb17bcba6cc4979-285075060-0
+        - GlobalObjectId_V1-2-a0117947df55d2d46bb17bcba6cc4979-8961098906843957059-2012697521
+        - GlobalObjectId_V1-2-a0117947df55d2d46bb17bcba6cc4979-1963741974-0
+        - GlobalObjectId_V1-2-a0117947df55d2d46bb17bcba6cc4979-1946070936-0
+        - GlobalObjectId_V1-2-a0117947df55d2d46bb17bcba6cc4979-41241189-0
+        - GlobalObjectId_V1-2-a0117947df55d2d46bb17bcba6cc4979-1416437101-0
+        - GlobalObjectId_V1-2-a0117947df55d2d46bb17bcba6cc4979-414310315-0
+        - GlobalObjectId_V1-2-a0117947df55d2d46bb17bcba6cc4979-980162277-0
+        - GlobalObjectId_V1-2-a0117947df55d2d46bb17bcba6cc4979-1149317694-0
+        - GlobalObjectId_V1-2-a0117947df55d2d46bb17bcba6cc4979-1966591577-0
+        - GlobalObjectId_V1-2-a0117947df55d2d46bb17bcba6cc4979-96343529-0
+        values:
+        - iColor: 2
+          icon: Folder Icon
+        - iColor: 8
+          icon: Folder Icon
+        - iColor: 2
+          icon: Folder Icon
+        - iColor: 2
+          icon: Folder Icon
+        - iColor: 2
+          icon: Folder Icon
+        - iColor: 2
+          icon: Folder Icon
+        - iColor: 2
+          icon: Folder Icon
+        - iColor: 9
+          icon: Folder Icon
+        - iColor: 2
+          icon: Folder Icon
+        - iColor: 2
+          icon: Folder Icon
+        - iColor: 2
+          icon: Folder Icon
+        - iColor: 2
+          icon: Folder Icon
+        - iColor: 4
+          icon: Folder Icon
+        - iColor: 2
+          icon: Folder Icon
+        - iColor: 2
+          icon: Folder Icon
+        - iColor: 2
+          icon: Folder Icon
+        - iColor: 7
+          icon: Folder Icon
+        - iColor: 2
+          icon: Folder Icon
+        - iColor: 2
+          icon: Folder Icon
+        - iColor: 3
+          icon: Folder Icon
+        - iColor: 2
+          icon: Folder Icon
+        - iColor: 2
+          icon: Folder Icon
+        - iColor: 2
+          icon: Folder Icon
+        - iColor: 2
+          icon: Folder Icon
+        - iColor: 6
+          icon: Folder Icon
+        - iColor: 2
+          icon: Folder Icon
+        - iColor: 2
+          icon: Folder Icon
+        - iColor: 2
+          icon: Folder Icon
+        - iColor: 1
+          icon: Folder Icon
+        - iColor: 2
+          icon: Folder Icon
+        - iColor: 2
+          icon: Folder Icon
+        - iColor: 0
+          icon: 
+        - iColor: 2
+          icon: Folder Icon
+        - iColor: 8
+          icon: Folder Icon
+        - iColor: 2
+          icon: 
+        - iColor: 2
+          icon: 
+        - iColor: 2
+          icon: 
+        - iColor: 9
+          icon: Folder Icon
+        - iColor: 2
+          icon: Folder Icon
+        - iColor: 2
+          icon: Folder Icon
+        - iColor: 2
+          icon: Folder Icon
+      goDatasByInstanceId:
+        keys: 4c7d0000747c0000647d0000947c0000b87a00000e7a0000587b00000c7e0000a07b0000907b0000c47d0000287b0000ac7b0000cc7a0000d87b0000c87a0000b2790000307b00006c7d0000b432ffffee33ffff1a04ffff9e01ffff0a00fffff2bbfeff44befeffa0b8feffd4b2feffe896feff5493feff3e7cfeff1a80feff627afeffcc3dfeffe83efeff803afeff4a39feff6edefdff4edffdff40ddfdff12dcfdff
+        values:
+        - iColor: 2
+          icon: Folder Icon
+        - iColor: 8
+          icon: Folder Icon
+        - iColor: 2
+          icon: Folder Icon
+        - iColor: 2
+          icon: Folder Icon
+        - iColor: 2
+          icon: Folder Icon
+        - iColor: 2
+          icon: Folder Icon
+        - iColor: 2
+          icon: Folder Icon
+        - iColor: 9
+          icon: Folder Icon
+        - iColor: 2
+          icon: Folder Icon
+        - iColor: 2
+          icon: Folder Icon
+        - iColor: 2
+          icon: Folder Icon
+        - iColor: 2
+          icon: Folder Icon
+        - iColor: 4
+          icon: Folder Icon
+        - iColor: 2
+          icon: Folder Icon
+        - iColor: 2
+          icon: Folder Icon
+        - iColor: 2
+          icon: Folder Icon
+        - iColor: 7
+          icon: Folder Icon
+        - iColor: 2
+          icon: Folder Icon
+        - iColor: 2
+          icon: Folder Icon
+        - iColor: 3
+          icon: Folder Icon
+        - iColor: 2
+          icon: Folder Icon
+        - iColor: 2
+          icon: Folder Icon
+        - iColor: 2
+          icon: Folder Icon
+        - iColor: 2
+          icon: Folder Icon
+        - iColor: 6
+          icon: Folder Icon
+        - iColor: 2
+          icon: Folder Icon
+        - iColor: 2
+          icon: Folder Icon
+        - iColor: 2
+          icon: Folder Icon
+        - iColor: 1
+          icon: Folder Icon
+        - iColor: 2
+          icon: Folder Icon
+        - iColor: 2
+          icon: Folder Icon
+        - iColor: 0
+          icon: 
+        - iColor: 2
+          icon: Folder Icon
+        - iColor: 8
+          icon: Folder Icon
+        - iColor: 2
+          icon: 
+        - iColor: 2
+          icon: 
+        - iColor: 2
+          icon: 
+        - iColor: 9
+          icon: Folder Icon
+        - iColor: 2
+          icon: Folder Icon
+        - iColor: 2
+          icon: Folder Icon
+        - iColor: 2
+          icon: Folder Icon
