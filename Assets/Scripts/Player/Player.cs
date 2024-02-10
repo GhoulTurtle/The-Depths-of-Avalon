@@ -11,7 +11,7 @@ public class Player{
 	public Player(int _playerNum, PlayerInput _assignedplayerInput){
 		playerNum = _playerNum;
 		assignedPlayerInput = _assignedplayerInput;
-		
+
 		assignedPlayerInput.TryGetComponent(out playerCharacter);
 		if(playerCharacter == null){
 			Debug.LogError("Player " + playerNum + " does not have a Character component attached to the game object.");

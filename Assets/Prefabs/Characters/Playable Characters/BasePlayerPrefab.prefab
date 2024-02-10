@@ -175,7 +175,8 @@ GameObject:
   - component: {fileID: 4127411281864016584}
   - component: {fileID: -487671402204889205}
   - component: {fileID: 1718911537333029899}
-  - component: {fileID: -635800207006913966}
+  - component: {fileID: -6454174977820298318}
+  - component: {fileID: -4820100345650839450}
   m_Layer: 8
   m_Name: BasePlayerPrefab
   m_TagString: Untagged
@@ -354,7 +355,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movementSpeed: 8
-  accelerationSpeed: 10
   rotationSpeed: 9.5
   groundedOffset: 0.55
   groundedRadius: 0.6
@@ -390,7 +390,6 @@ MonoBehaviour:
   characterType: 0
   characterVisualParent: {fileID: 7118599039630769877}
   characterAudioSource: {fileID: 4537791954355014679}
-  characterVisuals: {fileID: 0}
 --- !u!114 &-487671402204889205
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -422,11 +421,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 217dd0aa7852d8441933a7bd60588e8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isInvincible: 0
   maxHealth: 100
   currentHealth: 0
   requiredDamageType: {fileID: 0}
-  isAlive: 0
---- !u!114 &-635800207006913966
+--- !u!114 &-6454174977820298318
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -438,11 +437,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 932f9fad1bf66fa4c9fa8af278036794, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageTypeSO: {fileID: 11400000, guid: a39d8008fcb92614181af06b2a61240b, type: 2}
+  damageTypeSO: {fileID: 11400000, guid: 494a1e5db449980439d7584e253947ed, type: 2}
   statusEffect:
     statusDuration:
-      minValue: 2.4956856
-      maxValue: 3.232819
-    statusStrength: 16
-  damageAmount: 10
+      minValue: 1.1057011
+      maxValue: 3.1328197
+    statusStrength: 1
+  damageAmount: 50
   healthSystem: {fileID: 0}
+--- !u!114 &-4820100345650839450
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6509989325390252658}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9abd9436dbba5294897be80b071d72f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  respawnDelay: 1
+  respawnPoint: {fileID: 0}

@@ -18,12 +18,14 @@ public class Character : MonoBehaviour{
 	[SerializeField] private AudioSource characterAudioSource;
 
 	private Dictionary<StatusEffect, IEnumerator> characterStatusDictionary;
-	public GameObject characterVisuals;
+	
+	public AudioSource CharacterAudioSource => characterAudioSource;
 
 	public event EventHandler<SetupCharacterEventArgs> OnSetupCharacter;
 	public event EventHandler<StatusEffectAppliedEventArgs> OnStatusEffectApplied;
 	public event EventHandler<StatusEffectAppliedEventArgs> OnStatusEffectFinished;
 
+	
 	public class SetupCharacterEventArgs : EventArgs{
 		public List<AbilitySO> CharacterAbilities;
 		public CharacterAudioSO CharacterAudio;
@@ -40,10 +42,15 @@ public class Character : MonoBehaviour{
 
 	public class StatusEffectAppliedEventArgs : EventArgs{
 		public StatusEffect abilityEffect;
-		public StatusEffectAppliedEventArgs(StatusEffect _abilityEffect){
+		public Transform damageSource;
+		public StatusEffectAppliedEventArgs(StatusEffect _abilityEffect, Transform _damageSource = null){
 			abilityEffect = _abilityEffect;
+			damageSource = _damageSource;
 		}
 	}
+
+	private HealthSystem characterHealthSystem;
+	private GameObject characterVisuals;
 
 	private void Awake() {
 		characterStatusDictionary = new Dictionary<StatusEffect, IEnumerator>();
@@ -53,9 +60,11 @@ public class Character : MonoBehaviour{
 		if(characterSO != null){
 			SetupCharacter();
 		}
+
+		TryGetComponent(out characterHealthSystem);
 	}
 
-	public void ChangeCharacter(CharacterSO _characterSO){
+    public void ChangeCharacter(CharacterSO _characterSO){
 		if(characterSO == _characterSO) return;
 
 		characterSO = _characterSO;
@@ -70,7 +79,10 @@ public class Character : MonoBehaviour{
 		OnSetupCharacter?.Invoke(this, new SetupCharacterEventArgs(characterSO.CharacterStats, characterSO.CharacterVisuals, characterSO.CharacterAudio, characterSO.CharacterAbilities));
 	}
 
-	public void ApplyStatusEffectToCharacter(StatusEffect statusEffect){
+	public void ApplyStatusEffectToCharacter(StatusEffect statusEffect, Transform damageSource){
+		//Return if the character is dead
+		if(!characterHealthSystem.IsAlive) return;
+
 		//Check if we already have that effect
 		if(characterStatusDictionary.FirstOrDefault(_statusEffect => _statusEffect.Key.Status == statusEffect.Status).Key != null){
 			//Reset/Stack
@@ -84,13 +96,16 @@ public class Character : MonoBehaviour{
 		Debug.Log(statusEffect.Status + " has started!");
 
 		characterStatusDictionary.Add(statusEffectInstance, statusEffectCoroutine);
-		OnStatusEffectApplied?.Invoke(this, new StatusEffectAppliedEventArgs(statusEffect));
+
+		characterSO.SharedAssetsSO.StatusInflicted(statusEffectInstance.Status, this);
+
+		OnStatusEffectApplied?.Invoke(this, new StatusEffectAppliedEventArgs(statusEffect, damageSource));
 		StartCoroutine(statusEffectCoroutine);
 	}
 
 	public void FinishedEffect(StatusEffect statusEffect){
 		Debug.Log(statusEffect.Status + " has finished!");
-
+		
 		characterStatusDictionary.Remove(statusEffect);
 		OnStatusEffectFinished?.Invoke(this, new StatusEffectAppliedEventArgs(statusEffect));
 	}

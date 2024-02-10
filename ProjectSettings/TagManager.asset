@@ -17,8 +17,8 @@ TagManager:
   - Enemy
   - Block
   - LevelMechanic
-  - 
-  - 
+  - Damager
+  - RespawnSpot
   - 
   - 
   - 
