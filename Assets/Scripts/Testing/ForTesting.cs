@@ -25,7 +25,8 @@ public class ForTesting : MonoBehaviour {
 
     
     private void Update() {
-        if(Input.GetKeyDown(KeyCode.J)) {
+        if(Input.GetKeyDown(KeyCode.K)) {
+            healthSystem.TakeDamage(damageTypeSO, 20, this.transform);
         }
     }
 }

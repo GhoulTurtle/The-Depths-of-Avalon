@@ -175,7 +175,7 @@ GameObject:
   - component: {fileID: 4127411281864016584}
   - component: {fileID: -487671402204889205}
   - component: {fileID: 1718911537333029899}
-  - component: {fileID: -635800207006913966}
+  - component: {fileID: -6454174977820298318}
   m_Layer: 8
   m_Name: BasePlayerPrefab
   m_TagString: Untagged
@@ -425,7 +425,7 @@ MonoBehaviour:
   maxHealth: 100
   currentHealth: 0
   requiredDamageType: {fileID: 0}
---- !u!114 &-635800207006913966
+--- !u!114 &-6454174977820298318
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -440,8 +440,8 @@ MonoBehaviour:
   damageTypeSO: {fileID: 11400000, guid: 2ac3428a4ad1e7643a6fac7b152b86e6, type: 2}
   statusEffect:
     statusDuration:
-      minValue: 1.2517715
-      maxValue: 1.2517715
+      minValue: 1.1057011
+      maxValue: 3.1328197
     statusStrength: 1
-  damageAmount: 15
+  damageAmount: 5
   healthSystem: {fileID: 0}
