@@ -45,6 +45,7 @@ public class PlayerManager : MonoBehaviour{
 		if(CurrentPlayerList.Count == correctPlayerCount) {
 			return;
 		}
+		
 		int incomingPlayerIndex = CurrentPlayerList.Count;
 		
 		Player incomingPlayer = new Player(incomingPlayerIndex, playerInput);

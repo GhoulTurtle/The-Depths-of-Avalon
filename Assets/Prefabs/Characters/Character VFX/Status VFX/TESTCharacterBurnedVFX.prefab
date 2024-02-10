@@ -9793,3 +9793,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c49de990f07b6564d93cb7978ce51aec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  statusAssociated: 1
