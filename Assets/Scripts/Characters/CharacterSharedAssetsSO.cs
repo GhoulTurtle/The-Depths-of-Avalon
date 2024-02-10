@@ -2,11 +2,21 @@ using UnityEngine;
 
 [CreateAssetMenu(menuName = "Character/Shared Asset", fileName = "CharacterSharedAsset")]
 public class CharacterSharedAssetsSO : ScriptableObject{
+    [Header("Health VFX")]
+    [Tooltip("The visual effect that will be used when the character is healed.")]
+	public CharacterVisualEffect CharacterHealingEffect;
+    [Tooltip("The visual effect that will be used when the character is damaged.")]
+	public CharacterVisualEffect CharacterDamagedEffect;
+    
     [Header("Status VFX")]
-    public CharacterStatusVisualEffect BurnedStatusVFX;
-    public CharacterStatusVisualEffect SlowedStatusVFX;
-    public CharacterStatusVisualEffect KnockbackStatusVFX;
-    public CharacterStatusVisualEffect StunnedStatusVFX;
+    public CharacterVisualEffect BurnedStatusVFX;
+    public CharacterVisualEffect SlowedStatusVFX;
+    public CharacterVisualEffect KnockbackStatusVFX;
+    public CharacterVisualEffect StunnedStatusVFX;
+
+    [Header("Health Audio")]
+    public AudioEvent HealingAudioEvent;
+    public AudioEvent DamagedAudioEvent;
 
     [Header("Status Audio")]
     public AudioEvent BurnedStatusAudioEvent;
@@ -14,31 +24,47 @@ public class CharacterSharedAssetsSO : ScriptableObject{
     public AudioEvent KnockbackStatusAudioEvent;
     public AudioEvent StunnedStatusAudioEvent;
 
-    public void StatusInflicted(Status status, Character character){
+    public void CharacterStatusInflicted(Status status, Character character){
         switch (status){
             case Status.Burned: 
-                InstatiateVFX(BurnedStatusVFX, character);
-                BurnedStatusAudioEvent.Play(character.CharacterAudioSource);
+                InstantiateVFX(BurnedStatusVFX, character);
+                PlayAudioEvent(BurnedStatusAudioEvent, character);
                 break;
             case Status.Knockback: 
-                InstatiateVFX(KnockbackStatusVFX, character);
-                KnockbackStatusAudioEvent.Play(character.CharacterAudioSource);
+                InstantiateVFX(KnockbackStatusVFX, character);
+                PlayAudioEvent(KnockbackStatusAudioEvent, character);
                 break;
             case Status.Slow: 
-                InstatiateVFX(SlowedStatusVFX, character);
-                SlowedStatusAudioEvent.Play(character.CharacterAudioSource);
+                InstantiateVFX(SlowedStatusVFX, character);
+                PlayAudioEvent(SlowedStatusAudioEvent, character);
                 break;
             case Status.Stun: 
-                InstatiateVFX(StunnedStatusVFX, character);
-                StunnedStatusAudioEvent.Play(character.CharacterAudioSource);
+                InstantiateVFX(StunnedStatusVFX, character);
+                PlayAudioEvent(StunnedStatusAudioEvent, character);
                 break;
         }
     }
 
-    private void InstatiateVFX(CharacterStatusVisualEffect effect, Character character){
+    public void CharacterDamaged(Character character){
+		InstantiateVFX(CharacterDamagedEffect, character);
+        PlayAudioEvent(DamagedAudioEvent, character);
+	}
+
+	public void CharacterHealed(Character character){
+        InstantiateVFX(CharacterHealingEffect, character);
+        PlayAudioEvent(HealingAudioEvent, character);
+	}
+
+    private void InstantiateVFX(CharacterVisualEffect effect, Character character){
         if(effect != null){
-            var visualEffect = Instantiate(effect, character.transform);
+            var visualEffect = Instantiate(effect, character.CharacterVisualParent);
             visualEffect.SetupVisualEffect(character);
+        }
+    }
+
+    private void PlayAudioEvent(AudioEvent audioEvent, Character character){
+        if(audioEvent != null){
+            audioEvent.Play(character.CharacterAudioSource);
         }
     }
 }   
