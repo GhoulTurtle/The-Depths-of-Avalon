@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class CharacterStatusVisualEffect : MonoBehaviour{
+public class CharacterVisualEffect : MonoBehaviour{
 	[SerializeField] private Status statusAssociated;
 	private bool deleteUponCompletion = true;
 	private Character character;
@@ -34,7 +34,7 @@ public class CharacterStatusVisualEffect : MonoBehaviour{
 		}
 
 		character = _character;
-		if(character != null){
+		if(character != null && statusAssociated != Status.None){
 			character.OnStatusEffectFinished += DeleteVisualEffect;
 		} 
 
