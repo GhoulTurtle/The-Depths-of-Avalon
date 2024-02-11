@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Audio;
+using UnityEngine.UIElements.Experimental;
 
 public class SettingScreen : MonoBehaviour
 {
-
+    public AudioMixer mainMixer;
     public static float masterVolume;
     public static float sfxVolume;
     public static float musicVolume;
@@ -15,14 +16,15 @@ public class SettingScreen : MonoBehaviour
     public Slider musicSlider;
     public Slider sfxSlider;
 
-    public AudioMixer mainMixer;
+   
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
-        if (PlayerPrefs.GetInt("FirstTimeOpening") != null)
+        if (!PlayerPrefs.HasKey("FirstTimeOpening"))
+
         {
-         ResetVolumePrefs();
-         UpdateMisxervolume();
+            ResetVolumePrefs();
+            UpdateMixerVolume();
             PlayerPrefs.SetInt("FirstTimeOpening", 1);
         }
 
@@ -32,30 +34,52 @@ public class SettingScreen : MonoBehaviour
 
         masterSlider.value = PlayerPrefs.GetFloat("MasterSliderValue");
         musicSlider.value = PlayerPrefs.GetFloat("MusicSliderValue");
-        sfxSlider.value = sfxVolume = PlayerPrefs.GetFloat("SFXSliderVaule");
+        sfxSlider.value = PlayerPrefs.GetFloat("SFXSliderValue");
     }
 
-    // Update is called once per frame
-   void UpdateMisxervolume()
+    //Update is called once per frame
+  
+
+    
+    public void  ChangeMasterVolume(float value)
     {
-        mainMixer.SetFloat("MasterVolume", Mathf.Log10(masterVolume) * 20);
+     masterVolume = value;
+     UpdateMixerVolume();
+    }
+
+    public void ChangeMusicVolume(float value)
+    {
+     musicVolume = value;
+     UpdateMixerVolume();
+
+    }
+
+    public void ChangeSFXVolume(float value)
+    {
+      sfxVolume = value;
+      UpdateMixerVolume();
+    } 
+    void UpdateMixerVolume()
+    {
+        mainMixer.SetFloat("MasterVolume", Mathf.Log10(masterVolume) * 20 );
         mainMixer.SetFloat("SFXVolume", Mathf.Log10(sfxVolume) * 20);
         mainMixer.SetFloat("MusicVolume", Mathf.Log10(musicVolume) * 20);
 
-        PlayerPrefs.SetFloat("MasterVolume", Mathf.Log10(masterVolume) * 20);
-        PlayerPrefs.SetFloat("SFXVolume", Mathf.Log10(sfxVolume) * 20);
-        PlayerPrefs.SetFloat("MusicVolume", Mathf.Log10(musicVolume) * 20);
+        PlayerPrefs.SetFloat("MasterVolume", Mathf.Log10(masterVolume));
+        PlayerPrefs.SetFloat("SFXVolume", Mathf.Log10(sfxVolume));
+        PlayerPrefs.SetFloat("MusicVolume", Mathf.Log10(musicVolume));
 
         PlayerPrefs.Save();
+        Debug.Log("MixerUpdated");
+        
     }
-
     void ResetVolumePrefs()
     {
         PlayerPrefs.SetFloat("MasterSliderValue", 1);
         PlayerPrefs.SetFloat("MusicSliderValue", 1);
-        PlayerPrefs.SetFloat("SFXSliderValue", 1);
+       PlayerPrefs.SetFloat("SFXSliderValue", 1);
 
-        masterVolume = PlayerPrefs.GetFloat("MasterSliderValue");
+       masterVolume = PlayerPrefs.GetFloat("MasterSliderValue");
         musicVolume = PlayerPrefs.GetFloat("MusicSliderValue");
         sfxVolume = PlayerPrefs.GetFloat("SFXSliderValue");
 
