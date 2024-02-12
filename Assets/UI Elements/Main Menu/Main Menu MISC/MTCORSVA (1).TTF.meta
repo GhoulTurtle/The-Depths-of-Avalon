@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: 8055d59e4ec95e84a95764af9fb74bba
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 28
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Monotype Corsiva
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 9cd29e134065a57449322f225bb3bba5, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
