@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/UI Elements/Main Menu.unity
     guid: 345e67a9b53b957429d73292e03107c5
   - enabled: 1
+    path: Assets/Scenes/Week4Build.unity
+    guid: c24b0e11f1e3f0143ac37d84f2f25fa6
+  - enabled: 0
     path: Assets/Scenes/Huss Dev Scene.unity
     guid: dfa13b5e600da084fa77d2f7daec9c6e
   - enabled: 0
