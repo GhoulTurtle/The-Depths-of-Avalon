@@ -14,8 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AbilityName: Firebolt
   CastTime: 0
-  Cooldown: 0
-  AbilityDamageType: {fileID: 0}
+  Cooldown: 0.25
+  AbilityDamageType: {fileID: 11400000, guid: 2ac3428a4ad1e7643a6fac7b152b86e6, type: 2}
+  AbilityStatusEffect:
+    statusDuration:
+      minValue: 1.3649073
+      maxValue: 2.2179742
+    statusStrength: 0
   AbilityDamageAmount:
     minValue: 0
     maxValue: 0
@@ -24,3 +29,6 @@ MonoBehaviour:
   CastingAudio: {fileID: 0}
   FiredAudio: {fileID: 0}
   CanceledAudio: {fileID: 0}
+  DrawAbilityGizmos: 0
+  GizmosColor: {r: 0, g: 0, b: 0, a: 0}
+  GizmosShape: 0
