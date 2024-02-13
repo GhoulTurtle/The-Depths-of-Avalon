@@ -14,13 +14,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AbilityName: Stormcloud
   CastTime: 0
-  Cooldown: 0
+  Cooldown: 5
   AbilityDamageType: {fileID: 0}
+  AbilityStatusEffect:
+    statusDuration:
+      minValue: 0
+      maxValue: 0
+    statusStrength: 0
   AbilityDamageAmount:
     minValue: 0
     maxValue: 6.990014
-  IsCancelable: 0
+  IsCancelable: 1
   AbilityVisuals: {fileID: 0}
   CastingAudio: {fileID: 0}
   FiredAudio: {fileID: 0}
   CanceledAudio: {fileID: 0}
+  DrawAbilityGizmos: 0
+  GizmosColor: {r: 0, g: 0, b: 0, a: 0}
+  GizmosShape: 0
+  stormCloudTime: 3
+  movementSpeedMultipler: 1.5

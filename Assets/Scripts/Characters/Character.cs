@@ -21,6 +21,7 @@ public class Character : MonoBehaviour{
 	
 	public Transform CharacterVisualParent => characterVisualParent;
 	public AudioSource CharacterAudioSource => characterAudioSource;
+	public CharacterType CharacterType => characterType;
 	public Animator CharacterAnimator;
 
 	public event EventHandler<SetupCharacterEventArgs> OnSetupCharacter;
@@ -96,8 +97,6 @@ public class Character : MonoBehaviour{
 		var statusEffectInstance = new StatusEffect(statusEffect.statusDuration, statusEffect.statusStrength, statusEffect.Status);
 		var statusEffectCoroutine = statusEffectInstance.StatusEffectCoroutine(this);
 
-		Debug.Log(statusEffect.Status + " has started!");
-
 		characterStatusDictionary.Add(statusEffectInstance, statusEffectCoroutine);
 
 		if(characterSO.SharedAssetsSO != null){
@@ -109,10 +108,15 @@ public class Character : MonoBehaviour{
 	}
 
 	public void FinishedEffect(StatusEffect statusEffect){
-		Debug.Log(statusEffect.Status + " has finished!");
-		
 		characterStatusDictionary.Remove(statusEffect);
 		OnStatusEffectFinished?.Invoke(this, new StatusEffectAppliedEventArgs(statusEffect));
+	}
+
+	public void RemoveAllEffects(){
+		foreach (var keyValuePair in characterStatusDictionary){
+			StopCoroutine(keyValuePair.Value);
+			keyValuePair.Key.StopStatusEffectCoroutine(this);
+		}
 	}
 
 	private void CleanupCharacter(){

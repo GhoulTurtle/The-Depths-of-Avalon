@@ -94,6 +94,10 @@ public class HealthSystem : MonoBehaviour {
         OnHealed?.Invoke(this, EventArgs.Empty);
     }
 
+    public void SetIsInvincible(bool _isInvincible){
+        isInvincible = _isInvincible;
+    }
+
     //Need way to trigger OnDie event when health <= 0
     private void Die() {
         IsAlive = false;
