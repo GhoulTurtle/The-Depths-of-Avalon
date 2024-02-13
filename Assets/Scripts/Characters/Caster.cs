@@ -113,6 +113,14 @@ public class Caster : MonoBehaviour{
 	public void DebugAbility(Color gizmosColor, GizmosShape shape, Vector3 origin, Vector3 destination = new Vector3(), float radius = 0){
 		currentGizmosCall = new GizmosCall(gizmosColor, shape, origin, destination, radius);
     }
+	
+	public void StartAbilityCoroutine(IEnumerator abilityCoroutine){
+		StartCoroutine(abilityCoroutine);
+	}
+
+	public void StopAbilityCoroutine(IEnumerator abilityCoroutine){
+		StopCoroutine(abilityCoroutine);
+	}
 
     private void SetupCharacterAbilities(object sender, Character.SetupCharacterEventArgs e){
 		abilitySOs.Clear();
