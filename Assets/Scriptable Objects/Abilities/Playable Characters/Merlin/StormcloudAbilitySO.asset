@@ -34,3 +34,4 @@ MonoBehaviour:
   GizmosShape: 0
   stormCloudTime: 3
   movementSpeedMultipler: 1.5
+  cloudLayerMaskName: StormCloud

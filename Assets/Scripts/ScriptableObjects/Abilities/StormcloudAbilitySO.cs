@@ -8,6 +8,9 @@ public class StormcloudAbilitySO : AbilitySO{
     [SerializeField] private float stormCloudTime = 3f;
     [Tooltip("The multipler that affects the movement speed of the caster while in stormcloud form.")]
     [SerializeField] private float movementSpeedMultipler = 1.2f; 
+    [SerializeField] private string cloudLayerMaskName;
+
+    private const string playerLayerMashName = "Player";
 
     public override void CancelAbility(Caster caster){
 
@@ -28,6 +31,10 @@ public class StormcloudAbilitySO : AbilitySO{
             caster.character.RemoveAllEffects();
         }
 
+        int cloudLayerValue = LayerMask.NameToLayer(cloudLayerMaskName);
+
+        caster.gameObject.layer = cloudLayerValue;
+
         caster.StartAbilityCoroutine(CloudFormCoroutine(caster));
     }
 
@@ -41,5 +48,9 @@ public class StormcloudAbilitySO : AbilitySO{
         if(caster.TryGetComponent(out PlayerMovement playerMovement)){
             playerMovement.ResetMovementSpeed();
         }
+
+        int playerLayerValue = LayerMask.NameToLayer(playerLayerMashName);
+
+        caster.gameObject.layer = playerLayerValue;
     }
 }
