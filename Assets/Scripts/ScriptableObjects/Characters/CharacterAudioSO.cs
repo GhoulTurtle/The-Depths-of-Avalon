@@ -3,6 +3,18 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Character/Audio/Basic", fileName = "NewBasicCharacterAudioSO")]
 public class CharacterAudioSO : ScriptableObject{
 	public AudioEvent WalkingAudioEvent;
-	public AudioEvent GettingHurtAudioEvent;
+	public AudioEvent DamagedAudioEvent;
 	public AudioEvent HealingAudioEvent;
+
+	public void CharacterDamagedAudio(Character character){
+		if(DamagedAudioEvent != null){
+			DamagedAudioEvent.Play(character.CharacterAudioSource);
+		}
+	}
+
+	public void CharacterHealedAudio(Character character){
+		if(HealingAudioEvent != null){
+			HealingAudioEvent.Play(character.CharacterAudioSource);
+		}
+	}
 }

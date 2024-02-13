@@ -19,12 +19,14 @@ public class Character : MonoBehaviour{
 
 	private Dictionary<StatusEffect, IEnumerator> characterStatusDictionary;
 	
+	public Transform CharacterVisualParent => characterVisualParent;
 	public AudioSource CharacterAudioSource => characterAudioSource;
+	public CharacterType CharacterType => characterType;
+	public Animator CharacterAnimator;
 
 	public event EventHandler<SetupCharacterEventArgs> OnSetupCharacter;
 	public event EventHandler<StatusEffectAppliedEventArgs> OnStatusEffectApplied;
 	public event EventHandler<StatusEffectAppliedEventArgs> OnStatusEffectFinished;
-
 	
 	public class SetupCharacterEventArgs : EventArgs{
 		public List<AbilitySO> CharacterAbilities;
@@ -62,6 +64,8 @@ public class Character : MonoBehaviour{
 		}
 
 		TryGetComponent(out characterHealthSystem);
+		characterHealthSystem.OnDamaged += CharacterDamaged;
+		characterHealthSystem.OnHealed += CharacterHealed;
 	}
 
     public void ChangeCharacter(CharacterSO _characterSO){
@@ -93,21 +97,26 @@ public class Character : MonoBehaviour{
 		var statusEffectInstance = new StatusEffect(statusEffect.statusDuration, statusEffect.statusStrength, statusEffect.Status);
 		var statusEffectCoroutine = statusEffectInstance.StatusEffectCoroutine(this);
 
-		Debug.Log(statusEffect.Status + " has started!");
-
 		characterStatusDictionary.Add(statusEffectInstance, statusEffectCoroutine);
 
-		characterSO.SharedAssetsSO.StatusInflicted(statusEffectInstance.Status, this);
+		if(characterSO.SharedAssetsSO != null){
+			characterSO.SharedAssetsSO.CharacterStatusInflicted(statusEffectInstance.Status, this);
+		}
 
 		OnStatusEffectApplied?.Invoke(this, new StatusEffectAppliedEventArgs(statusEffect, damageSource));
 		StartCoroutine(statusEffectCoroutine);
 	}
 
 	public void FinishedEffect(StatusEffect statusEffect){
-		Debug.Log(statusEffect.Status + " has finished!");
-		
 		characterStatusDictionary.Remove(statusEffect);
 		OnStatusEffectFinished?.Invoke(this, new StatusEffectAppliedEventArgs(statusEffect));
+	}
+
+	public void RemoveAllEffects(){
+		foreach (var keyValuePair in characterStatusDictionary){
+			StopCoroutine(keyValuePair.Value);
+			keyValuePair.Key.StopStatusEffectCoroutine(this);
+		}
 	}
 
 	private void CleanupCharacter(){
@@ -123,4 +132,16 @@ public class Character : MonoBehaviour{
 		if(characterSO.CharacterVisuals.CharacterModelPrefab == null) return;
 		characterVisuals = Instantiate(characterSO.CharacterVisuals.CharacterModelPrefab, transform.position, transform.rotation, characterVisualParent);
     }
+
+    private void CharacterDamaged(object sender, HealthSystem.DamagedEventArgs e){
+		if(characterSO.SharedAssetsSO != null){
+			characterSO.SharedAssetsSO.CharacterDamaged(this);
+		}
+    }
+
+	private void CharacterHealed(object sender, EventArgs e){
+		if(characterSO.SharedAssetsSO != null){
+			characterSO.SharedAssetsSO.CharacterHealed(this);
+		}
+	}
 }

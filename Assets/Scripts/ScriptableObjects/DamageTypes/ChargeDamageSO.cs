@@ -8,6 +8,7 @@ public class ChargeDamageSO : DamageTypeSO{
             statusEffect.SetStatus(Status.Knockback);
             character.ApplyStatusEffectToCharacter(statusEffect, damageSource);
         }
+        
         healthSystem.TakeDamage(this, damageAmount, damageSource);
     }
 }

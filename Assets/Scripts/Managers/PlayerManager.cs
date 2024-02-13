@@ -42,16 +42,21 @@ public class PlayerManager : MonoBehaviour{
 	}
 
 	public void AddNewPlayer(PlayerInput playerInput){
+		if(CurrentPlayerList.Count == correctPlayerCount) {
+			return;
+		}
+		
 		int incomingPlayerIndex = CurrentPlayerList.Count;
 		
 		Player incomingPlayer = new Player(incomingPlayerIndex, playerInput);
 		CurrentPlayerList.Add(incomingPlayer);
 
 		var playerCharacter = incomingPlayerIndex == 0 ? arthurCharacterSO : merlinCharacterSO;
-
 		incomingPlayer.UpdateCharacter(playerCharacter);
 
+
 		OnPlayerJoined?.Invoke(this, new PlayerEventArgs(incomingPlayer));
+		Debug.Log("Player joining");
 		
 		if(CurrentPlayerList.Count == correctPlayerCount){
 			OnCorrectPlayerCount?.Invoke(this, EventArgs.Empty);
@@ -59,9 +64,11 @@ public class PlayerManager : MonoBehaviour{
     }
 
     public void RemovePlayer(PlayerInput playerInput){
+		return;
+		
 		Player leavingPlayer = CurrentPlayerList.FirstOrDefault(x => x.assignedPlayerInput == playerInput);
 		CurrentPlayerList.Remove(leavingPlayer);
-
+		Debug.Log("Player Leaving");
 		OnPlayerLeave?.Invoke(this, new PlayerEventArgs(leavingPlayer));
 	}	
 }
