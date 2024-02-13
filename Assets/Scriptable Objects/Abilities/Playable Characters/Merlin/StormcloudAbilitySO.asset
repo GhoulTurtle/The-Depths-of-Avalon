@@ -34,3 +34,6 @@ MonoBehaviour:
   GizmosShape: 0
   stormCloudTime: 3
   movementSpeedMultipler: 1.5
+  cloudLayerMask:
+    serializedVersion: 2
+    m_Bits: 16384
