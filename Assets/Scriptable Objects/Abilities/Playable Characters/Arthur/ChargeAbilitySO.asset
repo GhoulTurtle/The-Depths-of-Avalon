@@ -33,7 +33,7 @@ MonoBehaviour:
   GizmosColor: {r: 0, g: 0.44313717, b: 1, a: 1}
   GizmosShape: 1
   chargeDuration: 0.5
-  chargeStrength: 25
+  chargeStrength: 20
   ChargeRangeRadius: 1
   ChargeCheckOffset: 1
   MaxTargetsHit: 10

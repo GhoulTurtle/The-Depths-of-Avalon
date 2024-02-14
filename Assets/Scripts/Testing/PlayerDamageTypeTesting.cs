@@ -1,7 +1,9 @@
+//Last Editor: Caleb Richardson
+//Last Edited: Feb 14
+
 using UnityEngine;
 
-public class PlayerDamageTypeTesting : MonoBehaviour
-{
+public class PlayerDamageTypeTesting : MonoBehaviour{
     public DamageTypeSO damageTypeSO;
 	public StatusEffect statusEffect;
 	public float damageAmount;

@@ -32,6 +32,6 @@ MonoBehaviour:
   DrawAbilityGizmos: 0
   GizmosColor: {r: 0, g: 0, b: 0, a: 0}
   GizmosShape: 0
-  stormCloudTime: 3
+  stormCloudTime: 2
   movementSpeedMultipler: 1.5
   cloudLayerMaskName: StormCloud

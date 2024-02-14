@@ -1,4 +1,6 @@
-using System;
+//Last Editor: Caleb Richardson
+//Last Edited: Feb 14
+
 using UnityEngine;
 
 [CreateAssetMenu(menuName = "Character/Visuals", fileName = "NewCharacterVisualsSO")]
