@@ -19,11 +19,11 @@ public class HealthSystem : MonoBehaviour {
     public class DamagedEventArgs : EventArgs {
         public DamageTypeSO damageTypeSO;
         public float damageAmount;
-        public Transform damageSourceGO;
+        public Transform damageSource;
         public DamagedEventArgs(DamageTypeSO _damageTypeSO, float _damageAmount, Transform _damageSource) {
             damageTypeSO = _damageTypeSO;
             damageAmount = _damageAmount;
-            damageSourceGO = _damageSource;
+            damageSource = _damageSource;
         }
     }
 #endregion
@@ -88,7 +88,6 @@ public class HealthSystem : MonoBehaviour {
 
         if(currentHealth > maxHealth) {
             currentHealth = maxHealth;
-            return;
         }
 
         OnHealed?.Invoke(this, EventArgs.Empty);
@@ -119,5 +118,13 @@ public class HealthSystem : MonoBehaviour {
         if(e.abilityEffect.Status != Status.Burned || currentBurnJob == null) return;
         currentBurnJob.FinishedBurning();
         currentBurnJob = null;
+    }
+
+    public float GetMaxHealth() {
+        return maxHealth;
+    }
+
+    public float GetCurrentHealth() {
+        return currentHealth;
     }
  }
