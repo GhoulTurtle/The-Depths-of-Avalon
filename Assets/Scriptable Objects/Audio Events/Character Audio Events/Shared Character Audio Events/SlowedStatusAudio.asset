@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9a622233bb5bc7742a1c376504652514, type: 3}
-  m_Name: BurnedStatusAudioEvent
+  m_Name: SlowedStatusAudio
   m_EditorClassIdentifier: 
   clips: []
   volume:
