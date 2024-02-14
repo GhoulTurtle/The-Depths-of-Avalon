@@ -13,5 +13,137 @@ MonoBehaviour:
   m_Name: vHierarchy Data
   m_EditorClassIdentifier: 
   sceneDatasByGuid:
-    keys: []
-    values: []
+    keys:
+    - 91a743d29b3fb3540bac3dd93e4921fd
+    values:
+    - goDatasByGlobalId:
+        keys:
+        - GlobalObjectId_V1-2-91a743d29b3fb3540bac3dd93e4921fd-2003546860-0
+        - GlobalObjectId_V1-2-91a743d29b3fb3540bac3dd93e4921fd-347451311-0
+        - GlobalObjectId_V1-2-91a743d29b3fb3540bac3dd93e4921fd-10821211-0
+        - GlobalObjectId_V1-2-91a743d29b3fb3540bac3dd93e4921fd-245905992-0
+        - GlobalObjectId_V1-2-91a743d29b3fb3540bac3dd93e4921fd-219564601-0
+        - GlobalObjectId_V1-2-91a743d29b3fb3540bac3dd93e4921fd-1600765598-0
+        - GlobalObjectId_V1-2-91a743d29b3fb3540bac3dd93e4921fd-257090871-0
+        - GlobalObjectId_V1-2-91a743d29b3fb3540bac3dd93e4921fd-526887919-0
+        - GlobalObjectId_V1-2-91a743d29b3fb3540bac3dd93e4921fd-587982752-0
+        - GlobalObjectId_V1-2-91a743d29b3fb3540bac3dd93e4921fd-1692717079-0
+        - GlobalObjectId_V1-2-91a743d29b3fb3540bac3dd93e4921fd-466114882-0
+        - GlobalObjectId_V1-2-91a743d29b3fb3540bac3dd93e4921fd-381029669-0
+        - GlobalObjectId_V1-2-91a743d29b3fb3540bac3dd93e4921fd-251377842-0
+        - GlobalObjectId_V1-2-91a743d29b3fb3540bac3dd93e4921fd-30096408-0
+        - GlobalObjectId_V1-2-91a743d29b3fb3540bac3dd93e4921fd-2076277843-0
+        - GlobalObjectId_V1-2-91a743d29b3fb3540bac3dd93e4921fd-2077373988-0
+        - GlobalObjectId_V1-2-91a743d29b3fb3540bac3dd93e4921fd-1532573362-0
+        - GlobalObjectId_V1-2-91a743d29b3fb3540bac3dd93e4921fd-1506023740-0
+        - GlobalObjectId_V1-2-91a743d29b3fb3540bac3dd93e4921fd-606321560-0
+        - GlobalObjectId_V1-2-91a743d29b3fb3540bac3dd93e4921fd-1688045243-0
+        - GlobalObjectId_V1-2-91a743d29b3fb3540bac3dd93e4921fd-377931246-0
+        - GlobalObjectId_V1-2-91a743d29b3fb3540bac3dd93e4921fd-577944200-0
+        - GlobalObjectId_V1-2-91a743d29b3fb3540bac3dd93e4921fd-803332002-0
+        - GlobalObjectId_V1-2-91a743d29b3fb3540bac3dd93e4921fd-262745550-0
+        - GlobalObjectId_V1-2-91a743d29b3fb3540bac3dd93e4921fd-1048638900-0
+        values:
+        - iColor: 1
+          icon: 
+        - iColor: 1
+          icon: 
+        - iColor: 1
+          icon: 
+        - iColor: 1
+          icon: 
+        - iColor: 9
+          icon: 
+        - iColor: 1
+          icon: 
+        - iColor: 1
+          icon: 
+        - iColor: 6
+          icon: 
+        - iColor: 1
+          icon: 
+        - iColor: 1
+          icon: 
+        - iColor: 1
+          icon: 
+        - iColor: 1
+          icon: 
+        - iColor: 2
+          icon: 
+        - iColor: 1
+          icon: 
+        - iColor: 1
+          icon: 
+        - iColor: 4
+          icon: 
+        - iColor: 1
+          icon: 
+        - iColor: 1
+          icon: 
+        - iColor: 1
+          icon: 
+        - iColor: 1
+          icon: 
+        - iColor: 7
+          icon: 
+        - iColor: 1
+          icon: 
+        - iColor: 1
+          icon: 
+        - iColor: 1
+          icon: 
+        - iColor: 1
+          icon: 
+      goDatasByInstanceId:
+        keys: 9e6a0000bc620000146100005c62000028620000f46800007462000068630000a46300005269000042630000e8620000646200003c610000fe6a00003e1efffff41dffffd21dffffb01dffff8e1dffff7e3dfeff463dfeff143dfeffe63cfeffc43cfeff
+        values:
+        - iColor: 1
+          icon: 
+        - iColor: 1
+          icon: 
+        - iColor: 1
+          icon: 
+        - iColor: 1
+          icon: 
+        - iColor: 9
+          icon: 
+        - iColor: 1
+          icon: 
+        - iColor: 1
+          icon: 
+        - iColor: 6
+          icon: 
+        - iColor: 1
+          icon: 
+        - iColor: 1
+          icon: 
+        - iColor: 1
+          icon: 
+        - iColor: 1
+          icon: 
+        - iColor: 2
+          icon: 
+        - iColor: 1
+          icon: 
+        - iColor: 1
+          icon: 
+        - iColor: 4
+          icon: 
+        - iColor: 1
+          icon: 
+        - iColor: 1
+          icon: 
+        - iColor: 1
+          icon: 
+        - iColor: 1
+          icon: 
+        - iColor: 7
+          icon: 
+        - iColor: 1
+          icon: 
+        - iColor: 1
+          icon: 
+        - iColor: 1
+          icon: 
+        - iColor: 1
+          icon: 
