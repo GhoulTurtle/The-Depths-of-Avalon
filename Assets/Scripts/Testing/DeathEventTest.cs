@@ -10,11 +10,11 @@ public class DeathEventTest : MonoBehaviour {
     public GameObject GameOverUI;
 
     private void Start() {
-        playerRespawner.GameOverEvent += GameOver;
+        playerRespawner.OnGameOver += GameOver;
     }
 
     private void OnDestroy() {
-        playerRespawner.GameOverEvent -= GameOver;
+        playerRespawner.OnGameOver -= GameOver;
     }
 
     private void GameOver(object sender, EventArgs e) {
