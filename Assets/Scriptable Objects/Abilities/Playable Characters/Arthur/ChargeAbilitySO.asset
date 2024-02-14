@@ -13,22 +13,27 @@ MonoBehaviour:
   m_Name: ChargeAbilitySO
   m_EditorClassIdentifier: 
   AbilityName: Charge
-  CastTime: 0.25
+  CastTime: 0
   Cooldown: 3
-  AbilityDamageType: {fileID: 0}
+  AbilityDamageType: {fileID: 11400000, guid: 72fcffdb100fa5d40b1b3195d42b8d0f, type: 2}
   AbilityStatusEffect:
     statusDuration:
-      minValue: 0
-      maxValue: 0
-    statusStrength: 0
+      minValue: 3.6474602
+      maxValue: 4.0160275
+    statusStrength: 5
   AbilityDamageAmount:
-    minValue: 0
-    maxValue: 0
+    minValue: 0.30816638
+    maxValue: 0.30816638
   IsCancelable: 0
   AbilityVisuals: {fileID: 0}
   CastingAudio: {fileID: 0}
   FiredAudio: {fileID: 0}
   CanceledAudio: {fileID: 0}
-  DrawAbilityGizmos: 0
-  GizmosColor: {r: 0, g: 0, b: 0, a: 0}
-  GizmosShape: 0
+  DrawAbilityGizmos: 1
+  GizmosColor: {r: 0, g: 0.44313717, b: 1, a: 1}
+  GizmosShape: 1
+  chargeDuration: 0.5
+  chargeStrength: 25
+  ChargeRangeRadius: 1
+  ChargeCheckOffset: 1
+  MaxTargetsHit: 10

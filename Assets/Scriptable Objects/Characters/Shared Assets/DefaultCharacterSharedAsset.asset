@@ -12,11 +12,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc945a0b91e4c1c4ea4b9286ddb0f3a9, type: 3}
   m_Name: DefaultCharacterSharedAsset
   m_EditorClassIdentifier: 
+  CharacterHealingEffect: {fileID: 9180092245863043314, guid: b9d82239941adcf459d38d2f184cc025,
+    type: 3}
+  CharacterDamagedEffect: {fileID: 471795597263697645, guid: ed88bb8c640b2604787c5d20df0bdccc,
+    type: 3}
   BurnedStatusVFX: {fileID: 4997067071301802928, guid: 7b94c7189484e134e9fa448bc34965c5,
     type: 3}
   SlowedStatusVFX: {fileID: 0}
   KnockbackStatusVFX: {fileID: 0}
   StunnedStatusVFX: {fileID: 0}
+  HealingAudioEvent: {fileID: 0}
+  DamagedAudioEvent: {fileID: 0}
   BurnedStatusAudioEvent: {fileID: 11400000, guid: 877e3031764b50f4ba93fa6f8f90710f,
     type: 2}
   SlowedStatusAudioEvent: {fileID: 11400000, guid: f733e5ea9e437e740a475ceb0d77492c,
