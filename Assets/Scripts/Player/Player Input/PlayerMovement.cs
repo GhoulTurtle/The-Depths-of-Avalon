@@ -23,6 +23,7 @@ public class PlayerMovement : MonoBehaviour{
     //Movement
     private Vector3 inputDirection;
     private Vector3 externalMovement;
+    public float CurrentMovementSpeed => currentMovementSpeed;
 
     //Gravity & Mass
     private const float terminalVelocity = 53f;
@@ -30,6 +31,7 @@ public class PlayerMovement : MonoBehaviour{
     private float playerMass = 3f;
     private float knockbackEffectMinAmount = 0.5f;
     private float knockbackEnergyConsumptionAmount = 5f;
+    private float defaultGravity;
 
     //Checks
     private bool grounded = false;
@@ -47,6 +49,8 @@ public class PlayerMovement : MonoBehaviour{
         playerCharacter.OnSetupCharacter += UpdateMovementVariables;
         playerCharacter.OnStatusEffectApplied += StatusEffectApplied;
         playerCharacter.OnStatusEffectFinished += StatusEffectFinished;
+
+        defaultGravity = gravity;
     }
 
     private void OnDestroy() {
@@ -75,13 +79,33 @@ public class PlayerMovement : MonoBehaviour{
         transform.position = pos;
         characterController.enabled = true;
     }
+
+    public void SetMovementSpeed(float speed){
+        currentMovementSpeed = speed;
+    }
+
+    public void ResetMovementSpeed(){
+        currentMovementSpeed = movementSpeed;
+    }
+
+    public void AddExternalForce(Vector3 forceDirection, float forceStrength){
+        externalMovement += forceDirection.normalized * (forceStrength / playerMass);
+    }
+
+    public void SetPlayerGravity(float amount){
+        gravity = amount;
+    }
+
+    public void ResetPlayerGravity(){
+        gravity = defaultGravity;
+    }
     
     private void StatusEffectApplied(object sender, Character.StatusEffectAppliedEventArgs e){
         switch (e.abilityEffect.Status){
             case Status.Knockback:
                 var direction = (e.damageSource.position + transform.position).normalized;
                 direction.y = 0;
-                externalMovement += direction.normalized * (e.abilityEffect.statusStrength / playerMass);
+                AddExternalForce(direction, e.abilityEffect.statusStrength);
                 break;
             case Status.Slow:
                 float reducedMovementSpeed = movementSpeed * (1f - (e.abilityEffect.statusStrength * 0.01f));
@@ -103,7 +127,7 @@ public class PlayerMovement : MonoBehaviour{
 
     private void Gravity(){
         if(grounded){
-            verticalVelocity = -2f;
+            verticalVelocity = 0f;
             return;
         }
 

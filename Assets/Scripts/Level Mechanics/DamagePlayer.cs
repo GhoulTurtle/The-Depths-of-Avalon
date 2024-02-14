@@ -7,7 +7,7 @@ public class DamagePlayer : MonoBehaviour {
 
     private void OnTriggerEnter(Collider other) {
         if((KillableLayer.value & 1 << other.gameObject.layer) != 0) {
-            other.TryGetComponent<HealthSystem>(out HealthSystem healthSystem);
+            other.TryGetComponent(out HealthSystem healthSystem);
             if(healthSystem != null) {
                 healthSystem.TakeDamage(null, 1000, null);
             }

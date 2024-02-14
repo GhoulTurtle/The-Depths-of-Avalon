@@ -58,8 +58,6 @@ public class PlateReceiver : MonoBehaviour {
         float journeyLength = Vector3.Distance(startPos, endPos);
         float startTime = Time.time;
 
-        Debug.Log("End Position: " + endPos); // Debugging
-
         while (true) {
             float distCovered = (Time.time - startTime) * moveSpeed;
             float fracJourney = distCovered / journeyLength;
