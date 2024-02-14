@@ -1,10 +1,13 @@
+//Last Editor: Caleb Husselman
+//Last Edited: Feb 14
+
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(BoxCollider))]
-public class InLevelCheckpoint : MonoBehaviour {
+public class Checkpoint : MonoBehaviour {
     [SerializeField] private LayerMask playerLayer;
     public Transform RespawnPoint;
 
@@ -21,7 +24,7 @@ public class InLevelCheckpoint : MonoBehaviour {
     private void OnTriggerEnter(Collider other) {
         if((playerLayer.value & 1 << other.gameObject.layer) != 0) {
             Debug.Log("Player entered Zone");
-            InLevelCheckpointManager.Instance.UpdateCurrentRespawnPoint(RespawnPoint);
+            CheckpointManager.Instance.UpdateCurrentRespawnPoint(RespawnPoint);
         }
     }
 }

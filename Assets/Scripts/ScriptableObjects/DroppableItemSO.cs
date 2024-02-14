@@ -1,5 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
+//Last Editor: Caleb Hussleman
+//Last Edited: Feb 14
+
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "New Droppable Item", menuName = "Droppable Items/New Droppable Item")]

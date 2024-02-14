@@ -1,10 +1,13 @@
+//Last Editor: Caleb Husselman
+//Last Edited: Feb 14
+
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class BurnableGate : DamagableObject
+public class BreakableObject : DamagableObject
 {
     public override void OnObjectDamaged(object sender, HealthSystem.DamagedEventArgs e) {
         Debug.Log("Burnable Gate got burned for " + e.damageAmount);

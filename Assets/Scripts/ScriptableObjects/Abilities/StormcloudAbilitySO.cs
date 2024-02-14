@@ -1,8 +1,11 @@
+//Last Editor: Caleb Richardson
+//Last Edited: Feb 14
+
 using System.Collections;
 using UnityEngine;
 
 [CreateAssetMenu(menuName = "Abilities/State Change/Stormcloud", fileName = "NewStormcloudAbilitySO")]
-public class StormcloudAbilitySO : AbilitySO{
+public class StormCloudAbilitySO : AbilitySO{
     [Header("Stormcloud Variables")]
     [Tooltip("The amount of time the caster can be in storm cloud form")]
     [SerializeField] private float stormCloudTime = 3f;
