@@ -33,7 +33,7 @@ public class SlidingBlock : MonoBehaviour
         Debug.Log("Begin Sliding");
 
         // Calculate the direction vector opposite to the damage source
-        slideDirection = transform.position - e.damageSourceGO.position;
+        slideDirection = transform.position - e.damageSource.position;
         slideDirection.y = 0f; // Keep the movement in the horizontal plane
         slideDirection.Normalize(); // Normalize the vector to have a length of 1
 
