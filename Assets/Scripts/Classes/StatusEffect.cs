@@ -30,6 +30,10 @@ public class StatusEffect {
 		character.FinishedEffect(this);
 	}
 
+	public void StopStatusEffectCoroutine(Character character){
+		character.FinishedEffect(this);
+	}
+
 	private void ChooseRandomStatusTimer(){
 		var randomDuration = Random.Range(statusDuration.minValue, statusDuration.maxValue);
 		statusTimer.waitTime = randomDuration;

@@ -4,26 +4,26 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerRespawn : MonoBehaviour {
-    [SerializeField] private HealthSystem healthSystem => GetComponent<HealthSystem>();
-    [SerializeField] private float respawnDelay;
-    public Transform respawnPoint;
-
-    private void OnEnable() {
+    private HealthSystem healthSystem => GetComponent<HealthSystem>();
+    private PlayerRespawner respawner => FindObjectOfType<PlayerRespawner>();
+        
+    private void Start() {
         healthSystem.OnDie += StartRespawn;
     }
 
-    private void OnDisable() {
+    private void OnDestroy() {
         healthSystem.OnDie -= StartRespawn;
     }
 
-    private void StartRespawn(object sender, EventArgs e) {
+    private void StartRespawn(object sender, System.EventArgs e) {
         Debug.Log("Player died, starting respawn");
-        StartCoroutine(Respawn());
+        Player player = PlayerManager.Instance.CurrentPlayerList.Find(p => p.assignedPlayerInput.gameObject == gameObject);
+        
+        if(player != null) {
+            respawner.StartRespawn(player);
+        } else {
+            Debug.LogWarning("Player Not Found In PlayerManager List");
+        }
+        
     }
-
-    private IEnumerator Respawn(){
-        yield return new WaitForSeconds(respawnDelay);
-        Debug.Log("Player Respawned");
-        this.gameObject.transform.position = respawnPoint.position;
-    }        
 }
