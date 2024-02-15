@@ -1,4 +1,4 @@
-//Last Editor: Caleb Hussleman
+//Last Editor: Caleb Richardson
 //Last Edited: Feb 14
 
 using System;
@@ -101,7 +101,7 @@ public class HealthSystem : MonoBehaviour {
     }
 
     //Need way to trigger OnDie event when health <= 0
-    private void Die() {
+    public void Die() {
         IsAlive = false;
         if(currentBurnJob != null){
             currentBurnJob.FinishedBurning();
