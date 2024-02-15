@@ -86,7 +86,7 @@ public class Character : MonoBehaviour{
 		OnSetupCharacter?.Invoke(this, new SetupCharacterEventArgs(characterSO.CharacterStats, characterSO.CharacterVisuals, characterSO.CharacterAudio, characterSO.CharacterAbilities));
 	}
 
-	public void ApplyStatusEffectToCharacter(StatusEffect statusEffect, Transform damageSource){
+	public void ApplyStatusEffectToCharacter(StatusEffect statusEffect, Transform statusSource){
 		//Return if the character is dead
 		if(!characterHealthSystem.IsAlive) return;
 
@@ -106,7 +106,7 @@ public class Character : MonoBehaviour{
 			characterSO.SharedAssetsSO.CharacterStatusInflicted(statusEffectInstance.Status, this);
 		}
 
-		OnStatusEffectApplied?.Invoke(this, new StatusEffectAppliedEventArgs(statusEffect, damageSource));
+		OnStatusEffectApplied?.Invoke(this, new StatusEffectAppliedEventArgs(statusEffect, statusSource));
 		StartCoroutine(statusEffectCoroutine);
 	}
 

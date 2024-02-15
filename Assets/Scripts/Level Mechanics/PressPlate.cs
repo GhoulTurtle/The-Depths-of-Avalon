@@ -4,8 +4,7 @@
 using System;
 using UnityEngine;
 
-public class PressPlate : PlateObject
-{
+public class PressPlate : PlateObject{
     public override event EventHandler OnActivate;
     public override event EventHandler OnDeactivate;
 

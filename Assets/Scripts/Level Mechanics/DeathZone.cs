@@ -1,18 +1,16 @@
-//Last Editor: Caleb Husselman
+//Last Editor: Caleb Richardson
 //Last Edited: Feb 14
 
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class DamagePlayer : MonoBehaviour {
+public class DeathZone : MonoBehaviour {
     public LayerMask KillableLayer;
 
     private void OnTriggerEnter(Collider other) {
         if((KillableLayer.value & 1 << other.gameObject.layer) != 0) {
             other.TryGetComponent(out HealthSystem healthSystem);
             if(healthSystem != null) {
-                healthSystem.TakeDamage(null, 1000, null);
+                healthSystem.Die();
             }
         }
     }

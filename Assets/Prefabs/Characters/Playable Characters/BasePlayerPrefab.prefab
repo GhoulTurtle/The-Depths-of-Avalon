@@ -438,13 +438,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 932f9fad1bf66fa4c9fa8af278036794, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageTypeSO: {fileID: 11400000, guid: 494a1e5db449980439d7584e253947ed, type: 2}
+  damageTypeSO: {fileID: 11400000, guid: 72fcffdb100fa5d40b1b3195d42b8d0f, type: 2}
   statusEffect:
     statusDuration:
-      minValue: 1.1057011
-      maxValue: 3.1328197
-    statusStrength: 1
-  damageAmount: 50
+      minValue: 0.1
+      maxValue: 0.1
+    statusStrength: 39
+    Status: 0
+  damageAmount: 1
   healthSystem: {fileID: 0}
 --- !u!114 &-4820100345650839450
 MonoBehaviour:
