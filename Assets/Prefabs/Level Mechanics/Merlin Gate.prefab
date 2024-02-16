@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4158596350436856471}
   - component: {fileID: 6792235967325040289}
   m_Layer: 15
-  m_Name: MerlinGate
+  m_Name: Merlin Gate
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7240375795381509458}
   - component: {fileID: 4243999462163918893}
   m_Layer: 0
-  m_Name: PressPressurePlateTest
+  m_Name: Press Pressure Plate
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -67,7 +67,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5fb9e7be8274cbb49848dd302b3b8476, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerLayer:
+  activateLayer:
     serializedVersion: 2
     m_Bits: 1280
 --- !u!1 &4803235227279025783

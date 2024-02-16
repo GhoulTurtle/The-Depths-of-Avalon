@@ -132,7 +132,7 @@ GameObject:
   - component: {fileID: 5633046869461930255}
   - component: {fileID: 5908489083412395238}
   m_Layer: 0
-  m_Name: DuoPressurePlateNew
+  m_Name: Duo-Pressure Plate
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -167,7 +167,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99506e9e423512549873634dac72fc08, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerLayer:
+  activateLayer:
     serializedVersion: 2
     m_Bits: 1280
   activatedCount: 0

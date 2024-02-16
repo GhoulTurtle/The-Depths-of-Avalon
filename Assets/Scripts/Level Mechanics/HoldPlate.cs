@@ -1,6 +1,5 @@
-//Last Editor: Caleb Husselman
-//Last Edited: Feb 14
-
+//Last Editor: Caleb Richardson
+//Last Edited: Feb 16
 using System;
 using UnityEngine;
 
@@ -9,23 +8,21 @@ public class HoldPlate : PlateObject {
     public override event EventHandler OnDeactivate;
 
     public override void Activate() {
-        Debug.Log("Standing on Pressure Plate");
         OnActivate?.Invoke(this, EventArgs.Empty);
     }
 
     public override void Deactivate() {
-        Debug.Log("Got off Pressure Plate");
         OnDeactivate?.Invoke(this, EventArgs.Empty);
     }
 
     private void OnTriggerEnter(Collider other) {
-        if((playerLayer.value & 1 << other.gameObject.layer) != 0) {
+        if((activateLayer.value & 1 << other.gameObject.layer) != 0) {
             Activate();
         }
     }
 
     private void OnTriggerExit(Collider other) {
-        if((playerLayer.value & 1 << other.gameObject.layer) != 0) {
+        if((activateLayer.value & 1 << other.gameObject.layer) != 0) {
             Deactivate();
         }
     }

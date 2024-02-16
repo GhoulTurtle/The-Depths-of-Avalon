@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 6965116161505532795}
   - component: {fileID: 7902079936320316741}
   m_Layer: 11
-  m_Name: BurnableGate
+  m_Name: Burnable Gate
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

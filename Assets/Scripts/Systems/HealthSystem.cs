@@ -1,6 +1,5 @@
 //Last Editor: Caleb Richardson
-//Last Edited: Feb 14
-
+//Last Edited: Feb 16
 using System;
 using UnityEngine;
 
@@ -96,13 +95,21 @@ public class HealthSystem : MonoBehaviour {
         OnHealed?.Invoke(this, EventArgs.Empty);
     }
 
+    public void Respawn(){
+        IsAlive = true;
+        currentHealth = maxHealth;
+    }
+
     public void SetIsInvincible(bool _isInvincible){
         isInvincible = _isInvincible;
     }
 
     //Need way to trigger OnDie event when health <= 0
     public void Die() {
-        IsAlive = false;
+        if(!isInvincible){
+            IsAlive = false;
+        } 
+
         if(currentBurnJob != null){
             currentBurnJob.FinishedBurning();
             currentBurnJob = null;

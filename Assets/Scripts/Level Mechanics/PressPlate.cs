@@ -24,7 +24,7 @@ public class PressPlate : PlateObject{
         if(isActivated) {
             return;
         }
-        if((playerLayer.value & 1 << other.gameObject.layer) != 0) {
+        if((activateLayer.value & 1 << other.gameObject.layer) != 0) {
             Activate();
         }
     }
