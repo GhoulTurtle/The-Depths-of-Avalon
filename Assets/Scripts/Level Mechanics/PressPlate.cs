@@ -1,8 +1,10 @@
+//Last Editor: Caleb Husselman
+//Last Edited: Feb 14
+
 using System;
 using UnityEngine;
 
-public class PressPlate : PlateObject
-{
+public class PressPlate : PlateObject{
     public override event EventHandler OnActivate;
     public override event EventHandler OnDeactivate;
 

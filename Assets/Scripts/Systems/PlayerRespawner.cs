@@ -1,10 +1,13 @@
+//Last Editor: Caleb Hussleman
+//Last Edited: Feb 14
+
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerRespawner : MonoBehaviour {
-    private InLevelCheckpointManager checkpointManager;
+    private CheckpointManager checkpointManager;
     public float RespawnDelay;
 
     public event EventHandler OnGameOver;
@@ -13,7 +16,7 @@ public class PlayerRespawner : MonoBehaviour {
     public bool isOnePlayerDead;
 
     private void Start() {
-        checkpointManager = InLevelCheckpointManager.Instance;
+        checkpointManager = CheckpointManager.Instance;
     }
 
     public void StartRespawn(Player player) {

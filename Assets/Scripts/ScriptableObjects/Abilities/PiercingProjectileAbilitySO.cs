@@ -1,3 +1,6 @@
+//Last Editor: Caleb Richardson
+//Last Edited: Feb 14
+
 using UnityEngine;
 
 [CreateAssetMenu(menuName = "Abilities/Projectile/Piercing Projectile Attack", fileName = "NewPiercingProjectileAbilitySO")]
