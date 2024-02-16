@@ -1,7 +1,8 @@
 //Last Editor: Caleb Richardson
-//Last Edited: Feb 14
+//Last Edited: Feb 15
 
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class Hazard : MonoBehaviour{
@@ -14,19 +15,22 @@ public class Hazard : MonoBehaviour{
 	[Header("Required References")]
 	[SerializeField] private LayerMask affectedLayers;
 
-	private bool onCooldown = false;
+	private Dictionary<GameObject, IEnumerator> affectedObjectDictionary = new Dictionary<GameObject, IEnumerator>(); 
 
 	private void OnDestroy() {
+		affectedObjectDictionary.Clear();
 		StopAllCoroutines();
 	}
 
 	private void OnTriggerStay(Collider other) {
-		if(onCooldown) return;
-
-		if((affectedLayers.value & 1 << other.gameObject.layer) != 0) {			
+		if((affectedLayers.value & 1 << other.gameObject.layer) != 0 && !affectedObjectDictionary.ContainsKey(other.gameObject)) {	
 			HazardStatus(other.gameObject);
 
-			StartCoroutine(HazardWaitCoroutine());
+            IEnumerator hazardWaitCoroutine = HazardWaitCoroutine(other.gameObject);
+
+			affectedObjectDictionary.Add(other.gameObject, hazardWaitCoroutine);
+
+			StartCoroutine(hazardWaitCoroutine);
 		}
 	}
 
@@ -41,9 +45,8 @@ public class Hazard : MonoBehaviour{
 		}
 	}
 
-	private IEnumerator HazardWaitCoroutine(){
-		onCooldown = true;
+	private IEnumerator HazardWaitCoroutine(GameObject gameObject){
 		yield return new WaitForSecondsRealtime(recoverTime);
-		onCooldown = false;
+		affectedObjectDictionary.Remove(gameObject);
 	}
 }
