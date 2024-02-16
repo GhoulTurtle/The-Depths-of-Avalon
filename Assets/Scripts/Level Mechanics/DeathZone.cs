@@ -1,6 +1,5 @@
 //Last Editor: Caleb Richardson
-//Last Edited: Feb 14
-
+//Last Edited: Feb 16
 using UnityEngine;
 
 public class DeathZone : MonoBehaviour {

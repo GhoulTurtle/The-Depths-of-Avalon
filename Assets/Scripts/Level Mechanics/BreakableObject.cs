@@ -1,20 +1,12 @@
-//Last Editor: Caleb Husselman
-//Last Edited: Feb 14
-
+//Last Editor: Caleb Richardson
+//Last Edited: Feb 15
 using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.EventSystems;
 
-public class BreakableObject : DamagableObject
-{
+public class BreakableObject : DamagableObject{
     public override void OnObjectDamaged(object sender, HealthSystem.DamagedEventArgs e) {
-        Debug.Log("Burnable Gate got burned for " + e.damageAmount);
     }
 
     public override void OnObjectDestroyed(object sender, EventArgs e) {
-        Debug.Log("Burnable Gate burned to death");
-        Destroy(this.gameObject);
+        Destroy(gameObject);
     }
 }

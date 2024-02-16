@@ -360,7 +360,7 @@ MonoBehaviour:
   groundedRadius: 0.6
   groundLayers:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 1088
   gravity: -80
 --- !u!114 &4338515436821928063
 MonoBehaviour:
