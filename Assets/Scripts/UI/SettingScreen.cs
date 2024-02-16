@@ -1,5 +1,5 @@
 //Last Editor: Matt Santos
-//Last Edited: Feb 14
+//Last Edited: Feb 15
 
 using System.Collections;
 using System.Collections.Generic;
@@ -10,6 +10,15 @@ using UnityEngine.UIElements.Experimental;
 
 public class SettingScreen : MonoBehaviour
 {
+    [Header("Resolution")]
+     public List<ResItem> resolutions = new List<ResItem>();
+
+     private int selectedRes;
+     
+     public Text resolutionLabel;
+      
+      public Toggle fullscreeenTog;
+    [Header("Audio")]
     public AudioMixer mainMixer;
     public static float masterVolume;
     public static float sfxVolume;
@@ -38,6 +47,28 @@ public class SettingScreen : MonoBehaviour
         masterSlider.value = PlayerPrefs.GetFloat("MasterSliderValue");
         musicSlider.value = PlayerPrefs.GetFloat("MusicSliderValue");
         sfxSlider.value = PlayerPrefs.GetFloat("SFXSliderValue");
+
+        bool foundRes = false;
+        for(int i = 0; i<resolutions.Count;i++)
+        {
+            if(Screen.width == resolutions[i].horizontal && Screen.height == resolutions[i].vertical)
+            {
+                foundRes = true;
+                selectedRes = i;
+                UpdateResLabel();
+            }
+        }
+        if(!foundRes)
+        {
+            ResItem newRes = new ResItem();
+            newRes.horizontal = Screen.width;
+            newRes.vertical = Screen.height;
+
+            resolutions.Add(newRes);
+            selectedRes = resolutions.Count -1;
+            
+
+        }
     }
 
     //Update is called once per frame
@@ -87,5 +118,40 @@ public class SettingScreen : MonoBehaviour
         sfxVolume = PlayerPrefs.GetFloat("SFXSliderValue");
 
         PlayerPrefs.Save();
+    }
+    
+    public void ResLeft()
+    {
+        selectedRes--;
+        if(selectedRes < 0)
+        {
+            selectedRes = 0;
+        }
+            UpdateResLabel();
+
+    }
+
+    public void ResRight()
+    {
+        selectedRes++;
+        if(selectedRes > resolutions.Count - 1)
+        {
+            selectedRes = resolutions.Count - 1;
+        }
+        UpdateResLabel();
+    }
+
+    public void UpdateResLabel()
+    {
+        resolutionLabel.text = resolutions[selectedRes].horizontal.ToString() + "X" + resolutions[selectedRes].vertical.ToString();
+    }
+    public void Apply()
+    {
+        Screen.SetResolution(resolutions[selectedRes].horizontal, resolutions[selectedRes].vertical, fullscreeenTog.isOn);
+    }
+    [System.Serializable]
+    public class ResItem
+    {
+        public int horizontal,vertical;
     }
 }
