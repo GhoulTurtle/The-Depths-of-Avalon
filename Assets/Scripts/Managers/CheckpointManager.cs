@@ -1,15 +1,10 @@
-//Last Editor: Caleb Husselman
-//Last Edited: Feb 14
+//Last Editor: Caleb Richardson
+//Last Edited: Feb 17
 
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.EventSystems;
 
 public class CheckpointManager : MonoBehaviour {
     public static CheckpointManager Instance {get; private set;}
-    public List<Checkpoint> checkpoints = new List<Checkpoint>();
 
     public Transform CurrentRespawnPoint;
 
@@ -25,5 +20,4 @@ public class CheckpointManager : MonoBehaviour {
         CurrentRespawnPoint = respawnTransform;
         Debug.Log("Current Respawn Point updated to " + respawnTransform.position);
     }
-
 }

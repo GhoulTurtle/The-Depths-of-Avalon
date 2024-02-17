@@ -21,7 +21,6 @@ public class BurnJob{
 		isBurning = true;
 		while(isBurning){
 			parentHealthSystem.TakeDamage(null, DamagePerTick, null);
-			Debug.Log("Burned " + parentHealthSystem.name + " for: " + DamagePerTick);
 			yield return TickTime;
 		}
 	}
