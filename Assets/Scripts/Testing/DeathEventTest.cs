@@ -1,3 +1,6 @@
+//Last Editor: Caleb Hussleman
+//Last Edited: Feb 14
+
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -10,11 +13,11 @@ public class DeathEventTest : MonoBehaviour {
     public GameObject GameOverUI;
 
     private void Start() {
-        playerRespawner.GameOverEvent += GameOver;
+        playerRespawner.OnGameOver += GameOver;
     }
 
     private void OnDestroy() {
-        playerRespawner.GameOverEvent -= GameOver;
+        playerRespawner.OnGameOver -= GameOver;
     }
 
     private void GameOver(object sender, EventArgs e) {

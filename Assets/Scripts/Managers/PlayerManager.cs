@@ -1,3 +1,6 @@
+//Last Editor: Caleb Richardson
+//Last Edited: Feb 14
+
 /// <summary>
 /// A singleton that is responsible for handling our players joining/leaving and their respective characters.
 /// Will need refactoring to support multiple scenes/levels so players don't have to rejoin every scene/level.

@@ -1,26 +1,29 @@
+//Last Editor: Caleb Hussleman
+//Last Edited: Feb 14
+
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 public class PlayerRespawner : MonoBehaviour {
-    private InLevelCheckpointManager checkpointManager;
+    private CheckpointManager checkpointManager;
     public float RespawnDelay;
 
-    public EventHandler GameOverEvent;
+    public event EventHandler OnGameOver;
+    public event EventHandler OnPlayerRespawned;
 
     public bool isOnePlayerDead;
 
     private void Start() {
-        checkpointManager = InLevelCheckpointManager.Instance;
+        checkpointManager = CheckpointManager.Instance;
     }
 
     public void StartRespawn(Player player) {
         if(isOnePlayerDead) {
             Debug.Log("Game Over");
             player.assignedPlayerInput.gameObject.SetActive(false);
-            GameOverEvent?.Invoke(this, EventArgs.Empty);
+            OnGameOver?.Invoke(this, EventArgs.Empty);
         } else {
             isOnePlayerDead = true;
             StartCoroutine(Respawn(player, RespawnDelay));
@@ -33,14 +36,14 @@ public class PlayerRespawner : MonoBehaviour {
         yield return new WaitForSeconds(respawnDelay);
 
         Debug.Log("Player Respawned");
-        
+        OnPlayerRespawned?.Invoke(this, EventArgs.Empty);
         
         // Move the player to the respawn point
         player.assignedPlayerInput.transform.position = checkpointManager.CurrentRespawnPoint.position;
 
         
-        player.assignedPlayerInput.GetComponent<HealthSystem>().Heal(1000);
         player.assignedPlayerInput.gameObject.SetActive(true);
+        player.assignedPlayerInput.GetComponent<HealthSystem>().Heal(1000);
 
         isOnePlayerDead = false;
     }

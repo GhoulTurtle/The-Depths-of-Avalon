@@ -1,3 +1,6 @@
+//Last Editor: Caleb Richardson
+//Last Edited: Feb 14
+
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "Stun Damage", menuName = "Damage Type/Stun Damage")]

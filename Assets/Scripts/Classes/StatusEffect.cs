@@ -1,3 +1,6 @@
+//Last Editor: Caleb Richardson
+//Last Edited: Feb 14
+
 using System;
 using System.Collections;
 using UnityEngine;
@@ -10,7 +13,7 @@ public class StatusEffect {
 	public RangedFloat statusDuration;
 	[Range(1f, 100f)]
 	public int statusStrength;
-	public Status Status {get; private set;}
+	public Status Status;
 
 	private WaitForSecondsRealtime statusTimer = new WaitForSecondsRealtime(1f);
 	

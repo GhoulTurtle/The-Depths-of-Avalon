@@ -6,7 +6,7 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/UI Elements/Main Menu.unity
+    path: Assets/Scenes/Main Menu.unity
     guid: 345e67a9b53b957429d73292e03107c5
   - enabled: 1
     path: Assets/Scenes/Week4Build.unity
@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/SantosUIDev.unity
     guid: 043c1e0b23f424a43ace4945e7fb3c42
+  - enabled: 0
+    path: Assets/Scenes/PlayerSelectScreen.unity
+    guid: d58e6eeff8514a442a73a90e3b3bc22d
   m_configObjects: {}

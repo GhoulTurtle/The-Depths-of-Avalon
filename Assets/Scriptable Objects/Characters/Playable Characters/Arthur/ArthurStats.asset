@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: ArthurStats
   m_EditorClassIdentifier: 
   movementSpeed: 8
-  accelerationSpeed: 6
-  rotationSpeed: 5
+  characterMass: 3
+  rotationSpeed: 9.5
   maxHealth: 100

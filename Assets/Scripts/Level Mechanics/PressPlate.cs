@@ -1,8 +1,10 @@
+//Last Editor: Caleb Husselman
+//Last Edited: Feb 14
+
 using System;
 using UnityEngine;
 
-public class PressPlate : PlateObject
-{
+public class PressPlate : PlateObject{
     public override event EventHandler OnActivate;
     public override event EventHandler OnDeactivate;
 
@@ -22,7 +24,7 @@ public class PressPlate : PlateObject
         if(isActivated) {
             return;
         }
-        if((playerLayer.value & 1 << other.gameObject.layer) != 0) {
+        if((activateLayer.value & 1 << other.gameObject.layer) != 0) {
             Activate();
         }
     }

@@ -222,8 +222,8 @@ CharacterController:
   serializedVersion: 3
   m_Height: 2
   m_Radius: 0.5
-  m_SlopeLimit: 45
-  m_StepOffset: 0.3
+  m_SlopeLimit: 10
+  m_StepOffset: 0.1
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0
   m_Center: {x: 0, y: 0, z: 0}
@@ -360,8 +360,8 @@ MonoBehaviour:
   groundedRadius: 0.6
   groundLayers:
     serializedVersion: 2
-    m_Bits: 64
-  gravity: -15
+    m_Bits: 1088
+  gravity: -80
 --- !u!114 &4338515436821928063
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -390,6 +390,7 @@ MonoBehaviour:
   characterType: 0
   characterVisualParent: {fileID: 7118599039630769877}
   characterAudioSource: {fileID: 4537791954355014679}
+  CharacterAnimator: {fileID: 0}
 --- !u!114 &-487671402204889205
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -437,13 +438,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 932f9fad1bf66fa4c9fa8af278036794, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageTypeSO: {fileID: 11400000, guid: 494a1e5db449980439d7584e253947ed, type: 2}
+  damageTypeSO: {fileID: 11400000, guid: 72fcffdb100fa5d40b1b3195d42b8d0f, type: 2}
   statusEffect:
     statusDuration:
-      minValue: 1.1057011
-      maxValue: 3.1328197
-    statusStrength: 1
-  damageAmount: 50
+      minValue: 0.1
+      maxValue: 0.1
+    statusStrength: 39
+    Status: 0
+  damageAmount: 1
   healthSystem: {fileID: 0}
 --- !u!114 &-4820100345650839450
 MonoBehaviour:
@@ -457,5 +459,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9abd9436dbba5294897be80b071d72f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  respawnDelay: 1
-  respawnPoint: {fileID: 0}

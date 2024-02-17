@@ -21,6 +21,7 @@ MonoBehaviour:
       minValue: 0
       maxValue: 0
     statusStrength: 0
+    Status: 0
   AbilityDamageAmount:
     minValue: 4.6348076
     maxValue: 10.50642
@@ -32,6 +33,6 @@ MonoBehaviour:
   DrawAbilityGizmos: 1
   GizmosColor: {r: 0, g: 1, b: 0.041554213, a: 1}
   GizmosShape: 1
-  MeleeRangeRadius: 2.5
-  MeleeCheckOffset: 2
+  MeleeRangeRadius: 1
+  MeleeCheckOffset: 1.5
   MaxTargetsHit: 3

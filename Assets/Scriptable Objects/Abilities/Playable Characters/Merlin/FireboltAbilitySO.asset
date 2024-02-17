@@ -21,14 +21,18 @@ MonoBehaviour:
       minValue: 1.3649073
       maxValue: 2.2179742
     statusStrength: 0
+    Status: 1
   AbilityDamageAmount:
-    minValue: 0
-    maxValue: 0
+    minValue: 6.4714947
+    maxValue: 10.477659
   IsCancelable: 0
   AbilityVisuals: {fileID: 0}
   CastingAudio: {fileID: 0}
   FiredAudio: {fileID: 0}
   CanceledAudio: {fileID: 0}
-  DrawAbilityGizmos: 0
-  GizmosColor: {r: 0, g: 0, b: 0, a: 0}
-  GizmosShape: 0
+  DrawAbilityGizmos: 1
+  GizmosColor: {r: 1, g: 0.3823667, b: 0, a: 1}
+  GizmosShape: 1
+  projectilePrefab: {fileID: 200042133992011964, guid: 20b5643aa98a3a94e93ddc17692b735b,
+    type: 3}
+  projectileSpawnOffset: 1.5
