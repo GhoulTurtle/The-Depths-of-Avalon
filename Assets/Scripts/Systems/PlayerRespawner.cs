@@ -19,14 +19,14 @@ public class PlayerRespawner : MonoBehaviour {
     }
 
     public void StartRespawn(Player player) {
-        if(isOnePlayerDead) {
-            Debug.Log("Game Over");
-            player.assignedPlayerInput.gameObject.SetActive(false);
-            OnGameOver?.Invoke(this, EventArgs.Empty);
-        } else {
-            isOnePlayerDead = true;
-            StartCoroutine(Respawn(player, RespawnDelay));
-        }
+        // if(isOnePlayerDead) {
+        //     Debug.Log("Game Over");
+        //     player.assignedPlayerInput.gameObject.SetActive(false);
+        //     OnGameOver?.Invoke(this, EventArgs.Empty);
+        // } else {
+        //     isOnePlayerDead = true;
+        // }
+        StartCoroutine(Respawn(player, RespawnDelay));
     }
 
     private IEnumerator Respawn(Player player, float respawnDelay) {
