@@ -4352,12 +4352,12 @@ PrefabInstance:
     - target: {fileID: 7832310923732392701, guid: df3156bd1b4aeef418b82696687254cd,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.37
+      value: 0.44
       objectReference: {fileID: 0}
     - target: {fileID: 7832310923732392701, guid: df3156bd1b4aeef418b82696687254cd,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -1577.22
+      value: -1577.21
       objectReference: {fileID: 0}
     - target: {fileID: 7832310923732392701, guid: df3156bd1b4aeef418b82696687254cd,
         type: 3}
@@ -7753,6 +7753,86 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: df3156bd1b4aeef418b82696687254cd, type: 3}
+--- !u!1001 &441505595
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 370077568596243812, guid: 3afd339dba42a7945817364a2375a6e7,
+        type: 3}
+      propertyPath: m_Name
+      value: Press Pressure Plate
+      objectReference: {fileID: 0}
+    - target: {fileID: 1581435848349949043, guid: 3afd339dba42a7945817364a2375a6e7,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -68.04
+      objectReference: {fileID: 0}
+    - target: {fileID: 1581435848349949043, guid: 3afd339dba42a7945817364a2375a6e7,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.36037636
+      objectReference: {fileID: 0}
+    - target: {fileID: 1581435848349949043, guid: 3afd339dba42a7945817364a2375a6e7,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -1579.35
+      objectReference: {fileID: 0}
+    - target: {fileID: 1581435848349949043, guid: 3afd339dba42a7945817364a2375a6e7,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1581435848349949043, guid: 3afd339dba42a7945817364a2375a6e7,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1581435848349949043, guid: 3afd339dba42a7945817364a2375a6e7,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1581435848349949043, guid: 3afd339dba42a7945817364a2375a6e7,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1581435848349949043, guid: 3afd339dba42a7945817364a2375a6e7,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1581435848349949043, guid: 3afd339dba42a7945817364a2375a6e7,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1581435848349949043, guid: 3afd339dba42a7945817364a2375a6e7,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 3afd339dba42a7945817364a2375a6e7, type: 3}
+--- !u!114 &441505596 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4243999462163918893, guid: 3afd339dba42a7945817364a2375a6e7,
+    type: 3}
+  m_PrefabInstance: {fileID: 441505595}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fb9e7be8274cbb49848dd302b3b8476, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &444258003
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7905,6 +7985,86 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: df3156bd1b4aeef418b82696687254cd, type: 3}
+--- !u!1001 &467776461
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 370077568596243812, guid: 3afd339dba42a7945817364a2375a6e7,
+        type: 3}
+      propertyPath: m_Name
+      value: Press Pressure Plate (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1581435848349949043, guid: 3afd339dba42a7945817364a2375a6e7,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -69.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1581435848349949043, guid: 3afd339dba42a7945817364a2375a6e7,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.36038494
+      objectReference: {fileID: 0}
+    - target: {fileID: 1581435848349949043, guid: 3afd339dba42a7945817364a2375a6e7,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -1615.19
+      objectReference: {fileID: 0}
+    - target: {fileID: 1581435848349949043, guid: 3afd339dba42a7945817364a2375a6e7,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1581435848349949043, guid: 3afd339dba42a7945817364a2375a6e7,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1581435848349949043, guid: 3afd339dba42a7945817364a2375a6e7,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1581435848349949043, guid: 3afd339dba42a7945817364a2375a6e7,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1581435848349949043, guid: 3afd339dba42a7945817364a2375a6e7,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1581435848349949043, guid: 3afd339dba42a7945817364a2375a6e7,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1581435848349949043, guid: 3afd339dba42a7945817364a2375a6e7,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 3afd339dba42a7945817364a2375a6e7, type: 3}
+--- !u!114 &467776462 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4243999462163918893, guid: 3afd339dba42a7945817364a2375a6e7,
+    type: 3}
+  m_PrefabInstance: {fileID: 467776461}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fb9e7be8274cbb49848dd302b3b8476, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &471629770
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8603,7 +8763,7 @@ PrefabInstance:
         type: 3}
       propertyPath: PlateObject
       value: 
-      objectReference: {fileID: 1392777553}
+      objectReference: {fileID: 441505596}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -16937,7 +17097,7 @@ PrefabInstance:
     - target: {fileID: 4742770435767828475, guid: cb21bdff77d6cae4c8ef952213260f24,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -1604.93
+      value: -1604.94
       objectReference: {fileID: 0}
     - target: {fileID: 4742770435767828475, guid: cb21bdff77d6cae4c8ef952213260f24,
         type: 3}
@@ -22668,86 +22828,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d2aa70a3b528c1c488a4c389bc1e230e, type: 3}
---- !u!1001 &1204302374
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 1145036572072653659, guid: 169c5ef438d86dc4b93578499864c7f6,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -71.95
-      objectReference: {fileID: 0}
-    - target: {fileID: 1145036572072653659, guid: 169c5ef438d86dc4b93578499864c7f6,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.33371544
-      objectReference: {fileID: 0}
-    - target: {fileID: 1145036572072653659, guid: 169c5ef438d86dc4b93578499864c7f6,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -1615.01
-      objectReference: {fileID: 0}
-    - target: {fileID: 1145036572072653659, guid: 169c5ef438d86dc4b93578499864c7f6,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1145036572072653659, guid: 169c5ef438d86dc4b93578499864c7f6,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1145036572072653659, guid: 169c5ef438d86dc4b93578499864c7f6,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1145036572072653659, guid: 169c5ef438d86dc4b93578499864c7f6,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1145036572072653659, guid: 169c5ef438d86dc4b93578499864c7f6,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1145036572072653659, guid: 169c5ef438d86dc4b93578499864c7f6,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1145036572072653659, guid: 169c5ef438d86dc4b93578499864c7f6,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6124667132001173616, guid: 169c5ef438d86dc4b93578499864c7f6,
-        type: 3}
-      propertyPath: m_Name
-      value: HoldPressurePlateTest (3)
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 169c5ef438d86dc4b93578499864c7f6, type: 3}
---- !u!114 &1204302375 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3209331034616957235, guid: 169c5ef438d86dc4b93578499864c7f6,
-    type: 3}
-  m_PrefabInstance: {fileID: 1204302374}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c36d14f99c1ad434880cc74cdb81c3dd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1205928138
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -27329,91 +27409,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: df3156bd1b4aeef418b82696687254cd, type: 3}
---- !u!1001 &1392777552
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 1145036572072653659, guid: 169c5ef438d86dc4b93578499864c7f6,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -68.71
-      objectReference: {fileID: 0}
-    - target: {fileID: 1145036572072653659, guid: 169c5ef438d86dc4b93578499864c7f6,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.33371544
-      objectReference: {fileID: 0}
-    - target: {fileID: 1145036572072653659, guid: 169c5ef438d86dc4b93578499864c7f6,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -1579.33
-      objectReference: {fileID: 0}
-    - target: {fileID: 1145036572072653659, guid: 169c5ef438d86dc4b93578499864c7f6,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1145036572072653659, guid: 169c5ef438d86dc4b93578499864c7f6,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1145036572072653659, guid: 169c5ef438d86dc4b93578499864c7f6,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1145036572072653659, guid: 169c5ef438d86dc4b93578499864c7f6,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1145036572072653659, guid: 169c5ef438d86dc4b93578499864c7f6,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1145036572072653659, guid: 169c5ef438d86dc4b93578499864c7f6,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1145036572072653659, guid: 169c5ef438d86dc4b93578499864c7f6,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2546632454488281969, guid: 169c5ef438d86dc4b93578499864c7f6,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0.012
-      objectReference: {fileID: 0}
-    - target: {fileID: 6124667132001173616, guid: 169c5ef438d86dc4b93578499864c7f6,
-        type: 3}
-      propertyPath: m_Name
-      value: HoldPressurePlateTest (4)
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 169c5ef438d86dc4b93578499864c7f6, type: 3}
---- !u!114 &1392777553 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3209331034616957235, guid: 169c5ef438d86dc4b93578499864c7f6,
-    type: 3}
-  m_PrefabInstance: {fileID: 1392777552}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c36d14f99c1ad434880cc74cdb81c3dd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1393596159
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -29834,7 +29829,7 @@ PrefabInstance:
         type: 3}
       propertyPath: PlateObject
       value: 
-      objectReference: {fileID: 1204302375}
+      objectReference: {fileID: 467776462}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -40850,8 +40845,6 @@ SceneRoots:
   - {fileID: 126229052}
   - {fileID: 1209359201}
   - {fileID: 1126802158}
-  - {fileID: 1204302374}
-  - {fileID: 1392777552}
   - {fileID: 1051033465}
   - {fileID: 968809563}
   - {fileID: 1754864590}
@@ -40932,3 +40925,5 @@ SceneRoots:
   - {fileID: 1028748538}
   - {fileID: 1168633585}
   - {fileID: 544687331}
+  - {fileID: 441505595}
+  - {fileID: 467776461}
