@@ -13,7 +13,7 @@ using UnityEngine;
 
 public class Character : MonoBehaviour{
 	[Header("Character SO References")]
-	[SerializeField] private CharacterSO characterSO;
+	public CharacterSO characterSO;
 	[SerializeField] private CharacterType characterType;
 
 	[Header("Required References")]

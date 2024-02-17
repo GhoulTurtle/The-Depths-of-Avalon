@@ -11,6 +11,7 @@ public class PlayerInputHandler : MonoBehaviour{
 	private Caster playerCaster;
 	private Character playerCharacter;
 	private HealthSystem playerHeathSystem;
+	private PlayerOptions playerOptions;
 
 	//Switch to enum if needing more disableInputs
 	private bool disableInput = false;
@@ -22,6 +23,7 @@ public class PlayerInputHandler : MonoBehaviour{
 		TryGetComponent(out playerCaster);
 		TryGetComponent(out playerCharacter);
 		TryGetComponent(out playerHeathSystem);
+		TryGetComponent(out playerOptions);
 
 		playerHeathSystem.OnDie += (sender, e) => {disableInput = true;};
 		playerHeathSystem.OnRespawn += (sender, e) => {disableInput = false;};
@@ -66,5 +68,10 @@ public class PlayerInputHandler : MonoBehaviour{
 	public void OnAbilityFour(CallbackContext context){
 		if(playerCaster == null || disableInput || disableAbilityInput) return;
 		if(context.phase == InputActionPhase.Performed) playerCaster.UseCharacterAbility(3);
+	}
+
+	public void OnOptionsCalled(CallbackContext context) {
+		if(playerOptions == null || disableInput) return;
+		if(context.phase == InputActionPhase.Performed) playerOptions.GetPlayer(playerCharacter);
 	}
 }

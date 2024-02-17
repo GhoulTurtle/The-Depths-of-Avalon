@@ -177,6 +177,7 @@ GameObject:
   - component: {fileID: 1718911537333029899}
   - component: {fileID: -6454174977820298318}
   - component: {fileID: -4820100345650839450}
+  - component: {fileID: -5326590038745214423}
   m_Layer: 8
   m_Name: BasePlayerPrefab
   m_TagString: Untagged
@@ -337,6 +338,22 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 00585207-7c2c-4ea8-b69a-77759fdfa9e0
     m_ActionName: Player/Ability4
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4338515436821928063}
+        m_TargetAssemblyTypeName: PlayerInputHandler, Assembly-CSharp
+        m_MethodName: OnOptionsCalled
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 884a3353-aae4-45e9-b044-19173aab232d
+    m_ActionName: Player/Options[/DualShock4GamepadHID/start,/DualShock4GamepadHID1/start]
   m_NeverAutoSwitchControlSchemes: 1
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -459,5 +476,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9abd9436dbba5294897be80b071d72f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &-5326590038745214423
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6509989325390252658}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: faa915069cf5388469605b05037f5346, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
