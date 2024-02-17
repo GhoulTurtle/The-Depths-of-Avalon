@@ -16,6 +16,9 @@ public class PlayerManager : MonoBehaviour{
 	[SerializeField] private CharacterSO arthurCharacterSO;
 	[SerializeField] private CharacterSO merlinCharacterSO;
 
+	[Header("Test Variables")]
+	[SerializeField] private Transform startingSpawnPoint;
+
 	public static PlayerManager Instance {get; private set;}
 
 	public List<Player> CurrentPlayerList {get; private set;}
@@ -44,11 +47,7 @@ public class PlayerManager : MonoBehaviour{
 		}
 	}
 
-	public void AddNewPlayer(PlayerInput playerInput){
-		if(CurrentPlayerList.Count == correctPlayerCount) {
-			return;
-		}
-		
+	public void AddNewPlayer(PlayerInput playerInput){		
 		int incomingPlayerIndex = CurrentPlayerList.Count;
 		
 		Player incomingPlayer = new Player(incomingPlayerIndex, playerInput);
@@ -59,19 +58,23 @@ public class PlayerManager : MonoBehaviour{
 
 
 		OnPlayerJoined?.Invoke(this, new PlayerEventArgs(incomingPlayer));
-		Debug.Log("Player joining");
-		
+
 		if(CurrentPlayerList.Count == correctPlayerCount){
 			OnCorrectPlayerCount?.Invoke(this, EventArgs.Empty);
 		}
+		
+		//Testing way to decide starting spawn point. Later on will need to update for each level to have its own spawn point.
+		if(!playerInput.TryGetComponent(out PlayerMovement playerMovement)){
+			Debug.LogError(playerInput.gameObject + " doesn't have a player movement attached!");
+		}
+
+		var validSpawnPoint = startingSpawnPoint != null ? startingSpawnPoint.position : transform.position;
+		playerMovement.UpdateSpawnPosition(validSpawnPoint);
     }
 
-    public void RemovePlayer(PlayerInput playerInput){
-		return;
-		
+    public void RemovePlayer(PlayerInput playerInput){		
 		Player leavingPlayer = CurrentPlayerList.FirstOrDefault(x => x.assignedPlayerInput == playerInput);
 		CurrentPlayerList.Remove(leavingPlayer);
-		Debug.Log("Player Leaving");
 		OnPlayerLeave?.Invoke(this, new PlayerEventArgs(leavingPlayer));
 	}	
 }

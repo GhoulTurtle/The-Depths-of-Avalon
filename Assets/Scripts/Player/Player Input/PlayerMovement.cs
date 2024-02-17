@@ -20,8 +20,9 @@ public class PlayerMovement : MonoBehaviour{
     [Header("Gravity")]
     [SerializeField] private float gravity = -15f;
     
+    [Header("Required References")]
+    [SerializeField] private CharacterController characterController;
     private Vector2 currentInput;
-    private CharacterController characterController;
 
     //Movement
     private Vector3 inputDirection;
@@ -38,16 +39,18 @@ public class PlayerMovement : MonoBehaviour{
 
     //Checks
     private bool grounded = false;
+    private bool canMove = false;
 
     //References
     private CameraController mainCameraController;
     private Character playerCharacter;
+    private HealthSystem playerHealthSystem;
 
     //Movement speed
     private float currentMovementSpeed;
     
     private void Awake() {
-        TryGetComponent(out characterController);
+        TryGetComponent(out playerHealthSystem);
         TryGetComponent(out playerCharacter);
         playerCharacter.OnSetupCharacter += UpdateMovementVariables;
         playerCharacter.OnStatusEffectApplied += StatusEffectApplied;
@@ -56,19 +59,27 @@ public class PlayerMovement : MonoBehaviour{
         defaultGravity = gravity;
     }
 
+    private void Start() {
+        Camera.main.TryGetComponent(out mainCameraController);
+        
+        playerHealthSystem.OnDie += (sender, e) => {canMove = false;};
+        playerHealthSystem.OnRespawn += (sender, e) => {canMove = true;};
+
+        currentMovementSpeed = movementSpeed;
+    }
+
     private void OnDestroy() {
         playerCharacter.OnSetupCharacter -= UpdateMovementVariables;
         playerCharacter.OnStatusEffectApplied -= StatusEffectApplied;
         playerCharacter.OnStatusEffectFinished -= StatusEffectFinished;
+        playerHealthSystem.OnDie -= (sender, e) => {canMove = false;};
+        playerHealthSystem.OnRespawn -= (sender, e) => {canMove = true;};
     }
 
-    private void Start() {
-        Camera.main.TryGetComponent(out mainCameraController);
-        
-        currentMovementSpeed = movementSpeed;
-    }
 
     private void Update() {
+        if(!canMove) return;
+
         GroundCheck();
         Gravity();
         Move();
@@ -77,10 +88,9 @@ public class PlayerMovement : MonoBehaviour{
 
     public void SetInputVector(Vector2 _currentInput) => currentInput = _currentInput;
 
-    public void UpdatePosition(Vector3 pos){
-        characterController.enabled = false;
-        transform.position = pos;
-        characterController.enabled = true;
+    public void UpdateSpawnPosition(Vector3 pos){
+        characterController.Move(pos);
+        canMove = true;
     }
 
     public void SetMovementSpeed(float speed){

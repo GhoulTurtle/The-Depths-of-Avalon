@@ -13,7 +13,6 @@ public class DuoPlate : PlateObject
     public int activatedCount = 0;
 
     public override void Activate() {
-        Debug.Log("Plate Activating");
         activatedCount ++;
         if(activatedCount == 2) {
             OnActivate?.Invoke(this, EventArgs.Empty);
