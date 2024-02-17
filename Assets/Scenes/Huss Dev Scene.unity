@@ -843,18 +843,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 2101047355}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &983343766 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 982652526836780123, guid: 92c0870e9fdd954488610cd15980f712,
-    type: 3}
-  m_PrefabInstance: {fileID: 989045264}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ef67d3987564b2744a6e4e91954d056d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &989045264
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -873,11 +861,6 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 982652526836780123, guid: 92c0870e9fdd954488610cd15980f712,
-        type: 3}
-      propertyPath: GameOverUI
-      value: 
-      objectReference: {fileID: 531856126}
     - target: {fileID: 2937547204701168749, guid: 92c0870e9fdd954488610cd15980f712,
         type: 3}
       propertyPath: m_AnchorMax.x
@@ -1827,7 +1810,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 983343766}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: DeathEventTest, Assembly-CSharp
         m_MethodName: RestartButton
         m_Mode: 1
