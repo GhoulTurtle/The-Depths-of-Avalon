@@ -14,13 +14,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AbilityName: Earth Shatter
   CastTime: 0
-  Cooldown: 0
+  Cooldown: 5
   AbilityDamageType: {fileID: 0}
   AbilityStatusEffect:
     statusDuration:
       minValue: 0.1
       maxValue: 6.2420826
     statusStrength: 0
+    Status: 0
   AbilityDamageAmount:
     minValue: 0
     maxValue: 0
