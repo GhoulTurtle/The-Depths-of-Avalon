@@ -1,5 +1,5 @@
-//Last Editor: Caleb Richardson
-//Last Edited: Feb 14
+//Last Editor: Caleb Husselman
+//Last Edited: Feb 16
 
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -10,6 +10,7 @@ public class PlayerInputHandler : MonoBehaviour{
 	private PlayerMovement playerMovement;
 	private Caster playerCaster;
 	private Character playerCharacter;
+	private PlayerOptions playerOptions;
 
 	private bool disableInput = false;
 
@@ -18,6 +19,7 @@ public class PlayerInputHandler : MonoBehaviour{
 		TryGetComponent(out playerMovement);
 		TryGetComponent(out playerCaster);
 		TryGetComponent(out playerCharacter);
+		TryGetComponent(out playerOptions);
 
 		playerCharacter.OnStatusEffectApplied += (sender, e) => {if(e.abilityEffect.Status == Status.Stun) disableInput = true;};
 		playerCharacter.OnStatusEffectFinished += (sender, e) => {if(e.abilityEffect.Status == Status.Stun) disableInput = false;};
@@ -54,5 +56,10 @@ public class PlayerInputHandler : MonoBehaviour{
 	public void OnAbilityFour(CallbackContext context){
 		if(playerCaster == null || disableInput) return;
 		if(context.phase == InputActionPhase.Performed) playerCaster.UseCharacterAbility(3);
+	}
+
+	public void OnOptionsCalled(CallbackContext context) {
+		if(playerOptions == null || disableInput) return;
+		if(context.phase == InputActionPhase.Performed) playerOptions.GetPlayer(playerCharacter.characterSO);
 	}
 }
