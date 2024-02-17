@@ -1,5 +1,5 @@
-//Last Editor: Caleb Richardson
-//Last Edited: Feb 14
+//Last Editor: Caleb Husselman
+//Last Edited: Feb 16
 
 using System;
 using System.Collections;
@@ -20,8 +20,10 @@ public class Caster : MonoBehaviour{
 	public event EventHandler<AbilityEventArgs> OnAbilityCanceled;
 	
 	public class AbilityEventArgs : EventArgs{
+		public int abilityNumber;
 		public AbilityCooldown abilityCooldown;
-		public AbilityEventArgs(AbilityCooldown _abilityCooldown){
+		public AbilityEventArgs(int _abilityIndex, AbilityCooldown _abilityCooldown){
+			abilityNumber = _abilityIndex;
 			abilityCooldown = _abilityCooldown;
 		}
 	}
@@ -30,7 +32,7 @@ public class Caster : MonoBehaviour{
 	[SerializeField] private LayerMask targetLayerMask;
 
 	[HideInInspector] public Character character;
-	private List<AbilitySO> abilitySOs;
+	public List<AbilitySO> abilitySOs;
 	private Dictionary<AbilitySO, AbilityCooldown> abilityCooldownDictionary;
 
 	private bool isCasting = false;
@@ -61,15 +63,15 @@ public class Caster : MonoBehaviour{
 		if(abilityCooldown.OnCooldown || isCasting){
 			if(abilitySOs[abilityIndex].IsCancelable){
 				abilitySOs[abilityIndex].CancelAbility(this);
-				OnAbilityCanceled?.Invoke(this, new AbilityEventArgs(abilityCooldown));
+				OnAbilityCanceled?.Invoke(this, new AbilityEventArgs(abilityIndex, abilityCooldown));
 				return;
 			}
 	
-			OnAbilityFailed?.Invoke(this, new AbilityEventArgs(abilityCooldown));
+			OnAbilityFailed?.Invoke(this, new AbilityEventArgs(abilityIndex, abilityCooldown));
 			return;
 		}
 
-		OnAbilityCasted?.Invoke(this, new AbilityEventArgs(abilityCooldown));
+		OnAbilityCasted?.Invoke(this, new AbilityEventArgs(abilityIndex, abilityCooldown));
 		StartCoroutine(CastingCoroutine(abilitySOs[abilityIndex], abilityCooldown));
 	}
 
@@ -86,15 +88,15 @@ public class Caster : MonoBehaviour{
 		if(abilityCooldown.OnCooldown || isCasting){
 			if(abilitySOs[abilityIndex].IsCancelable){
 				abilitySOs[abilityIndex].CancelAbility(this);
-				OnAbilityCanceled?.Invoke(this, new AbilityEventArgs(abilityCooldown));
+				OnAbilityCanceled?.Invoke(this, new AbilityEventArgs(abilityIndex, abilityCooldown));
 				return;
 			}
 			Debug.Log(ability + " is on cooldown!");
-			OnAbilityFailed?.Invoke(this, new AbilityEventArgs(abilityCooldown));
+			OnAbilityFailed?.Invoke(this, new AbilityEventArgs(abilityIndex, abilityCooldown));
 			return;
 		}
 
-		OnAbilityCasted?.Invoke(this, new AbilityEventArgs(abilityCooldown));
+		OnAbilityCasted?.Invoke(this, new AbilityEventArgs(abilityIndex, abilityCooldown));
 		StartCoroutine(CastingCoroutine(abilitySOs[abilityIndex], abilityCooldown));
 	}
 
@@ -110,7 +112,7 @@ public class Caster : MonoBehaviour{
 
 		abilitySOs[abilityIndex].CancelAbility(this);
 
-		OnAbilityCanceled?.Invoke(this, new AbilityEventArgs(abilityCooldown));
+		OnAbilityCanceled?.Invoke(this, new AbilityEventArgs(abilityIndex, abilityCooldown));
 	}
 
 	public void DebugAbility(Color gizmosColor, GizmosShape shape, Vector3 origin, Vector3 destination = new Vector3(), float radius = 0){
@@ -146,7 +148,7 @@ public class Caster : MonoBehaviour{
 		abilitySOs[abilityIndex].CastAbility(this);
 
 		StartCoroutine(abilityCooldown.AbilityCooldownCoroutine());
-		OnAbilityFired?.Invoke(this, new AbilityEventArgs(abilityCooldown));
+		OnAbilityFired?.Invoke(this, new AbilityEventArgs(abilityIndex, abilityCooldown));
 	}
 
 	private void OnDrawGizmos() {

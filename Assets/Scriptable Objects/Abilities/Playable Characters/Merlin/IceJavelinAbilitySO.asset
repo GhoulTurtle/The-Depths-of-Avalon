@@ -14,8 +14,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AbilityName: Ice Javelin
   CastTime: 0
-  Cooldown: 0
+  Cooldown: 15
   AbilityDamageType: {fileID: 0}
+  AbilityStatusEffect:
+    statusDuration:
+      minValue: 0
+      maxValue: 0
+    statusStrength: 0
+    Status: 0
   AbilityDamageAmount:
     minValue: 0
     maxValue: 0
@@ -24,3 +30,6 @@ MonoBehaviour:
   CastingAudio: {fileID: 0}
   FiredAudio: {fileID: 0}
   CanceledAudio: {fileID: 0}
+  DrawAbilityGizmos: 0
+  GizmosColor: {r: 0, g: 0, b: 0, a: 0}
+  GizmosShape: 0
