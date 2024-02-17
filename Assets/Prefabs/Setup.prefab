@@ -107,6 +107,37 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wanderLimitFromMidpoint: 20
   smoothSpeed: 3.5
+--- !u!1 &5067924654588672692
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7715863366445093801}
+  m_Layer: 0
+  m_Name: SpawnPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7715863366445093801
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5067924654588672692}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -4.5, y: -0.5, z: 8}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1931090989676703743}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5104006282922131199
 GameObject:
   m_ObjectHideFlags: 0
@@ -153,7 +184,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f9f04f93aefd2943bd3ee386171be1b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  checkpoints: []
   CurrentRespawnPoint: {fileID: 1931090989676703743}
 --- !u!114 &1345065180442680458
 MonoBehaviour:
@@ -212,7 +242,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 7715863366445093801}
   m_Father: {fileID: 3832294093693750495}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &4502130014322834003
@@ -264,7 +295,7 @@ MonoBehaviour:
   m_JoinAction:
     m_UseReference: 0
     m_Action:
-      m_Name: 
+      m_Name: Join
       m_Type: 0
       m_ExpectedControlType: 
       m_Id: 19696b12-d600-445c-909d-e362f3171b5d
@@ -298,6 +329,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   arthurCharacterSO: {fileID: 11400000, guid: 392d07da349b2eb4dac1a1b6195a1bdc, type: 2}
   merlinCharacterSO: {fileID: 11400000, guid: a01f38f3868dc61429fc738f34547ab9, type: 2}
+  startingSpawnPoint: {fileID: 7715863366445093801}
 --- !u!1 &8746167457218855334
 GameObject:
   m_ObjectHideFlags: 0
