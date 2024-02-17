@@ -1,9 +1,6 @@
-//Last Editor: Caleb Husselman
-//Last Edited: Feb 14
+//Last Editor: Caleb Richardson
+//Last Edited: Feb 17
 
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerRespawn : MonoBehaviour {
@@ -19,7 +16,6 @@ public class PlayerRespawn : MonoBehaviour {
     }
 
     private void StartRespawn(object sender, System.EventArgs e) {
-        Debug.Log("Player died, starting respawn");
         Player player = PlayerManager.Instance.CurrentPlayerList.Find(p => p.assignedPlayerInput.gameObject == gameObject);
         
         if(player != null) {

@@ -141,7 +141,7 @@ MonoBehaviour:
   groundDetectionRange: 0.25
   validStopLayerMask:
     serializedVersion: 2
-    m_Bits: 1025
+    m_Bits: 33793
   validPushLayerMask:
     serializedVersion: 2
     m_Bits: 768
