@@ -16845,6 +16845,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: MovableCube (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 3806085176156759716, guid: 8daa1d3b7ab66904799b911f18714a87,
+        type: 3}
+      propertyPath: validStopLayerMask.m_Bits
+      value: 35841
+      objectReference: {fileID: 0}
     - target: {fileID: 5006813890045072893, guid: 8daa1d3b7ab66904799b911f18714a87,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -26990,6 +26995,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: MovableCube
+      objectReference: {fileID: 0}
+    - target: {fileID: 3806085176156759716, guid: 8daa1d3b7ab66904799b911f18714a87,
+        type: 3}
+      propertyPath: validStopLayerMask.m_Bits
+      value: 35841
+      objectReference: {fileID: 0}
+    - target: {fileID: 4976185036603480609, guid: 8daa1d3b7ab66904799b911f18714a87,
+        type: 3}
+      propertyPath: m_IncludeLayers.m_Bits
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5006813890045072893, guid: 8daa1d3b7ab66904799b911f18714a87,
         type: 3}
@@ -45698,7 +45713,7 @@ PrefabInstance:
     - target: {fileID: 3412596896355139366, guid: a2ffc44fcafb3f24c95ff116f030c027,
         type: 3}
       propertyPath: m_Name
-      value: Wall
+      value: BurnableGate
       objectReference: {fileID: 0}
     - target: {fileID: 5155519817799329768, guid: a2ffc44fcafb3f24c95ff116f030c027,
         type: 3}
@@ -45764,6 +45779,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7170261973906814288, guid: a2ffc44fcafb3f24c95ff116f030c027,
+        type: 3}
+      propertyPath: m_IncludeLayers.m_Bits
+      value: 1024
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -51173,6 +51193,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7170261973906814288, guid: a2ffc44fcafb3f24c95ff116f030c027,
+        type: 3}
+      propertyPath: m_IncludeLayers.m_Bits
+      value: 1024
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -76009,6 +76034,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: MovableCube (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 3806085176156759716, guid: 8daa1d3b7ab66904799b911f18714a87,
+        type: 3}
+      propertyPath: validStopLayerMask.m_Bits
+      value: 35841
+      objectReference: {fileID: 0}
     - target: {fileID: 5006813890045072893, guid: 8daa1d3b7ab66904799b911f18714a87,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -80125,6 +80155,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: MovableCube (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3806085176156759716, guid: 8daa1d3b7ab66904799b911f18714a87,
+        type: 3}
+      propertyPath: validStopLayerMask.m_Bits
+      value: 35841
       objectReference: {fileID: 0}
     - target: {fileID: 5006813890045072893, guid: 8daa1d3b7ab66904799b911f18714a87,
         type: 3}
