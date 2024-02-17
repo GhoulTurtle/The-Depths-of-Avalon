@@ -29,6 +29,10 @@ public class StormCloudAbilitySO : AbilitySO{
             playerMovement.SetMovementSpeed(playerMovement.CurrentMovementSpeed * movementSpeedMultipler);
         }
 
+        if(caster.TryGetComponent(out PlayerInputHandler playerInputHandler)){
+            playerInputHandler.SetDisableAbilityInput(true);
+        }
+
         if(caster.character != null){
             //Clear all effects on the character
             caster.character.RemoveAllEffects();
@@ -50,6 +54,10 @@ public class StormCloudAbilitySO : AbilitySO{
 
         if(caster.TryGetComponent(out PlayerMovement playerMovement)){
             playerMovement.ResetMovementSpeed();
+        }
+
+        if(caster.TryGetComponent(out PlayerInputHandler playerInputHandler)){
+            playerInputHandler.SetDisableAbilityInput(false);
         }
 
         int playerLayerValue = LayerMask.NameToLayer(playerLayerMashName);
