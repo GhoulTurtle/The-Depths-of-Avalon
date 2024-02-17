@@ -1,20 +1,16 @@
-using System.Collections;
-using System.Collections.Generic;
+using System;
 using UnityEngine;
 
 public class PlayerOptions : MonoBehaviour {
     
-    [SerializeField] private bool isGamePaused;
+    public event EventHandler OnOptionsPressed;
+
     public void GetPlayer(Character character) {
         Debug.Log(character);
+        TogglePauseMenu();
     }
 
     public void TogglePauseMenu() {
-        if(isGamePaused) {
-            Time.timeScale = 1.0f;
-            Debug.Log("Game is no longer paused");
-        } else {
-            //Run the pause game stuff
-        }
+        OnOptionsPressed?.Invoke(this, EventArgs.Empty);
     }
 }
