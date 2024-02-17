@@ -5,13 +5,14 @@ using UnityEngine;
 public class PlayerOptions : MonoBehaviour {
     
     [SerializeField] private bool isGamePaused;
-    public void GetPlayer(CharacterSO characterSO) {
-        Debug.Log(characterSO);
+    public void GetPlayer(Character character) {
+        Debug.Log(character);
     }
 
     public void TogglePauseMenu() {
         if(isGamePaused) {
-            //Run the unpause stuff
+            Time.timeScale = 1.0f;
+            Debug.Log("Game is no longer paused");
         } else {
             //Run the pause game stuff
         }
