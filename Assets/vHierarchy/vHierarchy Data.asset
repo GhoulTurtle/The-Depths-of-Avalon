@@ -16,6 +16,7 @@ MonoBehaviour:
     keys:
     - 91a743d29b3fb3540bac3dd93e4921fd
     - afeed342239944e40a800254abb386b0
+    - 
     values:
     - goDatasByGlobalId:
         keys:
@@ -125,15 +126,20 @@ MonoBehaviour:
         - GlobalObjectId_V1-2-afeed342239944e40a800254abb386b0-915069399-0
         - GlobalObjectId_V1-2-afeed342239944e40a800254abb386b0-1336219600-0
         - GlobalObjectId_V1-2-afeed342239944e40a800254abb386b0-831885864-0
-        - GlobalObjectId_V1-2-afeed342239944e40a800254abb386b0-8746167457218855334-1014199402
-        - GlobalObjectId_V1-2-afeed342239944e40a800254abb386b0-7896065394327013075-1596066119
         - GlobalObjectId_V1-2-afeed342239944e40a800254abb386b0-858457004-0
-        - GlobalObjectId_V1-2-afeed342239944e40a800254abb386b0-19793521946197421-327521022
         - GlobalObjectId_V1-2-afeed342239944e40a800254abb386b0-251413758-0
         - GlobalObjectId_V1-2-afeed342239944e40a800254abb386b0-1829271548-0
         - GlobalObjectId_V1-2-afeed342239944e40a800254abb386b0-791155810-0
         - GlobalObjectId_V1-2-afeed342239944e40a800254abb386b0-1035476172-0
         - GlobalObjectId_V1-2-afeed342239944e40a800254abb386b0-1357400846-0
+        - GlobalObjectId_V1-2-afeed342239944e40a800254abb386b0-386717928-0
+        - GlobalObjectId_V1-2-afeed342239944e40a800254abb386b0-861842152-0
+        - GlobalObjectId_V1-2-afeed342239944e40a800254abb386b0-2011271953-0
+        - GlobalObjectId_V1-2-afeed342239944e40a800254abb386b0-649502673-0
+        - GlobalObjectId_V1-2-afeed342239944e40a800254abb386b0-939949295-0
+        - GlobalObjectId_V1-2-afeed342239944e40a800254abb386b0-1740113409-0
+        - GlobalObjectId_V1-2-afeed342239944e40a800254abb386b0-1982298595-0
+        - GlobalObjectId_V1-2-afeed342239944e40a800254abb386b0-1912466036-0
         values:
         - iColor: 8
           icon: Folder Icon
@@ -185,26 +191,36 @@ MonoBehaviour:
           icon: Folder Icon
         - iColor: 2
           icon: 
-        - iColor: 1
-          icon: Settings Icon
-        - iColor: 1
-          icon: PreMatCube
         - iColor: 6
           icon: Folder Icon
-        - iColor: 1
-          icon: Canvas Icon
         - iColor: 6
           icon: Folder Icon
         - iColor: 6
           icon: Folder Icon
         - iColor: 5
+          icon: Folder Icon
+        - iColor: 6
+          icon: Folder Icon
+        - iColor: 6
+          icon: Folder Icon
+        - iColor: 6
+          icon: Folder Icon
+        - iColor: 6
+          icon: Folder Icon
+        - iColor: 6
+          icon: Folder Icon
+        - iColor: 5
+          icon: Folder Icon
+        - iColor: 6
+          icon: Folder Icon
+        - iColor: 6
           icon: Folder Icon
         - iColor: 6
           icon: Folder Icon
         - iColor: 6
           icon: Folder Icon
       goDatasByInstanceId:
-        keys: d47b0000a46e0000b6720000da6e000086720000aa720000226f0000907100000a7c0000c87a00009a770000367400004072000000790000bc76000006780000247b000032760000f47b0000107c0000aa6f00002c79000042740000c8760000bc73000092e1ffff1aa9ffffc2f0feffd29affffead7feff26d5feff12c9feff70a7feff9e9ffeff
+        keys: d47b0000a46e0000b6720000da6e000086720000aa720000226f0000907100000a7c0000c87a00009a770000367400004072000000790000bc76000006780000247b000032760000f47b0000107c0000aa6f00002c79000042740000c8760000bc73000092e1ffff1aa9ffffc2f0feffd29affffead7feff26d5feff12c9feff70a7feff9e9ffeff8e14f4ffa2c7feff82c8feff2c12f4ffba11f4ff5011f4fff610f4ff6410f4ff
         values:
         - iColor: 8
           icon: Folder Icon
@@ -274,3 +290,25 @@ MonoBehaviour:
           icon: Folder Icon
         - iColor: 6
           icon: Folder Icon
+        - iColor: 6
+          icon: Folder Icon
+        - iColor: 6
+          icon: Folder Icon
+        - iColor: 6
+          icon: Folder Icon
+        - iColor: 5
+          icon: Folder Icon
+        - iColor: 6
+          icon: Folder Icon
+        - iColor: 6
+          icon: Folder Icon
+        - iColor: 6
+          icon: Folder Icon
+        - iColor: 6
+          icon: Folder Icon
+    - goDatasByGlobalId:
+        keys: []
+        values: []
+      goDatasByInstanceId:
+        keys: 
+        values: []
