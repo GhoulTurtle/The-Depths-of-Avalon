@@ -67,9 +67,20 @@ public class Character : MonoBehaviour{
 		}
 
 		TryGetComponent(out characterHealthSystem);
+		characterHealthSystem.OnDie += CharacterDied;
+		characterHealthSystem.OnRespawn += CharacterRespawned;
 		characterHealthSystem.OnDamaged += CharacterDamaged;
 		characterHealthSystem.OnHealed += CharacterHealed;
 	}
+
+    private void CharacterRespawned(object sender, EventArgs e){
+		characterVisualParent.gameObject.SetActive(true);
+    }
+
+    private void CharacterDied(object sender, EventArgs e){
+		characterVisualParent.gameObject.SetActive(false);
+		RemoveAllEffects();
+    }
 
     public void ChangeCharacter(CharacterSO _characterSO){
 		if(characterSO == _characterSO) return;
@@ -116,7 +127,7 @@ public class Character : MonoBehaviour{
 	}
 
 	public void RemoveAllEffects(){
-		foreach (var keyValuePair in characterStatusDictionary){
+		foreach (var keyValuePair in characterStatusDictionary.ToList()){
 			StopCoroutine(keyValuePair.Value);
 			keyValuePair.Key.StopStatusEffectCoroutine(this);
 		}

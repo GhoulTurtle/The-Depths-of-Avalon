@@ -1,9 +1,8 @@
-//Last Editor: Caleb Hussleman
-//Last Edited: Feb 14
+//Last Editor: Caleb Richardson
+//Last Edited: Feb 17
 
 using System;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerRespawner : MonoBehaviour {
@@ -31,19 +30,15 @@ public class PlayerRespawner : MonoBehaviour {
     }
 
     private IEnumerator Respawn(Player player, float respawnDelay) {
-        player.assignedPlayerInput.gameObject.SetActive(false);
 
         yield return new WaitForSeconds(respawnDelay);
 
-        Debug.Log("Player Respawned");
         OnPlayerRespawned?.Invoke(this, EventArgs.Empty);
         
         // Move the player to the respawn point
         player.assignedPlayerInput.transform.position = checkpointManager.CurrentRespawnPoint.position;
-
         
-        player.assignedPlayerInput.gameObject.SetActive(true);
-        player.assignedPlayerInput.GetComponent<HealthSystem>().Heal(1000);
+        player.assignedPlayerInput.GetComponent<HealthSystem>().Respawn();
 
         isOnePlayerDead = false;
     }

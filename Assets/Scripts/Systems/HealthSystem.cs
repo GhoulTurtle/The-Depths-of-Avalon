@@ -14,6 +14,7 @@ public class HealthSystem : MonoBehaviour {
 #endregion
 
 #region Events
+    public event EventHandler OnRespawn;
     public event EventHandler OnDie; //Used for whenever a player is killed.
     public event EventHandler<DamagedEventArgs> OnDamaged; //Used for any events that happen when player is damaged.
     public event EventHandler OnHealed; //Used for anything that happens when a player gets healed
@@ -98,6 +99,7 @@ public class HealthSystem : MonoBehaviour {
     public void Respawn(){
         IsAlive = true;
         currentHealth = maxHealth;
+        OnRespawn?.Invoke(this, EventArgs.Empty);
     }
 
     public void SetIsInvincible(bool _isInvincible){

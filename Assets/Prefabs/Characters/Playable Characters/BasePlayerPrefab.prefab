@@ -362,6 +362,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1088
   gravity: -80
+  characterController: {fileID: 5745857190525296049}
 --- !u!114 &4338515436821928063
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -410,6 +411,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 3584
   character: {fileID: 0}
+  abilitySOs: []
 --- !u!114 &1718911537333029899
 MonoBehaviour:
   m_ObjectHideFlags: 0
