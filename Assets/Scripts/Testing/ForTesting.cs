@@ -8,8 +8,7 @@ using UnityEngine;
 
 public class ForTesting : MonoBehaviour {
 
-    public HealthSystem healthSystem;
-    public DamageTypeSO damageTypeSO;
+    public AbilityRecharge abilityRecharge;
 
     private void Awake() {
 
@@ -29,7 +28,7 @@ public class ForTesting : MonoBehaviour {
     
     private void Update() {
         if(Input.GetKeyDown(KeyCode.K)) {
-            healthSystem.TakeDamage(damageTypeSO, 20, this.transform);
+            abilityRecharge.UseAbility();
         }
     }
 }
