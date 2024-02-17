@@ -15,6 +15,7 @@ MonoBehaviour:
   sceneDatasByGuid:
     keys:
     - 91a743d29b3fb3540bac3dd93e4921fd
+    - afeed342239944e40a800254abb386b0
     values:
     - goDatasByGlobalId:
         keys:
@@ -95,55 +96,181 @@ MonoBehaviour:
         - iColor: 1
           icon: 
       goDatasByInstanceId:
-        keys: 9e6a0000bc620000146100005c62000028620000f46800007462000068630000a46300005269000042630000e8620000646200003c610000fe6a00003e1efffff41dffffd21dffffb01dffff8e1dffff7e3dfeff463dfeff143dfeffe63cfeffc43cfeff
+        keys: 
+        values: []
+    - goDatasByGlobalId:
+        keys:
+        - GlobalObjectId_V1-2-afeed342239944e40a800254abb386b0-5213106091263586026-0
+        - GlobalObjectId_V1-2-afeed342239944e40a800254abb386b0-8548702-0
+        - GlobalObjectId_V1-2-afeed342239944e40a800254abb386b0-662493969-0
+        - GlobalObjectId_V1-2-afeed342239944e40a800254abb386b0-28534033-0
+        - GlobalObjectId_V1-2-afeed342239944e40a800254abb386b0-633258285-0
+        - GlobalObjectId_V1-2-afeed342239944e40a800254abb386b0-653539716-0
+        - GlobalObjectId_V1-2-afeed342239944e40a800254abb386b0-70832150-0
+        - GlobalObjectId_V1-2-afeed342239944e40a800254abb386b0-464210347-0
+        - GlobalObjectId_V1-2-afeed342239944e40a800254abb386b0-7326970597376414896-0
+        - GlobalObjectId_V1-2-afeed342239944e40a800254abb386b0-2012429841-0
+        - GlobalObjectId_V1-2-afeed342239944e40a800254abb386b0-1479977288-0
+        - GlobalObjectId_V1-2-afeed342239944e40a800254abb386b0-909711060-0
+        - GlobalObjectId_V1-2-afeed342239944e40a800254abb386b0-583897801-0
+        - GlobalObjectId_V1-2-afeed342239944e40a800254abb386b0-1707794389-0
+        - GlobalObjectId_V1-2-afeed342239944e40a800254abb386b0-1324622698-0
+        - GlobalObjectId_V1-2-afeed342239944e40a800254abb386b0-1530375422-0
+        - GlobalObjectId_V1-2-afeed342239944e40a800254abb386b0-2082192540-0
+        - GlobalObjectId_V1-2-afeed342239944e40a800254abb386b0-1239175313-0
+        - GlobalObjectId_V1-2-afeed342239944e40a800254abb386b0-5213106092109852998-0
+        - GlobalObjectId_V1-2-afeed342239944e40a800254abb386b0-8883228923051997222-0
+        - GlobalObjectId_V1-2-afeed342239944e40a800254abb386b0-146483024-0
+        - GlobalObjectId_V1-2-afeed342239944e40a800254abb386b0-1725661531-0
+        - GlobalObjectId_V1-2-afeed342239944e40a800254abb386b0-915069399-0
+        - GlobalObjectId_V1-2-afeed342239944e40a800254abb386b0-1336219600-0
+        - GlobalObjectId_V1-2-afeed342239944e40a800254abb386b0-831885864-0
+        - GlobalObjectId_V1-2-afeed342239944e40a800254abb386b0-8746167457218855334-1014199402
+        - GlobalObjectId_V1-2-afeed342239944e40a800254abb386b0-7896065394327013075-1596066119
+        - GlobalObjectId_V1-2-afeed342239944e40a800254abb386b0-858457004-0
+        - GlobalObjectId_V1-2-afeed342239944e40a800254abb386b0-19793521946197421-327521022
+        - GlobalObjectId_V1-2-afeed342239944e40a800254abb386b0-251413758-0
+        - GlobalObjectId_V1-2-afeed342239944e40a800254abb386b0-1829271548-0
+        - GlobalObjectId_V1-2-afeed342239944e40a800254abb386b0-791155810-0
+        - GlobalObjectId_V1-2-afeed342239944e40a800254abb386b0-1035476172-0
+        - GlobalObjectId_V1-2-afeed342239944e40a800254abb386b0-1357400846-0
         values:
-        - iColor: 1
-          icon: 
-        - iColor: 1
-          icon: 
-        - iColor: 1
-          icon: 
-        - iColor: 1
-          icon: 
-        - iColor: 9
-          icon: 
-        - iColor: 1
-          icon: 
-        - iColor: 1
-          icon: 
+        - iColor: 8
+          icon: Folder Icon
+        - iColor: 5
+          icon: Folder Icon
+        - iColor: 5
+          icon: Folder Icon
+        - iColor: 5
+          icon: Folder Icon
+        - iColor: 5
+          icon: Folder Icon
+        - iColor: 5
+          icon: Folder Icon
         - iColor: 6
-          icon: 
-        - iColor: 1
-          icon: 
-        - iColor: 1
-          icon: 
-        - iColor: 1
-          icon: 
-        - iColor: 1
-          icon: 
+          icon: Folder Icon
+        - iColor: 6
+          icon: Folder Icon
+        - iColor: 6
+          icon: Folder Icon
+        - iColor: 6
+          icon: Folder Icon
+        - iColor: 6
+          icon: Folder Icon
+        - iColor: 6
+          icon: Folder Icon
+        - iColor: 6
+          icon: Folder Icon
+        - iColor: 6
+          icon: Folder Icon
+        - iColor: 6
+          icon: Folder Icon
+        - iColor: 6
+          icon: Folder Icon
+        - iColor: 6
+          icon: Folder Icon
+        - iColor: 6
+          icon: Folder Icon
+        - iColor: 6
+          icon: Folder Icon
+        - iColor: 6
+          icon: Folder Icon
+        - iColor: 6
+          icon: Folder Icon
+        - iColor: 6
+          icon: Folder Icon
+        - iColor: 6
+          icon: Folder Icon
+        - iColor: 6
+          icon: Folder Icon
         - iColor: 2
           icon: 
         - iColor: 1
+          icon: Settings Icon
+        - iColor: 1
+          icon: PreMatCube
+        - iColor: 6
+          icon: Folder Icon
+        - iColor: 1
+          icon: Canvas Icon
+        - iColor: 6
+          icon: Folder Icon
+        - iColor: 6
+          icon: Folder Icon
+        - iColor: 5
+          icon: Folder Icon
+        - iColor: 6
+          icon: Folder Icon
+        - iColor: 6
+          icon: Folder Icon
+      goDatasByInstanceId:
+        keys: d47b0000a46e0000b6720000da6e000086720000aa720000226f0000907100000a7c0000c87a00009a770000367400004072000000790000bc76000006780000247b000032760000f47b0000107c0000aa6f00002c79000042740000c8760000bc73000092e1ffff1aa9ffffc2f0feffd29affffead7feff26d5feff12c9feff70a7feff9e9ffeff
+        values:
+        - iColor: 8
+          icon: Folder Icon
+        - iColor: 5
+          icon: Folder Icon
+        - iColor: 5
+          icon: Folder Icon
+        - iColor: 5
+          icon: Folder Icon
+        - iColor: 5
+          icon: Folder Icon
+        - iColor: 5
+          icon: Folder Icon
+        - iColor: 6
+          icon: Folder Icon
+        - iColor: 6
+          icon: Folder Icon
+        - iColor: 6
+          icon: Folder Icon
+        - iColor: 6
+          icon: Folder Icon
+        - iColor: 6
+          icon: Folder Icon
+        - iColor: 6
+          icon: Folder Icon
+        - iColor: 6
+          icon: Folder Icon
+        - iColor: 6
+          icon: Folder Icon
+        - iColor: 6
+          icon: Folder Icon
+        - iColor: 6
+          icon: Folder Icon
+        - iColor: 6
+          icon: Folder Icon
+        - iColor: 6
+          icon: Folder Icon
+        - iColor: 6
+          icon: Folder Icon
+        - iColor: 6
+          icon: Folder Icon
+        - iColor: 6
+          icon: Folder Icon
+        - iColor: 6
+          icon: Folder Icon
+        - iColor: 6
+          icon: Folder Icon
+        - iColor: 6
+          icon: Folder Icon
+        - iColor: 2
           icon: 
         - iColor: 1
-          icon: 
-        - iColor: 4
-          icon: 
+          icon: Settings Icon
         - iColor: 1
-          icon: 
+          icon: PreMatCube
+        - iColor: 6
+          icon: Folder Icon
         - iColor: 1
-          icon: 
-        - iColor: 1
-          icon: 
-        - iColor: 1
-          icon: 
-        - iColor: 7
-          icon: 
-        - iColor: 1
-          icon: 
-        - iColor: 1
-          icon: 
-        - iColor: 1
-          icon: 
-        - iColor: 1
-          icon: 
+          icon: Canvas Icon
+        - iColor: 6
+          icon: Folder Icon
+        - iColor: 6
+          icon: Folder Icon
+        - iColor: 5
+          icon: Folder Icon
+        - iColor: 6
+          icon: Folder Icon
+        - iColor: 6
+          icon: Folder Icon
