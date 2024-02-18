@@ -38,7 +38,7 @@ public class PlayerManager : MonoBehaviour{
 
 	private void Awake() {
 		CurrentPlayerList = new List<Player>();
-
+		Debug.Log(startingSpawnPoint.position);
 		if(Instance == null){
 			Instance = this;
 		}
