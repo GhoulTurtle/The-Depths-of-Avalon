@@ -122,7 +122,7 @@ MonoBehaviour:
   isInvincible: 0
   maxHealth: 25
   currentHealth: 0
-  requiredDamageType: {fileID: 11400000, guid: 494a1e5db449980439d7584e253947ed, type: 2}
+  requiredDamageType: {fileID: 11400000, guid: 72fcffdb100fa5d40b1b3195d42b8d0f, type: 2}
 --- !u!114 &3587922303226207886
 MonoBehaviour:
   m_ObjectHideFlags: 0

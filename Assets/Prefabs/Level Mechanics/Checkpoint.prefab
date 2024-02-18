@@ -121,7 +121,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerLayer:
     serializedVersion: 2
-    m_Bits: 256
+    m_Bits: 16640
   RespawnPoint: {fileID: 8997424626527720110}
 --- !u!1001 &685336533740942670
 PrefabInstance:

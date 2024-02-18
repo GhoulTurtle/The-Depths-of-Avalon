@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2546632454488281969}
   - component: {fileID: 5126051707780883082}
   - component: {fileID: 2232162937922731560}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -95,7 +95,7 @@ GameObject:
   - component: {fileID: 4064653635720558799}
   - component: {fileID: 3209331034616957235}
   - component: {fileID: 591563547403799252}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: Hold Pressure Plate
   m_TagString: Untagged
   m_Icon: {fileID: 0}
