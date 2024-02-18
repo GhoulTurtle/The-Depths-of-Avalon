@@ -12,6 +12,7 @@ public class PauseManager : MonoBehaviour {
         gameplayUI.SetActive(true);
         pauseScreen.SetActive(false);
         isGamePaused = false;
+        Time.timeScale = 1.0f;
     }
 
     private void ActivatePause(object sender, EventArgs e) {
