@@ -8,6 +8,9 @@ public class WallCutoutScript : MonoBehaviour
 
     [SerializeField] private LayerMask wallMask; //make sure the raycast only targets walls
 
+    [SerializeField] private float cutSize = 0.1f;
+    [SerializeField] private float fadeSize = 0.05f;
+
     private Camera mainCamera;
 
     private void Awake()
@@ -31,8 +34,8 @@ public class WallCutoutScript : MonoBehaviour
             for(int m = 0; m < materials.Length; ++m)
             {
                 materials[m].SetVector("_Cutout_Position", cutoutPos);
-                materials[m].SetFloat("_Cutout_Size", 0.1f);
-                materials[m].SetFloat("_Falloff_Size", 0.05f);
+                materials[m].SetFloat("_Cutout_Size", cutSize / 100);
+                materials[m].SetFloat("_Falloff_Size", fadeSize / 200);
             }
         }
     }
