@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ed01a97f2d78da41b1ce9c9088158ea, type: 3}
+  m_Name: FireboltAbilitySO
+  m_EditorClassIdentifier: 
+  AbilityName: Firebolt
+  CastTime: 0
+  Cooldown: 0.25
+  AbilityDamageType: {fileID: 11400000, guid: 2ac3428a4ad1e7643a6fac7b152b86e6, type: 2}
+  AbilityStatusEffect:
+    statusDuration:
+      minValue: 1.3649073
+      maxValue: 2.2179742
+    statusStrength: 0
+    Status: 1
+  AbilityDamageAmount:
+    minValue: 6.4714947
+    maxValue: 10.477659
+  IsCancelable: 0
+  AbilityVisuals: {fileID: 0}
+  CastingAudio: {fileID: 0}
+  FiredAudio: {fileID: 0}
+  CanceledAudio: {fileID: 0}
+  DrawAbilityGizmos: 1
+  GizmosColor: {r: 1, g: 0.3823667, b: 0, a: 1}
+  GizmosShape: 1
+  projectilePrefab: {fileID: 200042133992011964, guid: 20b5643aa98a3a94e93ddc17692b735b,
+    type: 3}
+  projectileSpawnOffset: 1.5

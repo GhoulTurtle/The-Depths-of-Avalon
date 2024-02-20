@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ee058994b669814083200ca5d81fea6, type: 3}
+  m_Name: ChargeAbilitySO
+  m_EditorClassIdentifier: 
+  AbilityName: Charge
+  CastTime: 0
+  Cooldown: 3
+  AbilityDamageType: {fileID: 11400000, guid: 72fcffdb100fa5d40b1b3195d42b8d0f, type: 2}
+  AbilityStatusEffect:
+    statusDuration:
+      minValue: 3.6474602
+      maxValue: 4.0160275
+    statusStrength: 5
+  AbilityDamageAmount:
+    minValue: 0.30816638
+    maxValue: 0.30816638
+  IsCancelable: 0
+  AbilityVisuals: {fileID: 0}
+  CastingAudio: {fileID: 0}
+  FiredAudio: {fileID: 0}
+  CanceledAudio: {fileID: 0}
+  DrawAbilityGizmos: 1
+  GizmosColor: {r: 0, g: 0.44313717, b: 1, a: 1}
+  GizmosShape: 1
+  chargeDuration: 0.5
+  chargeStrength: 20
+  ChargeRangeRadius: 1
+  ChargeCheckOffset: 1
+  MaxTargetsHit: 10

@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cbea89c803085d244a5f81558639405c, type: 3}
+  m_Name: CycloneAbilitySO
+  m_EditorClassIdentifier: 
+  AbilityName: Cyclone
+  CastTime: 0.5
+  Cooldown: 30
+  AbilityDamageType: {fileID: 11400000, guid: 494a1e5db449980439d7584e253947ed, type: 2}
+  AbilityDamageAmount:
+    minValue: 0
+    maxValue: 0
+  IsCancelable: 0
+  AbilityVisuals: {fileID: 0}
+  CastingAudio: {fileID: 0}
+  FiredAudio: {fileID: 0}
+  CanceledAudio: {fileID: 0}
